@@ -8,7 +8,7 @@ Please check [this][4] page in iOS device with this application installed to vie
 ### Networking
  As [RestKit][7] is having some known bugs, it not worth spending time fixing that. Rather [Alamofire][6] is ground up in Swift. 
  
- - [RestKit][7] uses AFNetworking under the hood
+ - [RestKit][7] uses [AFNetworking][8] under the hood
  - [Alamofire][6] is used for networking
  
 
@@ -40,3 +40,4 @@ Please check [this][4] page in iOS device with this application installed to vie
  [5]: https://cocoapods.org/
  [6]: https://github.com/Alamofire/Alamofire
  [7]: https://github.com/RestKit/RestKit
+ [8]: https://github.com/AFNetworking/AFNetworking
