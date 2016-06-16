@@ -14,11 +14,6 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>ISO8601DateFormatterValueTransformer.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
 		<key>ORStackView.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -29,33 +24,39 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>RKValueTransformers.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>RestKit.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>SOCKit.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
 		<key>SwiftyJSON.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>TransitionKit.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
-	<dict/>
+	<dict>
+		<key>18815E28B7B6024AD9287A4102D603FF</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>1C3436CEA5C3D39764C5F54374794ECB</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>A34CA2CDCA33A9CF24A09EA980F8EDEE</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>C6CEE7BEADAD8E11590F1C4ACF7C4BCC</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>E0C13B6D0D54E6AB8899EC6138516876</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+	</dict>
 </dict>
 </plist>

@@ -16,8 +16,8 @@ platform :ios, '9.0'
 use_frameworks!
 
 target 'HZTB' do
-	pod 'RestKit', '~> 0.26'
-  # pod 'AFNetworking', '~> 3.1' # Not needed as RestKit internally uses this and installs it
+	# pod 'RestKit', '~> 0.26' # Not working !
+  pod 'AFNetworking', '~> 3.1' # Not needed as RestKit internally uses this and installs it
   pod 'ORStackView', '~> 3.0'
   pod 'SwiftyJSON', '~> 2.3'
 end
