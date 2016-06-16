@@ -66,11 +66,34 @@ class PIVDUtilREST {
         //
     }
 //MARK: Alamofire START
-    internal func testGET(){
-        print("testGET : AlamofireVersionNumber =",AlamofireVersionNumber)
+    internal func test_GET(){
+        print("test_GET : AlamofireVersionNumber =",AlamofireVersionNumber)
+        Alamofire.request(.GET, "http://httpbin.org/get")
+            .response { (request, response, data, error) in
+                print("get : request=",request)
+                print("get : response=",response)
+                print("get : error=",error)
+            }
+        /*
+        Alamofire.request(.GET, "http://httpbin.org/get")
+            .responseString { (string) in
+                print(string)
+            }
+        Alamofire.request(.GET, "http://httpbin.org/get")
+            .responseJSON {(JSON) in
+                print(JSON)
+            }
+        */
     }
-    internal func testPOST(){
-        print("testPOST : AlamofireVersionNumber =",AlamofireVersionNumber)
+    internal func test_POST(){
+        print("test_POST : AlamofireVersionNumber =",AlamofireVersionNumber)
+        // ref : https://resttesttest.com/
+        Alamofire.request(.POST, "https://httpbin.org/post",parameters: ["foo": "bar"])
+            .response { (request, response, data, error) in
+                print("post : request=",request)
+                print("post : response=",response)
+                print("post : error=",error)
+        }
     }
 //MARK: Alamofire END
 }

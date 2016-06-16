@@ -42,8 +42,9 @@ class VCRegistration: UIViewController {
         
         //utilREST.callRESTtestWith_dataTaskWithRequest()
         //utilREST.callRESTtestWith_dataTaskWithUrl()
-        utilREST.testGET()
-        utilREST.testPOST()
+        
+        //utilREST.test_GET()
+        utilREST.test_POST()
         
     }
     
