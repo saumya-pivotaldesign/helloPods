@@ -72,6 +72,7 @@ class PIVDUtilREST {
             .response { (request, response, data, error) in
                 print("get : request=",request)
                 print("get : response=",response)
+                print("get : data=",data)
                 print("get : error=",error)
             }
         /*
@@ -88,10 +89,11 @@ class PIVDUtilREST {
     internal func test_POST(){
         print("test_POST : AlamofireVersionNumber =",AlamofireVersionNumber)
         // ref : https://resttesttest.com/
-        Alamofire.request(.POST, "https://httpbin.org/post",parameters: ["foo": "bar"])
+        Alamofire.request(.POST, "https://httpbin.org/post",parameters: ["foo": "bar"], encoding: .JSON)
             .response { (request, response, data, error) in
                 print("post : request=",request)
                 print("post : response=",response)
+                print("post : data=",data)
                 print("post : error=",error)
         }
     }
