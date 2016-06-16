@@ -14,10 +14,10 @@ class VCRegistration: UIViewController {
     @IBOutlet var uPass:UITextField!
     @IBOutlet var uEmail:UITextField!
     
-    private var utilREST:UtilREST
+    private var utilREST:PIVDUtilREST
     
     required init?(coder aDecoder: NSCoder) {
-        utilREST = UtilREST()
+        utilREST = PIVDUtilREST()
         //
         super.init(coder: aDecoder)
     }
@@ -42,6 +42,8 @@ class VCRegistration: UIViewController {
         
         //utilREST.callRESTtestWith_dataTaskWithRequest()
         //utilREST.callRESTtestWith_dataTaskWithUrl()
+        utilREST.testGET()
+        utilREST.testPOST()
         
     }
     

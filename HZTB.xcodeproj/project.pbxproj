@@ -20,7 +20,7 @@
 		AE717FBB1CF58840009DB28B /* VCHome.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE717FBA1CF58840009DB28B /* VCHome.swift */; };
 		AE717FBD1CF58D4F009DB28B /* VCSlideMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE717FBC1CF58D4F009DB28B /* VCSlideMenu.swift */; };
 		AE8F08B71CF33C8A004048A0 /* VCNewRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE8F08B61CF33C8A004048A0 /* VCNewRequest.swift */; };
-		AE96BB121D129572007DE2A2 /* UtilREST.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE96BB111D129572007DE2A2 /* UtilREST.swift */; };
+		AE96BB121D129572007DE2A2 /* PIVDUtilREST.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE96BB111D129572007DE2A2 /* PIVDUtilREST.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,7 +41,7 @@
 		AE717FBA1CF58840009DB28B /* VCHome.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VCHome.swift; sourceTree = "<group>"; };
 		AE717FBC1CF58D4F009DB28B /* VCSlideMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VCSlideMenu.swift; sourceTree = "<group>"; };
 		AE8F08B61CF33C8A004048A0 /* VCNewRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VCNewRequest.swift; sourceTree = "<group>"; };
-		AE96BB111D129572007DE2A2 /* UtilREST.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UtilREST.swift; sourceTree = "<group>"; };
+		AE96BB111D129572007DE2A2 /* PIVDUtilREST.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PIVDUtilREST.swift; sourceTree = "<group>"; };
 		AEC613221CFEC4E700DFD465 /* HZTB.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = HZTB.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -91,7 +91,7 @@
 				AE717FAD1CF587C2009DB28B /* SlideMenu */,
 				AE8F08B61CF33C8A004048A0 /* VCNewRequest.swift */,
 				AE56495F1D1039DF00FF6302 /* VCRegistration.swift */,
-				AE96BB111D129572007DE2A2 /* UtilREST.swift */,
+				AE96BB111D129572007DE2A2 /* PIVDUtilREST.swift */,
 				AE531D681CEAED7C00F6F2A5 /* Assets.xcassets */,
 				AE531D651CEAED7C00F6F2A5 /* Main.storyboard */,
 				AE531D6A1CEAED7C00F6F2A5 /* LaunchScreen.storyboard */,
@@ -259,7 +259,7 @@
 				AE717FBD1CF58D4F009DB28B /* VCSlideMenu.swift in Sources */,
 				AE717FB91CF587DF009DB28B /* PresentMenuAnimator.swift in Sources */,
 				AE717FB71CF587DF009DB28B /* MenuHelper.swift in Sources */,
-				AE96BB121D129572007DE2A2 /* UtilREST.swift in Sources */,
+				AE96BB121D129572007DE2A2 /* PIVDUtilREST.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

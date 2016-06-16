@@ -7,8 +7,9 @@
 //
 
 import Foundation
+import Alamofire
 
-class UtilREST {
+class PIVDUtilREST {
     
 //MARK: Test calls
     // Test API call
@@ -64,4 +65,12 @@ class UtilREST {
         dataTask.resume()
         //
     }
+//MARK: Alamofire START
+    internal func testGET(){
+        print("testGET : AlamofireVersionNumber =",AlamofireVersionNumber)
+    }
+    internal func testPOST(){
+        print("testPOST : AlamofireVersionNumber =",AlamofireVersionNumber)
+    }
+//MARK: Alamofire END
 }
