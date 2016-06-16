@@ -7,7 +7,9 @@
 //
 
 import Foundation
+
 import Alamofire
+import SwiftyJSON
 
 class PIVDUtilREST {
     
@@ -89,12 +91,37 @@ class PIVDUtilREST {
     internal func test_POST(){
         print("test_POST : AlamofireVersionNumber =",AlamofireVersionNumber)
         // ref : https://resttesttest.com/
+        /*
         Alamofire.request(.POST, "https://httpbin.org/post",parameters: ["foo": "bar"], encoding: .JSON)
             .response { (request, response, data, error) in
                 print("post : request=",request)
                 print("post : response=",response)
                 print("post : data=",data)
                 print("post : error=",error)
+        }
+        */
+        Alamofire.request(.POST, "https://httpbin.org/post",parameters: ["foo": "bar"], encoding: .JSON)
+            .responseJSON { (response) in
+                print("post : request=",response.request)
+                print("post : response=",response.response)
+                print("post : data=",response.data)
+                print("post : result=",response.result)
+                /*
+                if let JSON1 = response.result.value {
+                    print("JSON1: \(JSON1)")
+                }*/
+                
+                // SwiftyJSON
+                //let json = JSON(data: dataFromNetworking)
+                let jsonOBJ = JSON((response.result.value)!)
+
+                print("===========================================")
+                print("jsonOBJ=",jsonOBJ)
+                print("jsonOBJ[0]=",jsonOBJ[0])
+                print("jsonOBJ[1]=",jsonOBJ[1])
+                print("jsonOBJ['json']=",jsonOBJ["json"])
+                print("jsonOBJ[\"json\"][\"foo\"]=",jsonOBJ["json"]["foo"])
+                print("===========================================")
         }
     }
 //MARK: Alamofire END
