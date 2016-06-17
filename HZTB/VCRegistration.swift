@@ -46,9 +46,13 @@ class VCRegistration: UIViewController {
         //utilREST.test_GET()
         //utilREST.test_POST()
         
-        utilREST.callServerForRegistration()
+        utilREST.callServerForRegistration(self)
         //utilREST.callServerForPing()
         
+    }
+    
+    internal func onRegistrationCallResult(sResult:String){
+        print("onRegistrationCallResult:",sResult)
     }
     
     private func dictionaryToQueryString(dict: [String : String]) -> String {

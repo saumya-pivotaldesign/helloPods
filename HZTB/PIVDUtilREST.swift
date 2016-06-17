@@ -126,7 +126,7 @@ class PIVDUtilREST {
                 print("===========================================")
         }
     }
-    internal func callServerForRegistration(){
+    internal func callServerForRegistration(vcRef:VCRegistration){
         // register
         let url = "http://hztb-dev.us-east-1.elasticbeanstalk.com/user/register"
         let headers = [
@@ -166,6 +166,7 @@ class PIVDUtilREST {
                     print("response=",response.response)
                     print("=========================================== /ERROR ")
                 }
+                vcRef.onRegistrationCallResult(s)
         }
     }
     internal func callServerForPing(){
