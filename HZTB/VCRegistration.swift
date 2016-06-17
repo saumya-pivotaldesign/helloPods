@@ -46,8 +46,8 @@ class VCRegistration: UIViewController {
         //utilREST.test_GET()
         //utilREST.test_POST()
         
-        //utilREST.callServerForRegistration()
-        utilREST.callServerForPing()
+        utilREST.callServerForRegistration()
+        //utilREST.callServerForPing()
         
     }
     
@@ -60,7 +60,8 @@ class VCRegistration: UIViewController {
         return parts.joinWithSeparator("&")
     }
     
-    //MARK: REST call
+    /*
+    //MARK: REST call - Not used now
     private func callServiceToRegister(){
         print("callServiceToRegister")
         
@@ -101,7 +102,7 @@ class VCRegistration: UIViewController {
         dataTask.resume()
         //
     }
+    */
     
-    
-
 }
+//

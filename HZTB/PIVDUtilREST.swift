@@ -140,26 +140,32 @@ class PIVDUtilREST {
         ]
         Alamofire.request(.POST, url,headers:headers, parameters:parameters , encoding: .JSON)
             .responseJSON { (response) in
+                /*
                 print("post : request=",response.request)
                 print("post : response=",response.response)
                 print("post : data=",response.data)
                 print("post : result=",response.result)
-                /*
-                 if let JSON1 = response.result.value {
+                
+                if let JSON1 = response.result.value {
                  print("JSON1: \(JSON1)")
-                 }*/
+                }
+                */
                 
-                // SwiftyJSON
-                //let json = JSON(data: dataFromNetworking)
-                let jsonOBJ = JSON((response.result.value)!)
+                let s = String(response.result)
                 
-                print("===========================================")
-                print("jsonOBJ=",jsonOBJ)
-                print("jsonOBJ[0]=",jsonOBJ[0])
-                print("jsonOBJ[1]=",jsonOBJ[1])
-                print("jsonOBJ['json']=",jsonOBJ["json"])
-                print("jsonOBJ[\"json\"][\"foo\"]=",jsonOBJ["json"]["foo"])
-                print("===========================================")
+                if(s == "SUCCESS"){
+                    // SwiftyJSON
+                    //let json = JSON(data: dataFromNetworking)
+                    let jsonOBJ = JSON((response.result.value)!)
+                    print("=========================================== SUCCESS ")
+                    print("jsonOBJ=",jsonOBJ)
+                    print("jsonOBJ[\"mobileNumber\"]=",jsonOBJ["mobileNumber"])
+                    print("=========================================== /SUCCESS ")
+                }else{
+                    print("=========================================== ERROR ")
+                    print("response=",response.response)
+                    print("=========================================== /ERROR ")
+                }
         }
     }
     internal func callServerForPing(){
