@@ -168,7 +168,9 @@ class PIVDUtilREST {
                     print("description=",response.description)
                     print("=========================================== /ERROR ")
                 }
+                // callback
                 vcRef.onRegistrationCallResult(s)
+                //
         }
     }
     internal func callServerForPing(){

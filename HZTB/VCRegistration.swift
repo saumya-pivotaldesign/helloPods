@@ -58,7 +58,11 @@ class VCRegistration: UIViewController {
     internal func onRegistrationCallResult(sResult:String){
         print("onRegistrationCallResult:",sResult)
         registrationResult = sResult;
-        //self.dismissViewControllerAnimated(true, completion: nil)
+        
+        // Post the notification
+        let notification = NSNotification(name: "reg_success", object: self, userInfo:nil )
+        NSNotificationCenter.defaultCenter().postNotification(notification)
+        // Finally go back
         self.navigationController?.popViewControllerAnimated(true)
     }
     internal func getRegistrationResult()->String{

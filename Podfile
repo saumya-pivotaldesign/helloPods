@@ -19,8 +19,10 @@ target 'HZTB' do
 	# pod 'RestKit', '~> 0.26' # Not working !
   # pod 'AFNetworking', '~> 3.1' # Not needed as RestKit internally uses this and installs it
 
+  # pod 'Eventitic', '~> 1.0'
+
   pod 'Alamofire', '~> 3.4'
   pod 'ORStackView', '~> 3.0'
   pod 'SwiftyJSON', '~> 2.3'
-  pod 'Eventitic', '~> 1.0'
+
 end
