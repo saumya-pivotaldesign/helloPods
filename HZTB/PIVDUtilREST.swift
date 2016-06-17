@@ -164,6 +164,8 @@ class PIVDUtilREST {
                 }else{
                     print("=========================================== ERROR ")
                     print("response=",response.response)
+                    print("data=",response.data)
+                    print("description=",response.description)
                     print("=========================================== /ERROR ")
                 }
                 vcRef.onRegistrationCallResult(s)
