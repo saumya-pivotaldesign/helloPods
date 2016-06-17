@@ -44,7 +44,10 @@ class VCRegistration: UIViewController {
         //utilREST.callRESTtestWith_dataTaskWithUrl()
         
         //utilREST.test_GET()
-        utilREST.test_POST()
+        //utilREST.test_POST()
+        
+        //utilREST.callServerForRegistration()
+        utilREST.callServerForPing()
         
     }
     

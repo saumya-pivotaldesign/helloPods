@@ -100,7 +100,9 @@ class PIVDUtilREST {
                 print("post : error=",error)
         }
         */
-        Alamofire.request(.POST, "https://httpbin.org/post",parameters: ["foo": "bar"], encoding: .JSON)
+        
+        
+        Alamofire.request(.POST, "https://httpbin.org/post", parameters: ["foo": "bar"], encoding: .JSON)
             .responseJSON { (response) in
                 print("post : request=",response.request)
                 print("post : response=",response.response)
@@ -115,6 +117,74 @@ class PIVDUtilREST {
                 //let json = JSON(data: dataFromNetworking)
                 let jsonOBJ = JSON((response.result.value)!)
 
+                print("===========================================")
+                print("jsonOBJ=",jsonOBJ)
+                print("jsonOBJ[0]=",jsonOBJ[0])
+                print("jsonOBJ[1]=",jsonOBJ[1])
+                print("jsonOBJ['json']=",jsonOBJ["json"])
+                print("jsonOBJ[\"json\"][\"foo\"]=",jsonOBJ["json"]["foo"])
+                print("===========================================")
+        }
+    }
+    internal func callServerForRegistration(){
+        // register
+        let url = "http://hztb-dev.us-east-1.elasticbeanstalk.com/user/register"
+        let headers = [
+            "Content-Type":"application/json",
+            "Accept":"application/json",
+            "Accept-Language":"en-US",
+            "REQUEST_ID":"1"
+        ]
+        let parameters = [
+            "mobileNumber":"18479874489"
+        ]
+        Alamofire.request(.POST, url,headers:headers, parameters:parameters , encoding: .JSON)
+            .responseJSON { (response) in
+                print("post : request=",response.request)
+                print("post : response=",response.response)
+                print("post : data=",response.data)
+                print("post : result=",response.result)
+                /*
+                 if let JSON1 = response.result.value {
+                 print("JSON1: \(JSON1)")
+                 }*/
+                
+                // SwiftyJSON
+                //let json = JSON(data: dataFromNetworking)
+                let jsonOBJ = JSON((response.result.value)!)
+                
+                print("===========================================")
+                print("jsonOBJ=",jsonOBJ)
+                print("jsonOBJ[0]=",jsonOBJ[0])
+                print("jsonOBJ[1]=",jsonOBJ[1])
+                print("jsonOBJ['json']=",jsonOBJ["json"])
+                print("jsonOBJ[\"json\"][\"foo\"]=",jsonOBJ["json"]["foo"])
+                print("===========================================")
+        }
+    }
+    internal func callServerForPing(){
+        // ping
+        let url = "http://hztb-dev.us-east-1.elasticbeanstalk.com/user/ping"
+        let headers = [
+            "Content-Type":"application/json",
+            "Accept":"application/json",
+            "Accept-Language":"en-US",
+            "REQUEST_ID":"1212"
+        ]
+        let parameters = [
+            "mobileNumber" : "18479874489",
+            "imei" : "dummyimei"
+        ]
+        Alamofire.request(.POST, url,headers:headers, parameters:parameters , encoding: .JSON)
+            .responseJSON { (response) in
+                print("post : request=",response.request)
+                print("post : response=",response.response)
+                print("post : data=",response.data)
+                print("post : result=",response.result)
+                // SwiftyJSON
+                //let json = JSON(data: dataFromNetworking)
+                let jsonOBJ = JSON((response.result.value)!)
+                
                 print("===========================================")
                 print("jsonOBJ=",jsonOBJ)
                 print("jsonOBJ[0]=",jsonOBJ[0])
