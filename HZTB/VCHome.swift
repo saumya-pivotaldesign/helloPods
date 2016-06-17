@@ -90,7 +90,7 @@ extension VCHome {
     @IBAction func onURLSchemeTest(sender:AnyObject){
         print("onURLSchemeTest")
         //let n:NSURL = NSURL(string: "")!
-        UIApplication.sharedApplication().openURL(NSURL(fileURLWithPath: "hztbuddy://test_page/one?token=12345&domain=foo.com"))
+        //UIApplication.sharedApplication().openURL(NSURL(fileURLWithPath: "hztbuddy://test_page/one?token=12345&domain=foo.com"))
     }
 }
 
