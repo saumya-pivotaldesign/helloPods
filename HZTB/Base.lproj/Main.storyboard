@@ -16,7 +16,7 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="536"/>
+                        <rect key="frame" x="0.0" y="64" width="600" height="536"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="J7Y-lE-3OL">
@@ -355,10 +355,10 @@
                                     </mask>
                                     <mask key="constraints">
                                         <exclude reference="lle-5u-TRT"/>
-                                        <exclude reference="BxS-8P-cEj"/>
-                                        <exclude reference="EIC-o0-ODd"/>
                                         <exclude reference="jy1-SZ-quW"/>
                                         <exclude reference="vo1-6u-FlM"/>
+                                        <exclude reference="BxS-8P-cEj"/>
+                                        <exclude reference="EIC-o0-ODd"/>
                                     </mask>
                                 </variation>
                                 <variation key="heightClass=regular-widthClass=compact">
@@ -368,10 +368,10 @@
                                     </mask>
                                     <mask key="constraints">
                                         <include reference="lle-5u-TRT"/>
-                                        <include reference="BxS-8P-cEj"/>
-                                        <include reference="EIC-o0-ODd"/>
                                         <include reference="jy1-SZ-quW"/>
                                         <include reference="vo1-6u-FlM"/>
+                                        <include reference="BxS-8P-cEj"/>
+                                        <include reference="EIC-o0-ODd"/>
                                     </mask>
                                 </variation>
                             </view>
@@ -473,7 +473,7 @@
                         <viewControllerLayoutGuide type="bottom" id="Szl-5K-Auz"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="5cy-mU-LQL">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="536"/>
+                        <rect key="frame" x="0.0" y="64" width="600" height="536"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="t2c-c3-LCI">
@@ -1196,7 +1196,7 @@
                         <viewControllerLayoutGuide type="bottom" id="u8J-71-bXC"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Ke6-Ix-c2H">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="536"/>
+                        <rect key="frame" x="0.0" y="64" width="600" height="536"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="y1x-lO-Aj2">
@@ -1632,6 +1632,7 @@
                         <viewControllerLayoutGuide type="bottom" id="dWh-UN-95P"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="UST-Je-jqv">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Pvo-tQ-RjU">
@@ -1697,6 +1698,14 @@
                                     <action selector="onRegistrationClick:" destination="7pl-hO-L5H" eventType="touchUpInside" id="tAX-wu-bmy"/>
                                 </connections>
                             </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="mobile number" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BuY-NT-98g">
+                                <rect key="frame" x="-25" y="-30" width="97" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="20" y="361" width="360" height="30"/>
+                                </variation>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <variation key="default">
@@ -1708,6 +1717,7 @@
                                 <exclude reference="qgo-vF-yEx"/>
                                 <exclude reference="TGS-ah-cl6"/>
                                 <exclude reference="qEG-j6-DGR"/>
+                                <exclude reference="BuY-NT-98g"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
@@ -1719,6 +1729,7 @@
                                 <include reference="qgo-vF-yEx"/>
                                 <include reference="TGS-ah-cl6"/>
                                 <include reference="qEG-j6-DGR"/>
+                                <include reference="BuY-NT-98g"/>
                             </mask>
                         </variation>
                     </view>
@@ -1727,6 +1738,7 @@
                         <outlet property="uEmail" destination="5If-Uu-hlb" id="Bg3-AG-6Ak"/>
                         <outlet property="uName" destination="Pvo-tQ-RjU" id="p1c-mN-X1c"/>
                         <outlet property="uPass" destination="qgo-vF-yEx" id="j0t-pK-da0"/>
+                        <outlet property="uPhone" destination="BuY-NT-98g" id="KkA-WY-fTz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7E7-Rv-eff" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1742,7 +1754,7 @@
                         <viewControllerLayoutGuide type="bottom" id="6Yc-JT-gbg"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="1vT-XC-VmY">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="536"/>
+                        <rect key="frame" x="0.0" y="64" width="600" height="536"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mfM-cX-DGr">
@@ -2214,7 +2226,7 @@
                         <viewControllerLayoutGuide type="bottom" id="bAY-LI-NXB"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="o2j-MM-jwh">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="536"/>
+                        <rect key="frame" x="0.0" y="64" width="600" height="536"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tVy-xO-tey">
@@ -2387,10 +2399,10 @@
                                 <exclude reference="nm4-WU-4kY"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="dOJ-lh-IIY"/>
                                 <exclude reference="WOb-Mr-hPJ"/>
                                 <exclude reference="gyQ-3P-NqI"/>
                                 <exclude reference="qaS-X5-KcT"/>
+                                <exclude reference="dOJ-lh-IIY"/>
                                 <exclude reference="4br-57-8O2"/>
                                 <exclude reference="Ghr-Jy-O6V"/>
                                 <exclude reference="Hpc-qK-Nf6"/>
@@ -2407,10 +2419,10 @@
                                 <include reference="nm4-WU-4kY"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="dOJ-lh-IIY"/>
                                 <include reference="WOb-Mr-hPJ"/>
                                 <include reference="gyQ-3P-NqI"/>
                                 <include reference="qaS-X5-KcT"/>
+                                <include reference="dOJ-lh-IIY"/>
                                 <include reference="4br-57-8O2"/>
                                 <include reference="Ghr-Jy-O6V"/>
                                 <include reference="Hpc-qK-Nf6"/>
@@ -2436,7 +2448,7 @@
                         <viewControllerLayoutGuide type="bottom" id="zik-6b-qHX"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="6KE-br-HWj">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="536"/>
+                        <rect key="frame" x="0.0" y="64" width="600" height="536"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZUu-Kr-jA0">
@@ -2767,13 +2779,13 @@
                                 <exclude reference="r4i-ZU-fA2"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="Yv9-Pf-hAy"/>
                                 <exclude reference="6po-td-bRY"/>
                                 <exclude reference="CLf-fh-BpM"/>
                                 <exclude reference="Jfp-Io-cz9"/>
                                 <exclude reference="Hn1-7s-8fF"/>
                                 <exclude reference="Lti-IG-cLt"/>
                                 <exclude reference="YMk-AF-56Y"/>
+                                <exclude reference="Yv9-Pf-hAy"/>
                                 <exclude reference="C9l-EH-NHO"/>
                                 <exclude reference="KIT-YC-sK5"/>
                                 <exclude reference="XTw-G2-ktP"/>
@@ -2790,13 +2802,13 @@
                                 <include reference="r4i-ZU-fA2"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="Yv9-Pf-hAy"/>
                                 <include reference="6po-td-bRY"/>
                                 <include reference="CLf-fh-BpM"/>
                                 <include reference="Jfp-Io-cz9"/>
                                 <include reference="Hn1-7s-8fF"/>
                                 <include reference="Lti-IG-cLt"/>
                                 <include reference="YMk-AF-56Y"/>
+                                <include reference="Yv9-Pf-hAy"/>
                                 <include reference="C9l-EH-NHO"/>
                                 <include reference="KIT-YC-sK5"/>
                                 <include reference="XTw-G2-ktP"/>

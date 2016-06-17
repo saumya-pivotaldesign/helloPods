@@ -126,7 +126,7 @@ class PIVDUtilREST {
                 print("===========================================")
         }
     }
-    internal func callServerForRegistration(vcRef:VCRegistration){
+    internal func callServerForRegistration(vcRef:VCRegistration,sPhone:String){
         // register
         let url = "http://hztb-dev.us-east-1.elasticbeanstalk.com/user/register"
         let headers = [
@@ -136,7 +136,7 @@ class PIVDUtilREST {
             "REQUEST_ID":"1"
         ]
         let parameters = [
-            "mobileNumber":"18479874489"
+            "mobileNumber":sPhone
         ]
         Alamofire.request(.POST, url,headers:headers, parameters:parameters , encoding: .JSON)
             .responseJSON { (response) in

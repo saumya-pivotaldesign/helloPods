@@ -14,6 +14,8 @@ class VCRegistration: UIViewController {
     @IBOutlet var uPass:UITextField!
     @IBOutlet var uEmail:UITextField!
     
+    @IBOutlet var uPhone:UITextField!
+    
     private var utilREST:PIVDUtilREST
     
     required init?(coder aDecoder: NSCoder) {
@@ -37,6 +39,7 @@ class VCRegistration: UIViewController {
         print(uName.text)
         print(uPass.text)
         print(uEmail.text)
+        print(uPhone.text)
         
         //callServiceToRegister()
         
@@ -46,13 +49,15 @@ class VCRegistration: UIViewController {
         //utilREST.test_GET()
         //utilREST.test_POST()
         
-        utilREST.callServerForRegistration(self)
+        utilREST.callServerForRegistration(self,sPhone: uPhone.text!)
         //utilREST.callServerForPing()
         
     }
     
     internal func onRegistrationCallResult(sResult:String){
         print("onRegistrationCallResult:",sResult)
+        //self.dismissViewControllerAnimated(true, completion: nil)
+        self.navigationController?.popViewControllerAnimated(true)
     }
     
     private func dictionaryToQueryString(dict: [String : String]) -> String {
