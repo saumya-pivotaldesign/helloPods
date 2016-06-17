@@ -16,13 +16,23 @@ class VCHome: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         //
+        print("VCHome:viewDidLoad")
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         //
     }
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        print("viewWillAppear")
+        
+    }
+    
+    
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        print("VCHome : prepareForSegue")
         if let destinationViewController = segue.destinationViewController as? VCSlideMenu {
             destinationViewController.transitioningDelegate = self
             // 2
@@ -65,7 +75,10 @@ class VCHome: UIViewController {
         //navigationController?.presentViewController(vc, animated: true, completion: nil)
         navigationController?.pushViewController(vc, animated: true)
     }
+    
 }
+
+
 
 // MARK: Extension of the VCHome
 extension VCHome: UIViewControllerTransitioningDelegate {

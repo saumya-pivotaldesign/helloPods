@@ -17,6 +17,7 @@ class VCRegistration: UIViewController {
     @IBOutlet var uPhone:UITextField!
     
     private var utilREST:PIVDUtilREST
+    private var registrationResult:String = ""
     
     required init?(coder aDecoder: NSCoder) {
         utilREST = PIVDUtilREST()
@@ -56,8 +57,13 @@ class VCRegistration: UIViewController {
     
     internal func onRegistrationCallResult(sResult:String){
         print("onRegistrationCallResult:",sResult)
+        registrationResult = sResult;
         //self.dismissViewControllerAnimated(true, completion: nil)
         self.navigationController?.popViewControllerAnimated(true)
+    }
+    internal func getRegistrationResult()->String{
+        print("getRegistrationResult",registrationResult)
+        return registrationResult
     }
     
     private func dictionaryToQueryString(dict: [String : String]) -> String {
@@ -112,6 +118,10 @@ class VCRegistration: UIViewController {
         //
     }
     */
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        print("VCRegistration:prepareForSegue")
+    }
     
 }
 //
