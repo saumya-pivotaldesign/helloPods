@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Contacts
 
 class VCRegistration: UIViewController {
     
@@ -146,5 +147,20 @@ extension VCRegistration {
     }
     private func onGotRequestGrant(){
         print("onGotRequestGrant")
+        
+        do{
+            let contactStore:CNContactStore = AppDelegate.getAppDelegate().contactStore;
+            let keys = [CNContactFamilyNameKey, CNContactGivenNameKey, CNContactNamePrefixKey, CNContactMiddleNameKey, CNContactPhoneNumbersKey]
+            //let ccr:CNContactFetchRequest = CNContactFetchRequest(keysToFetch:keys)
+            
+            print("Fetching all contacts. Now ============== ")
+            try contactStore.enumerateContactsWithFetchRequest(CNContactFetchRequest(keysToFetch:keys)) { (contact, pointer) -> Void in
+                print(contact)
+            }
+            print("Fetching all contacts. Done ============= ")
+            
+        }catch let error as NSError{
+            print(error.description, separator: "", terminator: "\n")
+        }
     }
 }
