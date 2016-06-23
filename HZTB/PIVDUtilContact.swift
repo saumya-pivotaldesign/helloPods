@@ -10,20 +10,25 @@ import Foundation
 import Contacts
 
 class PIVDUtilContact {
-    class func getContacts(){
+    
+    static var hasContactsFetched:Bool = false
+    static var allContacts:Array = [AnyObject]()
+    
+    
+    class func getContacts(callerRef:VCRegistration){
         print("getContacts")
         let appDelegate:AppDelegate = AppDelegate.getAppDelegate()
         //appDelegate.showMessage("Hello","World")
         appDelegate.requestForAccess { (accessGranted) in
             if accessGranted {
                 //appDelegate.showMessage("Granted","Contact Access")
-                self.onGotRequestGrant()
+                self.onGotRequestGrant(callerRef)
             }else{
                 appDelegate.showMessage("Not Granted!","Contact Access")
             }
         }
     }
-    class func onGotRequestGrant(){
+    class func onGotRequestGrant(callerRef:VCRegistration){
         print("onGotRequestGrant")
         
         do{
@@ -31,14 +36,22 @@ class PIVDUtilContact {
             let keys = [CNContactFamilyNameKey, CNContactGivenNameKey, CNContactNamePrefixKey, CNContactMiddleNameKey, CNContactPhoneNumbersKey]
             //let ccr:CNContactFetchRequest = CNContactFetchRequest(keysToFetch:keys)
             
-            print("Fetching all contacts. Now ============== ")
+            //print("Fetching all contacts. Now ============== ")
             try contactStore.enumerateContactsWithFetchRequest(CNContactFetchRequest(keysToFetch:keys)) { (contact, pointer) -> Void in
-                print(contact)
+                //print(contact)
+                allContacts.append(contact)
+                hasContactsFetched = true
             }
-            print("Fetching all contacts. Done ============= ")
+            //print("Fetching all contacts. Done ============= ")
+            callerRef.gotContacts()
             
         }catch let error as NSError{
             print(error.description, separator: "", terminator: "\n")
         }
+        
+        //print("xxxxxxxxxxxxx")
+        //print(self.allContacts)
+        
+        
     }
 }

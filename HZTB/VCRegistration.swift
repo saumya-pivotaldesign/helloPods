@@ -30,7 +30,7 @@ class VCRegistration: UIViewController {
         super.viewDidLoad()
         //
         //getContacts()
-        PIVDUtilContact.getContacts()
+        PIVDUtilContact.getContacts(self)
        
     }
     override func didReceiveMemoryWarning() {
@@ -131,9 +131,10 @@ class VCRegistration: UIViewController {
     }
     
 }
-/*
+
 //MARK: Contacts API extension
 extension VCRegistration {
+    /*
     private func getContacts(){
         print("getContacts")
         let appDelegate:AppDelegate = AppDelegate.getAppDelegate()
@@ -166,5 +167,10 @@ extension VCRegistration {
             print(error.description, separator: "", terminator: "\n")
         }
     }
+    */
+    internal func gotContacts(){
+        print("VCRegistrastion : gotContacts")
+        print(PIVDUtilContact.allContacts)
+    }
 }
-*/
+
