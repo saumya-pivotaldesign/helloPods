@@ -29,7 +29,8 @@ class VCRegistration: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         //
-        getContacts()
+        //getContacts()
+        PIVDUtilContact.getContacts()
        
     }
     override func didReceiveMemoryWarning() {
@@ -130,6 +131,7 @@ class VCRegistration: UIViewController {
     }
     
 }
+/*
 //MARK: Contacts API extension
 extension VCRegistration {
     private func getContacts(){
@@ -139,7 +141,8 @@ extension VCRegistration {
         appDelegate.requestForAccess { (accessGranted) in
             if accessGranted {
                 //appDelegate.showMessage("Granted","Contact Access")
-                self.onGotRequestGrant()
+                //self.onGotRequestGrant()
+                PIVDUtilContact.onGotRequestGrant()
             }else{
                 appDelegate.showMessage("Not Granted!","Contact Access")
             }
@@ -164,3 +167,4 @@ extension VCRegistration {
         }
     }
 }
+*/

@@ -21,6 +21,7 @@
 		AE717FBD1CF58D4F009DB28B /* VCSlideMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE717FBC1CF58D4F009DB28B /* VCSlideMenu.swift */; };
 		AE8F08B71CF33C8A004048A0 /* VCNewRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE8F08B61CF33C8A004048A0 /* VCNewRequest.swift */; };
 		AE96BB121D129572007DE2A2 /* PIVDUtilREST.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE96BB111D129572007DE2A2 /* PIVDUtilREST.swift */; };
+		AEFA53181D1C2B6E00F71803 /* PIVDUtilContact.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEFA53171D1C2B6E00F71803 /* PIVDUtilContact.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +44,7 @@
 		AE8F08B61CF33C8A004048A0 /* VCNewRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VCNewRequest.swift; sourceTree = "<group>"; };
 		AE96BB111D129572007DE2A2 /* PIVDUtilREST.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PIVDUtilREST.swift; sourceTree = "<group>"; };
 		AEC613221CFEC4E700DFD465 /* HZTB.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = HZTB.entitlements; sourceTree = "<group>"; };
+		AEFA53171D1C2B6E00F71803 /* PIVDUtilContact.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PIVDUtilContact.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +94,7 @@
 				AE8F08B61CF33C8A004048A0 /* VCNewRequest.swift */,
 				AE56495F1D1039DF00FF6302 /* VCRegistration.swift */,
 				AE96BB111D129572007DE2A2 /* PIVDUtilREST.swift */,
+				AEFA53171D1C2B6E00F71803 /* PIVDUtilContact.swift */,
 				AE531D681CEAED7C00F6F2A5 /* Assets.xcassets */,
 				AE531D651CEAED7C00F6F2A5 /* Main.storyboard */,
 				AE531D6A1CEAED7C00F6F2A5 /* LaunchScreen.storyboard */,
@@ -252,6 +255,7 @@
 			files = (
 				AE717FB61CF587DF009DB28B /* Interactor.swift in Sources */,
 				AE717FB41CF587DF009DB28B /* DismissMenuAnimator.swift in Sources */,
+				AEFA53181D1C2B6E00F71803 /* PIVDUtilContact.swift in Sources */,
 				AE5649601D1039DF00FF6302 /* VCRegistration.swift in Sources */,
 				AE717FBB1CF58840009DB28B /* VCHome.swift in Sources */,
 				AE8F08B71CF33C8A004048A0 /* VCNewRequest.swift in Sources */,
