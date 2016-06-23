@@ -7,11 +7,13 @@
 //
 
 import UIKit
+import Contacts
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    var contactStore:CNContactStore = CNContactStore()
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
@@ -117,7 +119,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 // MARK: Utility
 extension AppDelegate{
-    
+    // Class method
+    class func getAppDelegate()->AppDelegate{
+        return UIApplication.sharedApplication().delegate as! AppDelegate
+    }
 }
 
 
