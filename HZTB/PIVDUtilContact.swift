@@ -15,20 +15,21 @@ class PIVDUtilContact {
     static var allContacts:Array = [AnyObject]()
     
     
-    class func getContacts(callerRef:VCRegistration){
+    class func getContacts(){
         print("getContacts")
         let appDelegate:AppDelegate = AppDelegate.getAppDelegate()
         //appDelegate.showMessage("Hello","World")
         appDelegate.requestForAccess { (accessGranted) in
             if accessGranted {
                 //appDelegate.showMessage("Granted","Contact Access")
-                self.onGotRequestGrant(callerRef)
+                //self.onGotRequestGrant(callerRef)
+                self.onGotRequestGrant()
             }else{
                 appDelegate.showMessage("Not Granted!","Contact Access")
             }
         }
     }
-    class func onGotRequestGrant(callerRef:VCRegistration){
+    class func onGotRequestGrant(){
         print("onGotRequestGrant")
         
         do{
@@ -43,7 +44,11 @@ class PIVDUtilContact {
                 hasContactsFetched = true
             }
             //print("Fetching all contacts. Done ============= ")
-            callerRef.gotContacts()
+            //callerRef.gotContacts()
+            
+            // Post the notification
+            let notification = NSNotification(name: "contact_fetch_success", object: self, userInfo:nil )
+            NSNotificationCenter.defaultCenter().postNotification(notification)
             
         }catch let error as NSError{
             print(error.description, separator: "", terminator: "\n")

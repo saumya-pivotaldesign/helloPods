@@ -29,8 +29,11 @@ class VCRegistration: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         //
+        NSNotificationCenter.defaultCenter().addObserver( self, selector:#selector(onGotContacts), name: "contact_fetch_success", object: nil )
+        
         //getContacts()
-        PIVDUtilContact.getContacts(self)
+        PIVDUtilContact.getContacts()
+        
        
     }
     override func didReceiveMemoryWarning() {
@@ -170,6 +173,13 @@ extension VCRegistration {
     */
     internal func gotContacts(){
         print("VCRegistrastion : gotContacts")
+        //print(PIVDUtilContact.allContacts)
+        
+        //let notification = NSNotification(name: "contact_fetch_success", object: self, userInfo:nil )
+        //NSNotificationCenter.defaultCenter().postNotification(notification)
+    }
+    internal func onGotContacts(data:NSObject){
+        print("VCRegistrastion : onGotContacts")
         print(PIVDUtilContact.allContacts)
     }
 }
