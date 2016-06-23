@@ -135,5 +135,16 @@ extension VCRegistration {
         print("getContacts")
         let appDelegate:AppDelegate = AppDelegate.getAppDelegate()
         //appDelegate.showMessage("Hello","World")
+        appDelegate.requestForAccess { (accessGranted) in
+            if accessGranted {
+                //appDelegate.showMessage("Granted","Contact Access")
+                self.onGotRequestGrant()
+            }else{
+                appDelegate.showMessage("Not Granted!","Contact Access")
+            }
+        }
+    }
+    private func onGotRequestGrant(){
+        print("onGotRequestGrant")
     }
 }
