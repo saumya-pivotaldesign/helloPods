@@ -27,7 +27,8 @@ class VCRegistration: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        //
+        getContacts()
        
     }
     override func didReceiveMemoryWarning() {
@@ -128,4 +129,11 @@ class VCRegistration: UIViewController {
     }
     
 }
-//
+//MARK: Contacts API extension
+extension VCRegistration {
+    private func getContacts(){
+        print("getContacts")
+        let appDelegate:AppDelegate = AppDelegate.getAppDelegate()
+        //appDelegate.showMessage("Hello","World")
+    }
+}

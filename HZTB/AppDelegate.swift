@@ -124,7 +124,7 @@ extension AppDelegate{
         return UIApplication.sharedApplication().delegate as! AppDelegate
     }
     // Instance method
-    func showMessage(message: String,title:String="Note") {
+    func showMessage(message: String,_ title:String="Note") {
         let alertController = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.Alert)
         
         let dismissAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default) { (action) -> Void in
