@@ -6,6 +6,6 @@
 //  Copyright © 2016 pivotaldesign.biz. All rights reserved.
 //
 
-struct PIVDEventNames {
+struct PIVDStaticNames {
     internal static let CONTACT_FETCH_SUCCESS:String = "PIVDEventNames.contact_fetch_success"
 }

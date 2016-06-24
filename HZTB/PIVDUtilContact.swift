@@ -48,7 +48,7 @@ class PIVDUtilContact {
             
             // Post the notification
             //let notification = NSNotification(name: "contact_fetch_success", object: self, userInfo:nil )
-            let notification = NSNotification(name:PIVDEventNames.CONTACT_FETCH_SUCCESS , object: self, userInfo:nil )
+            let notification = NSNotification(name:PIVDStaticNames.CONTACT_FETCH_SUCCESS , object: self, userInfo:nil )
             NSNotificationCenter.defaultCenter().postNotification(notification)
             
             //var P = PIVDEventNames.contact_fetch_success

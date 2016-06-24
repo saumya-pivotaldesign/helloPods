@@ -30,7 +30,7 @@ class VCRegistration: UIViewController {
         super.viewDidLoad()
         //
         //NSNotificationCenter.defaultCenter().addObserver( self, selector:#selector(onGotContacts), name: "contact_fetch_success", object: nil )
-        NSNotificationCenter.defaultCenter().addObserver( self, selector:#selector(onGotContacts), name: PIVDEventNames.CONTACT_FETCH_SUCCESS , object: nil )
+        NSNotificationCenter.defaultCenter().addObserver( self, selector:#selector(onGotContacts), name: PIVDStaticNames.CONTACT_FETCH_SUCCESS , object: nil )
         
         //getContacts()
         PIVDUtilContact.getContacts()
