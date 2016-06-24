@@ -47,8 +47,11 @@ class PIVDUtilContact {
             //callerRef.gotContacts()
             
             // Post the notification
-            let notification = NSNotification(name: "contact_fetch_success", object: self, userInfo:nil )
+            //let notification = NSNotification(name: "contact_fetch_success", object: self, userInfo:nil )
+            let notification = NSNotification(name:PIVDEventNames.CONTACT_FETCH_SUCCESS , object: self, userInfo:nil )
             NSNotificationCenter.defaultCenter().postNotification(notification)
+            
+            //var P = PIVDEventNames.contact_fetch_success
             
         }catch let error as NSError{
             print(error.description, separator: "", terminator: "\n")
