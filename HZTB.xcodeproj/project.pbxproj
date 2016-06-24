@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		336B9F887B0A1C0CC586904D /* Pods_HZTB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07D6C911D9C59D05281F3A22 /* Pods_HZTB.framework */; };
 		AE2B48011D1D1A6400EAD4B7 /* PIVDStaticNames.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE2B48001D1D1A6400EAD4B7 /* PIVDStaticNames.swift */; };
+		AE2B48031D1D420B00EAD4B7 /* PIVDContact.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE2B48021D1D420B00EAD4B7 /* PIVDContact.swift */; };
 		AE531D621CEAED7C00F6F2A5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE531D611CEAED7C00F6F2A5 /* AppDelegate.swift */; };
 		AE531D671CEAED7C00F6F2A5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE531D651CEAED7C00F6F2A5 /* Main.storyboard */; };
 		AE531D691CEAED7C00F6F2A5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AE531D681CEAED7C00F6F2A5 /* Assets.xcassets */; };
@@ -30,6 +31,7 @@
 		32C43E92C90F44444FABD508 /* Pods-HZTB.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HZTB.release.xcconfig"; path = "Pods/Target Support Files/Pods-HZTB/Pods-HZTB.release.xcconfig"; sourceTree = "<group>"; };
 		68113FFA8BC212CC24D6FC22 /* Pods-HZTB.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HZTB.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HZTB/Pods-HZTB.debug.xcconfig"; sourceTree = "<group>"; };
 		AE2B48001D1D1A6400EAD4B7 /* PIVDStaticNames.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PIVDStaticNames.swift; sourceTree = "<group>"; };
+		AE2B48021D1D420B00EAD4B7 /* PIVDContact.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PIVDContact.swift; sourceTree = "<group>"; };
 		AE531D5E1CEAED7C00F6F2A5 /* HZTB.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HZTB.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE531D611CEAED7C00F6F2A5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AE531D661CEAED7C00F6F2A5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -98,6 +100,7 @@
 				AE96BB111D129572007DE2A2 /* PIVDUtilREST.swift */,
 				AEFA53171D1C2B6E00F71803 /* PIVDUtilContact.swift */,
 				AE2B48001D1D1A6400EAD4B7 /* PIVDStaticNames.swift */,
+				AE2B48021D1D420B00EAD4B7 /* PIVDContact.swift */,
 				AE531D681CEAED7C00F6F2A5 /* Assets.xcassets */,
 				AE531D651CEAED7C00F6F2A5 /* Main.storyboard */,
 				AE531D6A1CEAED7C00F6F2A5 /* LaunchScreen.storyboard */,
@@ -268,6 +271,7 @@
 				AE717FB91CF587DF009DB28B /* PresentMenuAnimator.swift in Sources */,
 				AE717FB71CF587DF009DB28B /* MenuHelper.swift in Sources */,
 				AE96BB121D129572007DE2A2 /* PIVDUtilREST.swift in Sources */,
+				AE2B48031D1D420B00EAD4B7 /* PIVDContact.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

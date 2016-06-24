@@ -7,5 +7,16 @@
 //
 
 struct PIVDStaticNames {
-    internal static let CONTACT_FETCH_SUCCESS:String = "PIVDEventNames.contact_fetch_success"
+    // MARK: Events
+    internal static let CONTACT_FETCH_SUCCESS:String = "contactFetchSuccess"
+    
+    // MARK: localstorage keys
+    internal static let IS_CONTACT_SAVED:String = "isContactSaved" // saved in storeage as Bool
+    internal static let ALL_CONTACTS_AS_STRING:String = "allContactsAsString" 
+    
+    
+    // MARK: Flags
+    //internal static let IS_REGISTERED:Bool = false
+    
+    
 }

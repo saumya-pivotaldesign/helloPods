@@ -6,8 +6,10 @@
 //  Copyright © 2016 pivotaldesign.biz. All rights reserved.
 //
 
+import Foundation
 import UIKit
 import Contacts
+import SwiftyJSON
 
 class VCRegistration: UIViewController {
     
@@ -32,10 +34,31 @@ class VCRegistration: UIViewController {
         //NSNotificationCenter.defaultCenter().addObserver( self, selector:#selector(onGotContacts), name: "contact_fetch_success", object: nil )
         NSNotificationCenter.defaultCenter().addObserver( self, selector:#selector(onGotContacts), name: PIVDStaticNames.CONTACT_FETCH_SUCCESS , object: nil )
         
-        //getContacts()
-        PIVDUtilContact.getContacts()
         
-       
+        //
+        print("============== viewDidLoad = ");
+        
+        let defaults = NSUserDefaults.standardUserDefaults()
+        if let switchValue = defaults.stringForKey(PIVDStaticNames.IS_CONTACT_SAVED){
+            print("============== switchValue = ",switchValue);
+            if(Int(switchValue) == 1){
+                print(" === SAVED =========== ");
+                let savedContacts = defaults.stringForKey(PIVDStaticNames.ALL_CONTACTS_AS_STRING)
+                print(savedContacts)
+                print(" === / SAVED =========== ");
+            }else{
+                print("NOT SAVED ========");
+                PIVDUtilContact.getContacts()
+            }
+        }else{
+            print("============== viewDidLoad = ELSE = ");
+            PIVDUtilContact.getContacts()
+        }
+        
+        
+        // Get the contacts
+        //PIVDUtilContact.getContacts()
+        //
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -181,7 +204,23 @@ extension VCRegistration {
     }
     internal func onGotContacts(data:NSObject){
         print("VCRegistrastion : onGotContacts")
-        print(PIVDUtilContact.allContacts)
+        //print(PIVDUtilContact.allContacts)
+        //print("TODO: Save the contacts")
+        
+        var a:String = ""
+        for contact in PIVDUtilContact.allPIVDContacts {
+            let s = String(contact.identifier) + "|"
+            a.appendContentsOf(s)
+        }
+        //print(PIVDUtilContact.allPIVDContacts)
+        
+        
+        
+        // save flag
+        let defaults = NSUserDefaults.standardUserDefaults()
+        defaults.setValue(a, forKey: PIVDStaticNames.ALL_CONTACTS_AS_STRING)
+        defaults.setValue(true, forKey: PIVDStaticNames.IS_CONTACT_SAVED)
+        
     }
 }
 
