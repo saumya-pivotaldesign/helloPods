@@ -39,6 +39,10 @@ class PIVDUtilContact {
             let keys = [CNContactFamilyNameKey, CNContactGivenNameKey, CNContactNamePrefixKey, CNContactMiddleNameKey, CNContactPhoneNumbersKey]
             //let ccr:CNContactFetchRequest = CNContactFetchRequest(keysToFetch:keys)
             
+            //reset the data
+            PIVDUtilContact.allContacts = [CNContact]()
+            PIVDUtilContact.allPIVDContacts = [PIVDContact]()
+            
             //print("Fetching all contacts. Now ============== ")
             try contactStore.enumerateContactsWithFetchRequest(CNContactFetchRequest(keysToFetch:keys)) { (contact, pointer) -> Void in
                 //print(contact)
@@ -54,7 +58,9 @@ class PIVDUtilContact {
                 print ( (contact.phoneNumbers[0].value as! CNPhoneNumber).valueForKey("digits") as! String)
                 print(" =========== xxx ============ ")
                 */
+                
                 // MARK: Save the raw CNContact data
+                
                 allContacts.append(contact)
                 
                 // MARK: Parsing CNContact to PIVDContact
@@ -87,6 +93,8 @@ class PIVDUtilContact {
         
         //print("xxxxxxxxxxxxx")
         //print(self.allContacts)
-        
     }
+    
+    
+    
 }

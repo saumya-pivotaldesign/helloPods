@@ -32,8 +32,12 @@ class VCRegistration: UIViewController {
         super.viewDidLoad()
         //
         //NSNotificationCenter.defaultCenter().addObserver( self, selector:#selector(onGotContacts), name: "contact_fetch_success", object: nil )
-        NSNotificationCenter.defaultCenter().addObserver( self, selector:#selector(onGotContacts), name: PIVDStaticNames.CONTACT_FETCH_SUCCESS , object: nil )
-        
+        NSNotificationCenter.defaultCenter().addObserver( self,
+                                                          selector:#selector(onGotContacts),
+                                                          name: PIVDStaticNames.CONTACT_FETCH_SUCCESS , object: nil )
+        NSNotificationCenter.defaultCenter().addObserver( self,
+                                                          selector: #selector(addressBookDidChange),
+                                                          name: CNContactStoreDidChangeNotification, object: nil)
         
         //
         print("============== viewDidLoad = ");
@@ -44,8 +48,9 @@ class VCRegistration: UIViewController {
             if(Int(switchValue) == 1){
                 print(" === SAVED =========== ");
                 let savedContacts = defaults.stringForKey(PIVDStaticNames.ALL_CONTACTS_AS_STRING)
-                print(savedContacts)
+                //print(savedContacts)
                 print(" === / SAVED =========== ");
+                print(savedContacts)
             }else{
                 print("NOT SAVED ========");
                 PIVDUtilContact.getContacts()
@@ -54,10 +59,12 @@ class VCRegistration: UIViewController {
             print("============== viewDidLoad = ELSE = ");
             PIVDUtilContact.getContacts()
         }
-        
+ 
         
         // Get the contacts
         //PIVDUtilContact.getContacts()
+        //
+
         //
     }
     override func didReceiveMemoryWarning() {
@@ -212,15 +219,21 @@ extension VCRegistration {
             let s = String(contact.identifier) + "|"
             a.appendContentsOf(s)
         }
-        //print(PIVDUtilContact.allPIVDContacts)
+        print(PIVDUtilContact.allPIVDContacts)
         
         
         
         // save flag
         let defaults = NSUserDefaults.standardUserDefaults()
         defaults.setValue(a, forKey: PIVDStaticNames.ALL_CONTACTS_AS_STRING)
+        //defaults.setValue("", forKey: PIVDStaticNames.ALL_CONTACTS_AS_STRING) // Reset the data
         defaults.setValue(true, forKey: PIVDStaticNames.IS_CONTACT_SAVED)
         
+    }
+    
+    internal func addressBookDidChange(){
+        print("VCRegistrastion : addressBookDidChange")
+        PIVDUtilContact.getContacts()
     }
 }
 
