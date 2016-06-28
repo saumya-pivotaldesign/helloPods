@@ -24,5 +24,6 @@ target 'HZTB' do
   pod 'Alamofire', '~> 3.4'
   pod 'ORStackView', '~> 3.0'
   pod 'SwiftyJSON', '~> 2.3'
+  pod 'RealmSwift', '~> 1.0'
 
 end
