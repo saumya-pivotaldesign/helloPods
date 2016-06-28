@@ -81,21 +81,35 @@ extension VCRegistrationConfirmation {
         ]
         Alamofire.request(.POST, url,headers:headers, parameters:parameters , encoding: .JSON)
             .responseJSON { (response) in
-                print("post : request=",response.request)
-                print("post : response=",response.response)
-                print("post : data=",response.data)
-                print("post : result=",response.result)
+                
+                //print("post : request=",response.request)
+                //print("post : response=",response.response)
+                //print("post : data=",response.data)
+                //print("post : result=",response.result)
                 // SwiftyJSON
                 //let json = JSON(data: dataFromNetworking)
                 let jsonOBJ = JSON((response.result.value)!)
                 
                 print("===========================================")
                 print("jsonOBJ=",jsonOBJ)
-                print("jsonOBJ[0]=",jsonOBJ[0])
-                print("jsonOBJ[1]=",jsonOBJ[1])
+                //print("jsonOBJ[0]=",jsonOBJ[0])
+                //print("jsonOBJ[1]=",jsonOBJ[1])
                 //print("jsonOBJ['json']=",jsonOBJ["json"])
                 //print("jsonOBJ[\"json\"][\"foo\"]=",jsonOBJ["json"]["foo"])
+                print("status=",jsonOBJ["header"]["status"])
+                print("errors=",jsonOBJ["header"]["errors"])
+                print("message=",jsonOBJ["header"]["errors"][0]["message"])
                 print("===========================================")
+                
+                let s = jsonOBJ["header"]["status"].string
+                let n = NSInteger(s!)
+                if(n==400){
+                    print("ERROR : ====== ")
+                    let msg:String = jsonOBJ["header"]["errors"][0]["message"].string!
+                    AppDelegate.getAppDelegate().showMessage(msg,"OTP Validation Error")
+                }else{
+                    print("SUCCESS : ===== ")
+                }
         }
     }
 }
