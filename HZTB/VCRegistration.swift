@@ -106,7 +106,9 @@ class VCRegistration: UIViewController {
         // Post the notification
         let notification = NSNotification(name: PIVDStaticNames.REGISTRATION_SUCCESS, object: self, userInfo:nil )
         NSNotificationCenter.defaultCenter().postNotification(notification)
+        
         // Finally go back
+        print("VCRegistration : onRegistrationCallResult : TODO : navigating back to previous screen")
         //self.navigationController?.popViewControllerAnimated(true)
     }
     internal func getRegistrationResult()->String{
