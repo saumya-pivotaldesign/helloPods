@@ -40,25 +40,29 @@ class VCRegistration: UIViewController {
                                                           name: CNContactStoreDidChangeNotification, object: nil)
         
         //
-        print("============== viewDidLoad = ");
+        print("============== viewDidLoad = ")
         
-        let defaults = NSUserDefaults.standardUserDefaults()
+        //let defaults = NSUserDefaults.standardUserDefaults()
+        //defaults.setValue(true, forKey: PIVDStaticNames.IS_CONTACT_SAVED) // just a trick to make the address sync again
+        
+        PIVDUtilContact.getContacts()
+        
+        /*
         if let switchValue = defaults.stringForKey(PIVDStaticNames.IS_CONTACT_SAVED){
             print("============== switchValue = ",switchValue);
             if(Int(switchValue) == 1){
-                print(" === SAVED =========== ");
+                print(" === SAVED =========== ")
                 let savedContacts = defaults.stringForKey(PIVDStaticNames.ALL_CONTACTS_AS_STRING)
-                //print(savedContacts)
-                print(" === / SAVED =========== ");
                 print(savedContacts)
+                print(" === / SAVED =========== ")
             }else{
-                print("NOT SAVED ========");
+                print("NOT SAVED ========")
                 PIVDUtilContact.getContacts()
             }
         }else{
-            print("============== viewDidLoad = ELSE = ");
+            print("============== viewDidLoad = ELSE = ")
             PIVDUtilContact.getContacts()
-        }
+        }*/
  
         
         // Get the contacts
@@ -213,22 +217,30 @@ extension VCRegistration {
         print("VCRegistrastion : onGotContacts")
         //print(PIVDUtilContact.allContacts)
         //print("TODO: Save the contacts")
-        
+        /*
         var a:String = ""
         for contact in PIVDUtilContact.allPIVDContacts {
             let s = String(contact.identifier) + "|"
             a.appendContentsOf(s)
         }
         print(PIVDUtilContact.allPIVDContacts)
-        
-        
-        
+        */
+        /*
         // save flag
         let defaults = NSUserDefaults.standardUserDefaults()
         defaults.setValue(a, forKey: PIVDStaticNames.ALL_CONTACTS_AS_STRING)
         //defaults.setValue("", forKey: PIVDStaticNames.ALL_CONTACTS_AS_STRING) // Reset the data
         defaults.setValue(true, forKey: PIVDStaticNames.IS_CONTACT_SAVED)
+        */
         
+        let a = PIVDUtilContact.getAllContactNumbersAsStringArray()
+        let b = Dictionary(dictionaryLiteral: ("userProfileRequests",a))
+        let json = JSON(b)
+        
+        print("VCRegistrastion : onGotContacts : allAddress:")
+        print(json)
+        // TODO: Redy to go for the server call
+        print("VCRegistrastion : onGotContacts : TODO:Sync with server ")
     }
     
     internal func addressBookDidChange(){

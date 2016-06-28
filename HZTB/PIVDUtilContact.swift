@@ -95,6 +95,33 @@ class PIVDUtilContact {
         //print(self.allContacts)
     }
     
+    static func getAllContactNumbersAsStringArray()->Array<AnyObject>{
+        
+        var a:Array<AnyObject> = [AnyObject]()
+        //var a = Dictionary<String, String>()
+        //var a:Dictionary = [String:String]()
+        
+        for contact in PIVDUtilContact.allPIVDContacts {
+            //let s = String(contact.phoneNumber_digits)
+            
+            let s1 = "mobileNumber"
+            let s2 = String(contact.phoneNumber_digits)
+            //let s3 = "{"+s1+" : "+s2+" }"
+            //a.append(s3)
+            let d = Dictionary(dictionaryLiteral: (s1,s2))
+            a.append(d)
+            
+            //var d = []
+            //d.updateValue(contact.phoneNumber_digits, forKey: "mobileNumber")
+        }
+        
+        print("VCRegistration ====== getAllContactNumbers")
+        print(a)
+        print("VCRegistration ====== / getAllContactNumbers")
+        
+        return a
+    }
+    
     
     
 }
