@@ -27,7 +27,7 @@ class VCHome: UIViewController {
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         
-        print("viewWillAppear")
+        print("VCHome : viewWillAppear")
         
     }
     

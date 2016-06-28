@@ -12,9 +12,11 @@ class VCRegistrationConfirmation: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         //
+        print("VCRegistrationConfirmation : viewDidLoad : ")
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         //
+        print("VCRegistrationConfirmation : didReceiveMemoryWarning : ")
     }
 }
