@@ -27,7 +27,9 @@ class VCRegistrationConfirmation: UIViewController {
         super.viewDidAppear(animated)
         print("VCRegistrationConfirmation : viewDidAppear : ")
         
-        let url = NSURL(string: "http://lorempixel.com/g/40/620")
+        let s:String = "http://lorempixel.com/g/420/680/fashion/"
+        //let s:String = "http://lorempixel.com/g/420/680/"
+        let url = NSURL(string:s)
         if let data = NSData(contentsOfURL: url!) {
             bg!.image = UIImage(data: data)
         }

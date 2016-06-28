@@ -1775,7 +1775,9 @@
                             <constraint firstItem="4z0-ww-OOc" firstAttribute="leading" secondItem="dpw-qo-v5z" secondAttribute="leading" constant="10" id="IEg-cQ-EYf">
                                 <variation key="heightClass=regular-widthClass=compact" constant="0.0"/>
                             </constraint>
-                            <constraint firstItem="tBp-Os-qV9" firstAttribute="top" secondItem="w55-ke-bC4" secondAttribute="bottom" constant="40" id="LSY-14-7OU"/>
+                            <constraint firstItem="tBp-Os-qV9" firstAttribute="top" secondItem="w55-ke-bC4" secondAttribute="bottom" constant="40" id="LSY-14-7OU">
+                                <variation key="heightClass=regular-widthClass=compact" constant="300"/>
+                            </constraint>
                             <constraint firstItem="euC-GC-M22" firstAttribute="top" secondItem="tBp-Os-qV9" secondAttribute="bottom" constant="8" id="OT7-Jb-lME"/>
                             <constraint firstItem="2pi-Rl-qfy" firstAttribute="top" secondItem="4z0-ww-OOc" secondAttribute="bottom" constant="608" id="PPp-TI-xAd">
                                 <variation key="heightClass=regular-widthClass=compact" constant="0.0"/>
