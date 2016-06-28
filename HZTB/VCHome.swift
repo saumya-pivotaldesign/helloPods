@@ -16,8 +16,8 @@ class VCHome: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         //
-        print("VCHome:viewDidLoad")
-        NSNotificationCenter.defaultCenter().addObserver( self, selector:#selector(onRegistrationNotification), name: "reg_success", object: nil )
+        print("VCHome : viewDidLoad")
+        NSNotificationCenter.defaultCenter().addObserver( self, selector:#selector(onRegistrationNotification), name: PIVDStaticNames.REGISTRATION_SUCCESS, object: nil )
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -32,9 +32,9 @@ class VCHome: UIViewController {
     
     
     @objc private func onRegistrationNotification(data:NSObject){
-        print("================ onRegistrationNotification")
+        print("VCHome : onRegistrationNotification ================ ")
         print(data)
-        print("================ /onRegistrationNotification")
+        print("VCHome : onRegistrationNotification / ================ ")
     }
     
     

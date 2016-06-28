@@ -77,12 +77,14 @@ class VCRegistration: UIViewController {
     
     //MARK: Storyboard actions
     @IBAction func onRegistrationClick(sender:AnyObject){
-        print("TODO: registration call")
+        print("VCRegistration : onRegistrationClick : ")
+        /*
         print(uName.text)
         print(uPass.text)
         print(uEmail.text)
         print(uPhone.text)
-        
+        */
+        /*
         //callServiceToRegister()
         
         //utilREST.callRESTtestWith_dataTaskWithRequest()
@@ -90,6 +92,7 @@ class VCRegistration: UIViewController {
         
         //utilREST.test_GET()
         //utilREST.test_POST()
+        */
         
         utilREST.callServerForRegistration(self,sPhone: uPhone.text!)
         //utilREST.callServerForPing()
@@ -97,17 +100,17 @@ class VCRegistration: UIViewController {
     }
     
     internal func onRegistrationCallResult(sResult:String){
-        print("onRegistrationCallResult:",sResult)
+        print("VCRegistration : onRegistrationCallResult : ",sResult)
         registrationResult = sResult;
         
         // Post the notification
-        let notification = NSNotification(name: "reg_success", object: self, userInfo:nil )
+        let notification = NSNotification(name: PIVDStaticNames.REGISTRATION_SUCCESS, object: self, userInfo:nil )
         NSNotificationCenter.defaultCenter().postNotification(notification)
         // Finally go back
-        self.navigationController?.popViewControllerAnimated(true)
+        //self.navigationController?.popViewControllerAnimated(true)
     }
     internal func getRegistrationResult()->String{
-        print("getRegistrationResult",registrationResult)
+        print("VCRegistration : getRegistrationResult : ",registrationResult)
         return registrationResult
     }
     

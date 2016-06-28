@@ -127,6 +127,8 @@ class PIVDUtilREST {
         }
     }
     internal func callServerForRegistration(vcRef:VCRegistration,sPhone:String){
+        print("PIVDUtilREST : callServerForRegistration : ")
+        
         // register
         let url = "http://hztb-dev.us-east-1.elasticbeanstalk.com/user/register"
         let headers = [
@@ -157,16 +159,16 @@ class PIVDUtilREST {
                     // SwiftyJSON
                     //let json = JSON(data: dataFromNetworking)
                     let jsonOBJ = JSON((response.result.value)!)
-                    print("=========================================== SUCCESS ")
+                    print("PIVDUtilREST : callServerForRegistration : =========================================== SUCCESS ")
                     print("jsonOBJ=",jsonOBJ)
                     print("jsonOBJ[\"mobileNumber\"]=",jsonOBJ["mobileNumber"])
-                    print("=========================================== /SUCCESS ")
+                    print("PIVDUtilREST : callServerForRegistration : =========================================== /SUCCESS ")
                 }else{
-                    print("=========================================== ERROR ")
+                    print("PIVDUtilREST : callServerForRegistration : =========================================== ERROR ")
                     print("response=",response.response)
                     print("data=",response.data)
                     print("description=",response.description)
-                    print("=========================================== /ERROR ")
+                    print("PIVDUtilREST : callServerForRegistration : =========================================== /ERROR ")
                 }
                 // callback
                 vcRef.onRegistrationCallResult(s)
