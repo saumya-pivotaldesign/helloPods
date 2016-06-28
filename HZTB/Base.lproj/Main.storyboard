@@ -1764,6 +1764,9 @@
                                         <include reference="QF6-wn-Irs"/>
                                     </mask>
                                 </variation>
+                                <connections>
+                                    <action selector="onConfirmTap:" destination="3TA-Eg-PJX" eventType="touchUpInside" id="bHV-gE-0CS"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1835,6 +1838,7 @@
                     <navigationItem key="navigationItem" title="Confirm Registration" id="x1G-3B-g8p"/>
                     <connections>
                         <outlet property="bg" destination="4z0-ww-OOc" id="O2k-9s-89i"/>
+                        <outlet property="otpField" destination="tBp-Os-qV9" id="GLu-d6-u2E"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CUb-xT-xNu" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -7,10 +7,13 @@
 //
 
 import UIKit
+import Alamofire
+import SwiftyJSON
 
 class VCRegistrationConfirmation: UIViewController {
     
     @IBOutlet var bg:UIImageView?
+    @IBOutlet var otpField:UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,18 +30,72 @@ class VCRegistrationConfirmation: UIViewController {
         super.viewDidAppear(animated)
         print("VCRegistrationConfirmation : viewDidAppear : ")
         
+        /*
         let s:String = "http://lorempixel.com/g/420/680/fashion/"
         //let s:String = "http://lorempixel.com/g/420/680/"
         let url = NSURL(string:s)
         if let data = NSData(contentsOfURL: url!) {
             bg!.image = UIImage(data: data)
         }
+        */
         
-        //bg?.image = UIImage(data: "http://lorempixel.com/g/400/200")
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         //
         print("VCRegistrationConfirmation : didReceiveMemoryWarning : ")
+    }
+}
+
+//MARK: Storyboard Actions
+extension VCRegistrationConfirmation {
+    @IBAction func onConfirmTap(sender:AnyObject){
+        print("VCRegistrationConfirmation : onConfirmTap : ")
+        print(otpField.text)
+        confirmOTPwithServer()
+    }
+}
+//MARK: Utility Methods
+extension VCRegistrationConfirmation {
+    internal func confirmOTPwithServer(){
+        print("VCRegistrationConfirmation : confirmOTPwithServer : ")
+        callServerForPing()
+    }
+    internal func callServerForPing(){
+        
+        let sOTP:String = otpField.text!
+        // ping
+        let url = "http://hztb-dev.us-east-1.elasticbeanstalk.com/user/validateOTP"
+        let headers = [
+            "Content-Type":"application/json",
+            "Accept":"application/json",
+            "Accept-Language":"en-US",
+            "REQUEST_ID":"1"
+        ]
+        let parameters = [
+            "mobileNumber" : "11111111111",
+            "otpCode" : sOTP,
+            "imei" : "12345",
+            "deviceRegId" : "12345",
+            "deviceId" : "12345"
+        ]
+        Alamofire.request(.POST, url,headers:headers, parameters:parameters , encoding: .JSON)
+            .responseJSON { (response) in
+                print("post : request=",response.request)
+                print("post : response=",response.response)
+                print("post : data=",response.data)
+                print("post : result=",response.result)
+                // SwiftyJSON
+                //let json = JSON(data: dataFromNetworking)
+                let jsonOBJ = JSON((response.result.value)!)
+                
+                print("===========================================")
+                print("jsonOBJ=",jsonOBJ)
+                print("jsonOBJ[0]=",jsonOBJ[0])
+                print("jsonOBJ[1]=",jsonOBJ[1])
+                //print("jsonOBJ['json']=",jsonOBJ["json"])
+                //print("jsonOBJ[\"json\"][\"foo\"]=",jsonOBJ["json"]["foo"])
+                print("===========================================")
+        }
     }
 }
