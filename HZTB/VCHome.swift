@@ -17,7 +17,8 @@ class VCHome: UIViewController {
         super.viewDidLoad()
         //
         print("VCHome : viewDidLoad")
-        NSNotificationCenter.defaultCenter().addObserver( self, selector:#selector(onRegistrationNotification), name: PIVDStaticNames.REGISTRATION_SUCCESS, object: nil )
+        NSNotificationCenter.defaultCenter().addObserver( self, selector:#selector(onRegistrationNotification),
+                                                          name: PIVDStaticNames.REGISTRATION_SUCCESS, object: nil )
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -35,6 +36,14 @@ class VCHome: UIViewController {
         print("VCHome : onRegistrationNotification ================ ")
         print(data)
         print("VCHome : onRegistrationNotification / ================ ")
+        print("VCHome : TODO: Move to confirmation screen");
+        
+        self.navigationController?.popViewControllerAnimated(true)
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewControllerWithIdentifier("sid_registration_confirmation") as! VCRegistrationConfirmation
+        navigationController?.pushViewController(vc, animated: true)
+        
     }
     
     

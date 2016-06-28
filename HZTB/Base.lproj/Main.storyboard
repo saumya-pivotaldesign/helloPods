@@ -1712,7 +1712,25 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7E7-Rv-eff" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4291.5" y="-204.75"/>
+            <point key="canvasLocation" x="4245" y="-479.25"/>
+        </scene>
+        <!--Confirm Registration-->
+        <scene sceneID="emh-RH-2jm">
+            <objects>
+                <viewController storyboardIdentifier="sid_registration_confirmation" id="3TA-Eg-PJX" customClass="VCRegistrationConfirmation" customModule="HZTB" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="w55-ke-bC4"/>
+                        <viewControllerLayoutGuide type="bottom" id="2pi-Rl-qfy"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="dpw-qo-v5z">
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Confirm Registration" id="x1G-3B-g8p"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CUb-xT-xNu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4245" y="195.75"/>
         </scene>
         <!--Details-->
         <scene sceneID="Qyb-Yy-66a">
@@ -2805,6 +2823,7 @@
                     <nil name="viewControllers"/>
                     <connections>
                         <segue destination="7pl-hO-L5H" kind="relationship" relationship="rootViewController" id="Dln-8g-IRA"/>
+                        <segue destination="3TA-Eg-PJX" kind="show" identifier="sid_segue_toConfirmRegistration" id="Djo-cW-hjE"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xrS-0v-qJz" userLabel="First Responder" sceneMemberID="firstResponder"/>
