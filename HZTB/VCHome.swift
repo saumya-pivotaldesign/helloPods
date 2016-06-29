@@ -63,11 +63,12 @@ class VCHome: UIViewController {
         print("VCHome : onOTPSuccess   ================ ")
         // Come back to Home
         self.navigationController?.popViewControllerAnimated(true)
+        
         // Move to Profile View
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let vc = storyboard.instantiateViewControllerWithIdentifier("sid_registration_confirmation") as! VCRegistrationConfirmation
+        let vc = storyboard.instantiateViewControllerWithIdentifier("sid_profile") as! VCProfile
         navigationController?.pushViewController(vc, animated: true)
-        
+ 
         print("VCHome : onOTPSuccess / ================ ")
     }
     

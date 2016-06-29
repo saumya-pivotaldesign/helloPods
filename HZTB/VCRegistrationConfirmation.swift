@@ -122,7 +122,7 @@ extension VCRegistrationConfirmation {
                 */
                 if(jsonOBJ["isValidateOTPSuccesful"].isExists()==true){
                     print("SUCCESS")
-                    AppDelegate.getAppDelegate().showMessage("OTP Validation Success","Welcome to HZTB!")
+                    //AppDelegate.getAppDelegate().showMessage("OTP Validation Success","Welcome to HZTB!")
                     self.onOTPSuccess()
                 }else{
                     print("message=",jsonOBJ["header"]["errors"][0]["message"])
