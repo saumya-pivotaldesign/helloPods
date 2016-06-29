@@ -124,8 +124,11 @@ extension VCRegistrationConfirmation {
                 */
                 if(jsonOBJ["isValidateOTPSuccesful"].isExists()==true){
                     print("SUCCESS")
+                    AppDelegate.getAppDelegate().showMessage("OTP Validation Success","Welcome to HZTB!")
                 }else{
                     print("message=",jsonOBJ["header"]["errors"][0]["message"])
+                    let s:String = jsonOBJ["header"]["errors"][0]["message"].string!
+                    AppDelegate.getAppDelegate().showMessage(s,"OTP Error!")
                 }
                 print("===========================================")
         }
