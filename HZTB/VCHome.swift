@@ -18,8 +18,11 @@ class VCHome: UIViewController {
         super.viewDidLoad()
         //
         print("VCHome : viewDidLoad")
+        //MARK: EventHandler Registrations
         NSNotificationCenter.defaultCenter().addObserver( self, selector:#selector(onRegistrationNotification),
                                                           name: PIVDStaticNames.REGISTRATION_SUCCESS, object: nil )
+        NSNotificationCenter.defaultCenter().addObserver( self, selector:#selector(onOTPSuccess),
+                                                          name: PIVDStaticNames.OTP_SUCCESS, object: nil )
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -54,6 +57,18 @@ class VCHome: UIViewController {
         let vc = storyboard.instantiateViewControllerWithIdentifier("sid_registration_confirmation") as! VCRegistrationConfirmation
         navigationController?.pushViewController(vc, animated: true)
         
+    }
+    
+    @objc private func onOTPSuccess(notification:NSNotification){
+        print("VCHome : onOTPSuccess   ================ ")
+        // Come back to Home
+        self.navigationController?.popViewControllerAnimated(true)
+        // Move to Profile View
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewControllerWithIdentifier("sid_registration_confirmation") as! VCRegistrationConfirmation
+        navigationController?.pushViewController(vc, animated: true)
+        
+        print("VCHome : onOTPSuccess / ================ ")
     }
     
     

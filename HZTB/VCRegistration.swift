@@ -13,10 +13,13 @@ import SwiftyJSON
 
 class VCRegistration: UIViewController {
     
+    /*
     @IBOutlet var uName:UITextField!
     @IBOutlet var uPass:UITextField!
     @IBOutlet var uEmail:UITextField!
+    */
     
+    @IBOutlet var bg:UIImageView?
     @IBOutlet var uPhone:UITextField!
     
     private var utilREST:PIVDUtilREST
@@ -28,6 +31,19 @@ class VCRegistration: UIViewController {
         utilREST = PIVDUtilREST()
         //
         super.init(coder: aDecoder)
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        print("VCRegistration : viewDidAppear : ")
+        /*
+        let s:String = "http://lorempixel.com/g/420/680/fashion/"
+        //let s:String = "http://lorempixel.com/g/420/680/"
+        let url = NSURL(string:s)
+        if let data = NSData(contentsOfURL: url!) {
+            bg!.image = UIImage(data: data)
+        }
+        */
     }
     
     override func viewDidLoad() {

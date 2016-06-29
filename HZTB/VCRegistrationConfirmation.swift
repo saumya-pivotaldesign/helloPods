@@ -29,7 +29,6 @@ class VCRegistrationConfirmation: UIViewController {
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         print("VCRegistrationConfirmation : viewDidAppear : ")
-        
         /*
         let s:String = "http://lorempixel.com/g/420/680/fashion/"
         //let s:String = "http://lorempixel.com/g/420/680/"
@@ -38,7 +37,6 @@ class VCRegistrationConfirmation: UIViewController {
             bg!.image = UIImage(data: data)
         }
         */
-        
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -125,6 +123,7 @@ extension VCRegistrationConfirmation {
                 if(jsonOBJ["isValidateOTPSuccesful"].isExists()==true){
                     print("SUCCESS")
                     AppDelegate.getAppDelegate().showMessage("OTP Validation Success","Welcome to HZTB!")
+                    self.onOTPSuccess()
                 }else{
                     print("message=",jsonOBJ["header"]["errors"][0]["message"])
                     let s:String = jsonOBJ["header"]["errors"][0]["message"].string!
@@ -133,5 +132,11 @@ extension VCRegistrationConfirmation {
                 print("===========================================")
         }
         print("VCRegistrationConfirmation : callServerForPing : /=== ")
+    }
+    internal func onOTPSuccess(){
+        print("VCRegistrationConfirmation : onOTPSuccess : ")
+        // Post the notification
+        let notification = NSNotification(name: PIVDStaticNames.OTP_SUCCESS , object: self, userInfo:nil )
+        NSNotificationCenter.defaultCenter().postNotification(notification)
     }
 }
