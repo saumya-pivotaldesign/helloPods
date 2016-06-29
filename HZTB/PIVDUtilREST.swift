@@ -153,15 +153,28 @@ class PIVDUtilREST {
                 }
                 */
                 
-                let s = String(response.result)
+                var s = String(response.result)
+                var sResultMessage:String = ""
                 
                 if(s == "SUCCESS"){
                     // SwiftyJSON
                     //let json = JSON(data: dataFromNetworking)
                     let jsonOBJ = JSON((response.result.value)!)
+                    let mobileNum = jsonOBJ["mobileNumber"]
+                    
                     print("PIVDUtilREST : callServerForRegistration : =========================================== SUCCESS ")
                     print("jsonOBJ=",jsonOBJ)
                     print("jsonOBJ[\"mobileNumber\"]=",jsonOBJ["mobileNumber"])
+                    print("jsonOBJ.header.errors.message=",jsonOBJ["header"]["errors"][0]["message"])
+                    // Success: will get MobileNumber
+                    // Fail: will get error message
+                    // print("====== mobileNum ====",mobileNum.isEmpty)
+                    
+                    if(mobileNum.isEmpty){
+                        s = "ERROR"
+                        sResultMessage = jsonOBJ["header"]["errors"][0]["message"].string!
+                    }
+                    
                     print("PIVDUtilREST : callServerForRegistration : =========================================== /SUCCESS ")
                 }else{
                     print("PIVDUtilREST : callServerForRegistration : =========================================== ERROR ")
@@ -171,7 +184,7 @@ class PIVDUtilREST {
                     print("PIVDUtilREST : callServerForRegistration : =========================================== /ERROR ")
                 }
                 // callback
-                vcRef.onRegistrationCallResult(s)
+                vcRef.onRegistrationCallResult(s, resultMessage: sResultMessage)
                 //
         }
     }

@@ -99,17 +99,24 @@ class VCRegistration: UIViewController {
         
     }
     
-    internal func onRegistrationCallResult(sResult:String){
-        print("VCRegistration : onRegistrationCallResult : ",sResult)
+    internal func onRegistrationCallResult(sResult:String,resultMessage:String=""){
+        print("VCRegistration : onRegistrationCallResult : result=",sResult)
         registrationResult = sResult;
         
-        // Post the notification
-        let notification = NSNotification(name: PIVDStaticNames.REGISTRATION_SUCCESS, object: self, userInfo:nil )
-        NSNotificationCenter.defaultCenter().postNotification(notification)
-        
-        // Finally go back
-        print("VCRegistration : onRegistrationCallResult : TODO : navigating back to previous screen")
-        //self.navigationController?.popViewControllerAnimated(true)
+        if(sResult == "ERROR"){
+            print("VCRegistration : onRegistrationCallResult : message=",resultMessage)
+            
+            AppDelegate.getAppDelegate().showMessage(resultMessage,"Registration Error!")
+        }else{
+            // Post the notification
+            let notification = NSNotification(name: PIVDStaticNames.REGISTRATION_SUCCESS, object: self, userInfo:nil )
+            NSNotificationCenter.defaultCenter().postNotification(notification)
+            
+            // Finally go back
+            print("VCRegistration : onRegistrationCallResult : TODO : navigating back to previous screen")
+            //self.navigationController?.popViewControllerAnimated(true)
+        }
+        //
     }
     internal func getRegistrationResult()->String{
         print("VCRegistration : getRegistrationResult : ",registrationResult)
