@@ -22,6 +22,8 @@ class VCRegistration: UIViewController {
     private var utilREST:PIVDUtilREST
     private var registrationResult:String = ""
     
+    public var sRegisteredNum:String = ""
+    
     required init?(coder aDecoder: NSCoder) {
         utilREST = PIVDUtilREST()
         //
@@ -94,9 +96,9 @@ class VCRegistration: UIViewController {
         //utilREST.test_POST()
         */
         
+        //MARK: REST call for registration
         utilREST.callServerForRegistration(self,sPhone: uPhone.text!)
         //utilREST.callServerForPing()
-        
     }
     
     internal func onRegistrationCallResult(sResult:String,resultMessage:String=""){
@@ -108,6 +110,9 @@ class VCRegistration: UIViewController {
             
             AppDelegate.getAppDelegate().showMessage(resultMessage,"Registration Error!")
         }else{
+            //
+            self.sRegisteredNum = uPhone.text!
+            
             // Post the notification
             let notification = NSNotification(name: PIVDStaticNames.REGISTRATION_SUCCESS, object: self, userInfo:nil )
             NSNotificationCenter.defaultCenter().postNotification(notification)

@@ -12,6 +12,7 @@ import UIKit
 class VCHome: UIViewController {
     
     let interactor = Interactor()
+    var sRegisteredMobileNum:String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,12 +33,19 @@ class VCHome: UIViewController {
     }
     
     
-    @objc private func onRegistrationNotification(data:NSObject){
+    @objc private func onRegistrationNotification(notification:NSNotification){
         print("VCHome : onRegistrationNotification ================ ")
-        print(data)
-        print("VCHome : onRegistrationNotification / ================ ")
-        print("VCHome : TODO: Move to confirmation screen");
+        print(notification.name)
+        print(notification.object)
         
+        let a:VCRegistration = notification.object as! VCRegistration
+        print(a)
+        print(a.sRegisteredNum)
+        sRegisteredMobileNum = a.sRegisteredNum
+        
+        //print(data.object)
+        //print((data.object as! VCRegistration).sRegisteredNum)
+        print("VCHome : onRegistrationNotification / ================ ")
         self.navigationController?.popViewControllerAnimated(true)
         
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
