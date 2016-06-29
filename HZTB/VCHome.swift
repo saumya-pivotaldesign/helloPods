@@ -35,18 +35,20 @@ class VCHome: UIViewController {
     
     @objc private func onRegistrationNotification(notification:NSNotification){
         print("VCHome : onRegistrationNotification ================ ")
-        print(notification.name)
-        print(notification.object)
+        print("VCHome : onRegistrationNotification : name=",notification.name)
+        print("VCHome : onRegistrationNotification : object=",notification.object)
         
         let a:VCRegistration = notification.object as! VCRegistration
-        print(a)
-        print(a.sRegisteredNum)
+        print("VCHome : onRegistrationNotification : VCRegistration=",a)
+        print("VCHome : onRegistrationNotification : sRegisteredNum=",a.sRegisteredNum)
         sRegisteredMobileNum = a.sRegisteredNum
         
         //print(data.object)
         //print((data.object as! VCRegistration).sRegisteredNum)
         print("VCHome : onRegistrationNotification / ================ ")
         self.navigationController?.popViewControllerAnimated(true)
+        
+        AppDelegate.getAppDelegate().sRegisteredMobileNum = sRegisteredMobileNum
         
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let vc = storyboard.instantiateViewControllerWithIdentifier("sid_registration_confirmation") as! VCRegistrationConfirmation

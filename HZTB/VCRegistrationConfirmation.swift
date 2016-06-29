@@ -62,9 +62,14 @@ extension VCRegistrationConfirmation {
         callServerForPing()
     }
     internal func callServerForPing(){
+        print("VCRegistrationConfirmation : callServerForPing : === ")
         
         let sOTP:String = otpField.text!
-        // ping
+        let sRegisteredMobileNum:String = AppDelegate.getAppDelegate().sRegisteredMobileNum
+        
+        print("VCRegistrationConfirmation : callServerForPing : sRegisteredMobileNum=",sRegisteredMobileNum)
+        
+        // validate OTP
         let url = "http://hztb-dev.us-east-1.elasticbeanstalk.com/user/validateOTP"
         let headers = [
             "Content-Type":"application/json",
@@ -72,13 +77,15 @@ extension VCRegistrationConfirmation {
             "Accept-Language":"en-US",
             "REQUEST_ID":"1"
         ]
+        //MARK: TODO: Use actual value instead of Dummy date here
         let parameters = [
-            "mobileNumber" : "11111111111",
+            "mobileNumber" : sRegisteredMobileNum,
             "otpCode" : sOTP,
             "imei" : "12345",
             "deviceRegId" : "12345",
             "deviceId" : "12345"
         ]
+        
         Alamofire.request(.POST, url,headers:headers, parameters:parameters , encoding: .JSON)
             .responseJSON { (response) in
                 
@@ -92,15 +99,19 @@ extension VCRegistrationConfirmation {
                 
                 print("===========================================")
                 print("jsonOBJ=",jsonOBJ)
+                print("isExists=",jsonOBJ["isValidateOTPSuccesful"].isExists())
                 //print("jsonOBJ[0]=",jsonOBJ[0])
                 //print("jsonOBJ[1]=",jsonOBJ[1])
                 //print("jsonOBJ['json']=",jsonOBJ["json"])
                 //print("jsonOBJ[\"json\"][\"foo\"]=",jsonOBJ["json"]["foo"])
-                print("status=",jsonOBJ["header"]["status"])
-                print("errors=",jsonOBJ["header"]["errors"])
-                print("message=",jsonOBJ["header"]["errors"][0]["message"])
-                print("===========================================")
                 
+                
+                //print("status=",jsonOBJ["header"]["status"])
+                //print("errors=",jsonOBJ["header"]["errors"])
+                //print("message=",jsonOBJ["header"]["errors"][0]["message"])
+                
+                //print("===========================================")
+                /*
                 let s = jsonOBJ["header"]["status"].string
                 let n = NSInteger(s!)
                 if(n==400){
@@ -110,6 +121,14 @@ extension VCRegistrationConfirmation {
                 }else{
                     print("SUCCESS : ===== ")
                 }
+                */
+                if(jsonOBJ["isValidateOTPSuccesful"].isExists()==true){
+                    print("SUCCESS")
+                }else{
+                    print("message=",jsonOBJ["header"]["errors"][0]["message"])
+                }
+                print("===========================================")
         }
+        print("VCRegistrationConfirmation : callServerForPing : /=== ")
     }
 }

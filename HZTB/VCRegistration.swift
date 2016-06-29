@@ -107,18 +107,16 @@ class VCRegistration: UIViewController {
         
         if(sResult == "ERROR"){
             print("VCRegistration : onRegistrationCallResult : message=",resultMessage)
-            
             AppDelegate.getAppDelegate().showMessage(resultMessage,"Registration Error!")
         }else{
-            //
+            //MARK: Saves the Registered PhoneNumber
             self.sRegisteredNum = uPhone.text!
-            
             // Post the notification
             let notification = NSNotification(name: PIVDStaticNames.REGISTRATION_SUCCESS, object: self, userInfo:nil )
             NSNotificationCenter.defaultCenter().postNotification(notification)
             
-            // Finally go back
-            print("VCRegistration : onRegistrationCallResult : TODO : navigating back to previous screen")
+            // Finally go back, Now its done form the parent VC as part of above Notification Handler
+            //print("VCRegistration : onRegistrationCallResult : TODO : navigating back to previous screen")
             //self.navigationController?.popViewControllerAnimated(true)
         }
         //
