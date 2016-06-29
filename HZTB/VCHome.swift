@@ -78,7 +78,8 @@ class VCHome: UIViewController {
         print("VCHome : onProfileUpdateSuccess    ================ ")
         // Come back to Home
         self.navigationController?.popViewControllerAnimated(true)
-        
+        //
+        syncTheAddressbookWithServer()
         print("VCHome : onProfileUpdateSuccess  / ================ ")
     }
     
@@ -157,6 +158,15 @@ extension VCHome {
         print("onURLSchemeTest")
         //let n:NSURL = NSURL(string: "")!
         //UIApplication.sharedApplication().openURL(NSURL(fileURLWithPath: "hztbuddy://test_page/one?token=12345&domain=foo.com"))
+    }
+}
+
+//MARK: Functional needs
+extension VCHome {
+    private func syncTheAddressbookWithServer(){
+        print("VCHome : syncTheAddressbookWithServer     ================ ")
+        print("TODO:")
+        print("VCHome : syncTheAddressbookWithServer  /  ================ ")
     }
 }
 
