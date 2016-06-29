@@ -160,7 +160,7 @@ class PIVDUtilREST {
                     // SwiftyJSON
                     //let json = JSON(data: dataFromNetworking)
                     let jsonOBJ = JSON((response.result.value)!)
-                    let mobileNum = jsonOBJ["mobileNumber"]
+                    //let mobileNum = jsonOBJ["mobileNumber"]
                     
                     print("PIVDUtilREST : callServerForRegistration : =========================================== SUCCESS ")
                     print("jsonOBJ=",jsonOBJ)
