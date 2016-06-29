@@ -164,13 +164,16 @@ class PIVDUtilREST {
                     
                     print("PIVDUtilREST : callServerForRegistration : =========================================== SUCCESS ")
                     print("jsonOBJ=",jsonOBJ)
-                    print("jsonOBJ[\"mobileNumber\"]=",jsonOBJ["mobileNumber"])
-                    print("jsonOBJ.header.errors.message=",jsonOBJ["header"]["errors"][0]["message"])
+                    print("jsonOBJ[\"mobileNumber\"]=",jsonOBJ["mobileNumber"]) // SUCCESS
+                    //print("jsonOBJ.header.errors.message=",jsonOBJ["header"]["errors"][0]["message"]) // FAIL
                     // Success: will get MobileNumber
                     // Fail: will get error message
                     // print("====== mobileNum ====",mobileNum.isEmpty)
                     
-                    if(mobileNum.isEmpty){
+                    print("================ jsonOBJ[\"mobileNumber\"].string=",jsonOBJ["mobileNumber"].string)
+                    
+                    if(jsonOBJ["mobileNumber"].string==nil){
+                        print("===== IF =====")
                         s = "ERROR"
                         sResultMessage = jsonOBJ["header"]["errors"][0]["message"].string!
                     }
