@@ -1611,7 +1611,9 @@
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                 <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="CCR-lX-gUT"/>
+                                    <constraint firstAttribute="height" constant="30" id="CCR-lX-gUT">
+                                        <variation key="heightClass=regular-widthClass=compact" constant="40"/>
+                                    </constraint>
                                 </constraints>
                                 <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="Register"/>
@@ -1636,7 +1638,7 @@
                                         <variation key="heightClass=regular-widthClass=compact" constant="40"/>
                                     </constraint>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="36"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <variation key="default">
                                     <mask key="constraints">
@@ -1657,14 +1659,16 @@
                             </constraint>
                             <constraint firstItem="dWh-UN-95P" firstAttribute="top" secondItem="OI9-Oi-GCz" secondAttribute="bottom" id="AsF-zJ-1qf"/>
                             <constraint firstItem="BuY-NT-98g" firstAttribute="leading" secondItem="UST-Je-jqv" secondAttribute="leadingMargin" id="MKS-Mo-1c9"/>
-                            <constraint firstItem="qEG-j6-DGR" firstAttribute="top" secondItem="UST-Je-jqv" secondAttribute="topMargin" constant="400" id="Sa6-Zc-Rud"/>
+                            <constraint firstItem="qEG-j6-DGR" firstAttribute="top" secondItem="UST-Je-jqv" secondAttribute="topMargin" constant="400" id="Sa6-Zc-Rud">
+                                <variation key="heightClass=regular-widthClass=compact" constant="360"/>
+                            </constraint>
                             <constraint firstAttribute="trailing" secondItem="OI9-Oi-GCz" secondAttribute="trailing" id="jH2-AK-Zvi"/>
                             <constraint firstAttribute="trailingMargin" secondItem="qEG-j6-DGR" secondAttribute="trailing" id="lfm-yz-K6O"/>
                             <constraint firstItem="OI9-Oi-GCz" firstAttribute="leading" secondItem="UST-Je-jqv" secondAttribute="leading" id="mHE-Gp-3ZQ"/>
                             <constraint firstItem="qEG-j6-DGR" firstAttribute="leading" secondItem="UST-Je-jqv" secondAttribute="leadingMargin" id="nFh-6O-Gl2"/>
                             <constraint firstItem="OI9-Oi-GCz" firstAttribute="top" secondItem="RvZ-wy-yTL" secondAttribute="bottom" id="vIA-bn-qsD"/>
                             <constraint firstItem="BuY-NT-98g" firstAttribute="top" secondItem="UST-Je-jqv" secondAttribute="topMargin" id="yv4-2p-SQc">
-                                <variation key="heightClass=regular-widthClass=compact" constant="350"/>
+                                <variation key="heightClass=regular-widthClass=compact" constant="300"/>
                             </constraint>
                         </constraints>
                         <variation key="default">
