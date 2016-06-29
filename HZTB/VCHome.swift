@@ -166,6 +166,12 @@ extension VCHome {
     private func syncTheAddressbookWithServer(){
         print("VCHome : syncTheAddressbookWithServer     ================ ")
         print("TODO:")
+        //print("PIVDUtilContact.allContacts=",PIVDUtilContact.allContacts)
+        //print("PIVDUtilContact.allPIVDContacts=",PIVDUtilContact.allPIVDContacts)
+        //let aContacts = PIVDUtilContact.allPIVDContacts
+        
+        PIVDUtilContact.sendContactsToServer()
+        
         print("VCHome : syncTheAddressbookWithServer  /  ================ ")
     }
 }

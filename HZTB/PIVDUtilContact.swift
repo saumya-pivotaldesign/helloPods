@@ -9,6 +9,7 @@
 import Foundation
 import Contacts
 import SwiftyJSON
+import Alamofire
 
 class PIVDUtilContact {
     
@@ -18,7 +19,7 @@ class PIVDUtilContact {
     
     
     class func getContacts(){
-        print("getContacts")
+        print("PIVDUtilContact : getContacts :")
         let appDelegate:AppDelegate = AppDelegate.getAppDelegate()
         //appDelegate.showMessage("Hello","World")
         appDelegate.requestForAccess { (accessGranted) in
@@ -32,7 +33,7 @@ class PIVDUtilContact {
         }
     }
     class func onGotRequestGrant(){
-        print("onGotRequestGrant")
+        print("PIVDUtilContact : onGotRequestGrant :")
         //MARK: Get the Contact store
         do{
             let contactStore:CNContactStore = AppDelegate.getAppDelegate().contactStore;
@@ -115,12 +116,64 @@ class PIVDUtilContact {
             //d.updateValue(contact.phoneNumber_digits, forKey: "mobileNumber")
         }
         
-        print("VCRegistration ====== getAllContactNumbers")
+        print("PIVDUtilContact ====== getAllContactNumbers")
         print(a)
-        print("VCRegistration ====== / getAllContactNumbers")
+        print("PIVDUtilContact ====== / getAllContactNumbers")
         
         return a
     }
+    
+    static func sendContactsToServer(){
+        print("PIVDUtilContact : sendContactsToServer     ================ ")
+        
+        var a:Array<AnyObject> = [AnyObject]()
+        for contact in self.allPIVDContacts {
+            let s1 = "mobileNumber"
+            let s2 = String(contact.phoneNumber_digits)
+            let d = Dictionary(dictionaryLiteral: (s1,s2))
+            a.append(d)
+        }
+        //print(a)
+        //let d1 = Dictionary(dictionaryLiteral: ("userProfileRequests", a))
+        //print(d1)
+        
+        // ======================
+        let url = "http://hztb-dev.us-east-1.elasticbeanstalk.com/user/registeredUsers"
+        let headers = [
+            "Content-Type":"application/json",
+            "Accept":"application/json",
+            "Accept-Language":"en-US",
+            "REQUEST_ID":"1212"
+        ]
+        let parameters = [
+            "userProfileRequests" : a
+        ]
+        Alamofire.request(.POST, url,headers:headers, parameters:parameters , encoding: .JSON)
+            .responseJSON { (response) in
+                /*
+                print("post : request=",response.request)
+                print("post : response=",response.response)
+                print("post : data=",response.data)
+                print("post : result=",response.result)
+                // SwiftyJSON
+                //let json = JSON(data: dataFromNetworking)
+                let jsonOBJ = JSON((response.result.value)!)
+                
+                print("===========================================")
+                print("jsonOBJ=",jsonOBJ)
+                print("jsonOBJ[0]=",jsonOBJ[0])
+                print("jsonOBJ[1]=",jsonOBJ[1])
+                print("jsonOBJ['json']=",jsonOBJ["json"])
+                print("jsonOBJ[\"json\"][\"foo\"]=",jsonOBJ["json"]["foo"])
+                print("===========================================")
+                */
+                print("PIVDUtilContact : sendContactsToServer : result  ===========================================")
+                let jsonOBJ = JSON((response.result.value)!)
+                print(jsonOBJ)
+                print("PIVDUtilContact : sendContactsToServer : result / ===========================================")
+        }
+    }
+    
     
     
     
