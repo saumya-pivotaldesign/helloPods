@@ -23,6 +23,8 @@ class VCHome: UIViewController {
                                                           name: PIVDStaticNames.REGISTRATION_SUCCESS, object: nil )
         NSNotificationCenter.defaultCenter().addObserver( self, selector:#selector(onOTPSuccess),
                                                           name: PIVDStaticNames.OTP_SUCCESS, object: nil )
+        NSNotificationCenter.defaultCenter().addObserver( self, selector:#selector(onProfileUpdateSuccess),
+                                                          name: PIVDStaticNames.PROFILE_UPDATE_SUCCESS, object: nil )
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -70,6 +72,14 @@ class VCHome: UIViewController {
         navigationController?.pushViewController(vc, animated: true)
  
         print("VCHome : onOTPSuccess / ================ ")
+    }
+    
+    @objc private func onProfileUpdateSuccess(notification:NSNotification){
+        print("VCHome : onProfileUpdateSuccess    ================ ")
+        // Come back to Home
+        self.navigationController?.popViewControllerAnimated(true)
+        
+        print("VCHome : onProfileUpdateSuccess  / ================ ")
     }
     
     

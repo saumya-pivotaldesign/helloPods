@@ -11,6 +11,7 @@ struct PIVDStaticNames {
     internal static let CONTACT_FETCH_SUCCESS:String = "contactFetchSuccess"
     internal static let REGISTRATION_SUCCESS:String = "registrationSuccess"
     internal static let OTP_SUCCESS:String = "OTPValidationSuccess"
+    internal static let PROFILE_UPDATE_SUCCESS:String = "profileUpdateSuccess"
     
     // MARK: localstorage keys
     internal static let IS_CONTACT_SAVED:String = "isContactSaved" // saved in storeage as Bool

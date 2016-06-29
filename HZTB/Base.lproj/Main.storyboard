@@ -1882,7 +1882,7 @@
                                     </mask>
                                 </variation>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uSe-Kq-wKX">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uSe-Kq-wKX">
                                 <rect key="frame" x="-25" y="-30" width="97" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="oRh-In-JJa"/>
@@ -1919,7 +1919,7 @@
                                     </mask>
                                 </variation>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QcD-sE-zRS">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QcD-sE-zRS">
                                 <rect key="frame" x="-25" y="-30" width="97" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="X1F-Tl-qa2"/>
@@ -1955,6 +1955,9 @@
                                         <include reference="x8y-zc-ejF"/>
                                     </mask>
                                 </variation>
+                                <connections>
+                                    <action selector="onUpdateProfileTap" destination="gdO-F2-nPF" eventType="touchUpInside" id="cAk-OZ-gOi"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -2035,6 +2038,10 @@
                         </variation>
                     </view>
                     <navigationItem key="navigationItem" title="Profile" id="aRR-ag-UOC"/>
+                    <connections>
+                        <outlet property="tEmail" destination="QcD-sE-zRS" id="Ke3-h4-Tix"/>
+                        <outlet property="tName" destination="uSe-Kq-wKX" id="O1k-pA-6pO"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jXj-aw-tTl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
