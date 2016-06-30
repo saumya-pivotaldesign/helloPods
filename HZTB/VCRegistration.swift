@@ -11,7 +11,7 @@ import UIKit
 import Contacts
 import SwiftyJSON
 
-class VCRegistration: UIViewController {
+class VCRegistration: UIViewController, UIPickerViewDataSource,UIPickerViewDelegate {
     
     /*
     @IBOutlet var uName:UITextField!
@@ -21,6 +21,10 @@ class VCRegistration: UIViewController {
     
     @IBOutlet var bg:UIImageView?
     @IBOutlet var uPhone:UITextField!
+    @IBOutlet var uCountryCode:UIPickerView!
+    
+    let pickerData = ["United States","India","United Kingdom"]
+    private var sCountryCode:String = "01"
     
     private var utilREST:PIVDUtilREST
     private var registrationResult:String = ""
@@ -48,6 +52,9 @@ class VCRegistration: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        //
+        uCountryCode.dataSource = self
+        uCountryCode.delegate = self
         //
         //NSNotificationCenter.defaultCenter().addObserver( self, selector:#selector(onGotContacts), name: "contact_fetch_success", object: nil )
         NSNotificationCenter.defaultCenter().addObserver( self,
@@ -113,7 +120,10 @@ class VCRegistration: UIViewController {
         */
         
         //MARK: REST call for registration
+        let sPhoneNumber = self.sCountryCode + self.uPhone.text!
+        print("VCRegistration : onRegistrationClick : sPhoneNumber",sPhoneNumber)
         utilREST.callServerForRegistration(self,sPhone: uPhone.text!)
+        
         //utilREST.callServerForPing()
     }
     
@@ -277,6 +287,42 @@ extension VCRegistration {
     internal func addressBookDidChange(){
         print("VCRegistrastion : addressBookDidChange")
         PIVDUtilContact.getContacts()
+    }
+}
+
+//MARK: - Delegates and data sources
+extension VCRegistration {
+    
+    //MARK: Data Sources
+    func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return pickerData.count
+    }
+    
+    //MARK: Delegates
+    func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return pickerData[row]
+    }
+    
+    func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        //print(pickerData[row])
+        
+        let s:String = pickerData[row] as String!
+        var countryCode:String = "0"
+        
+        switch s {
+        case "India":
+            countryCode = "91"
+        case "United Kingdom":
+            countryCode = "44"
+        default:
+            countryCode = "01"
+        }
+        
+        //print("CountryCode=",countryCode)
+        self.sCountryCode = countryCode
     }
 }
 
