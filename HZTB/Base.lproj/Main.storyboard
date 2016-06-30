@@ -1615,6 +1615,7 @@
                                         <variation key="heightClass=regular-widthClass=compact" constant="40"/>
                                     </constraint>
                                 </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="Register"/>
                                 <variation key="default">
@@ -1635,10 +1636,10 @@
                                 <rect key="frame" x="-25" y="-30" width="97" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="hbp-vz-s6v">
-                                        <variation key="heightClass=regular-widthClass=compact" constant="50"/>
+                                        <variation key="heightClass=regular-widthClass=compact" constant="30"/>
                                     </constraint>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <variation key="default">
                                     <mask key="constraints">
@@ -1657,6 +1658,9 @@
                             <constraint firstAttribute="trailingMargin" secondItem="BuY-NT-98g" secondAttribute="trailing" constant="275" id="00o-7b-7vx">
                                 <variation key="heightClass=regular-widthClass=compact" constant="0.0"/>
                             </constraint>
+                            <constraint firstItem="qEG-j6-DGR" firstAttribute="top" secondItem="BuY-NT-98g" secondAttribute="bottom" constant="30" id="9hF-gT-Rmr">
+                                <variation key="heightClass=regular-widthClass=compact" constant="8"/>
+                            </constraint>
                             <constraint firstItem="dWh-UN-95P" firstAttribute="top" secondItem="OI9-Oi-GCz" secondAttribute="bottom" id="AsF-zJ-1qf"/>
                             <constraint firstItem="BuY-NT-98g" firstAttribute="leading" secondItem="UST-Je-jqv" secondAttribute="leadingMargin" id="MKS-Mo-1c9"/>
                             <constraint firstItem="qEG-j6-DGR" firstAttribute="top" secondItem="UST-Je-jqv" secondAttribute="topMargin" constant="400" id="Sa6-Zc-Rud">
@@ -1668,7 +1672,7 @@
                             <constraint firstItem="qEG-j6-DGR" firstAttribute="leading" secondItem="UST-Je-jqv" secondAttribute="leadingMargin" id="nFh-6O-Gl2"/>
                             <constraint firstItem="OI9-Oi-GCz" firstAttribute="top" secondItem="RvZ-wy-yTL" secondAttribute="bottom" id="vIA-bn-qsD"/>
                             <constraint firstItem="BuY-NT-98g" firstAttribute="top" secondItem="UST-Je-jqv" secondAttribute="topMargin" id="yv4-2p-SQc">
-                                <variation key="heightClass=regular-widthClass=compact" constant="300"/>
+                                <variation key="heightClass=regular-widthClass=compact" constant="320"/>
                             </constraint>
                         </constraints>
                         <variation key="default">
@@ -1678,16 +1682,17 @@
                                 <exclude reference="BuY-NT-98g"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="AsF-zJ-1qf"/>
-                                <exclude reference="00o-7b-7vx"/>
-                                <exclude reference="MKS-Mo-1c9"/>
-                                <exclude reference="yv4-2p-SQc"/>
-                                <exclude reference="Sa6-Zc-Rud"/>
-                                <exclude reference="lfm-yz-K6O"/>
-                                <exclude reference="nFh-6O-Gl2"/>
                                 <exclude reference="jH2-AK-Zvi"/>
                                 <exclude reference="mHE-Gp-3ZQ"/>
                                 <exclude reference="vIA-bn-qsD"/>
+                                <exclude reference="00o-7b-7vx"/>
+                                <exclude reference="MKS-Mo-1c9"/>
+                                <exclude reference="yv4-2p-SQc"/>
+                                <exclude reference="9hF-gT-Rmr"/>
+                                <exclude reference="Sa6-Zc-Rud"/>
+                                <exclude reference="lfm-yz-K6O"/>
+                                <exclude reference="nFh-6O-Gl2"/>
+                                <exclude reference="AsF-zJ-1qf"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
@@ -1697,16 +1702,16 @@
                                 <include reference="BuY-NT-98g"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="AsF-zJ-1qf"/>
-                                <include reference="00o-7b-7vx"/>
-                                <include reference="MKS-Mo-1c9"/>
-                                <include reference="yv4-2p-SQc"/>
-                                <include reference="Sa6-Zc-Rud"/>
-                                <include reference="lfm-yz-K6O"/>
-                                <include reference="nFh-6O-Gl2"/>
                                 <include reference="jH2-AK-Zvi"/>
                                 <include reference="mHE-Gp-3ZQ"/>
                                 <include reference="vIA-bn-qsD"/>
+                                <include reference="00o-7b-7vx"/>
+                                <include reference="MKS-Mo-1c9"/>
+                                <include reference="yv4-2p-SQc"/>
+                                <include reference="9hF-gT-Rmr"/>
+                                <include reference="lfm-yz-K6O"/>
+                                <include reference="nFh-6O-Gl2"/>
+                                <include reference="AsF-zJ-1qf"/>
                             </mask>
                         </variation>
                     </view>
@@ -1739,10 +1744,10 @@
                                 <rect key="frame" x="-25" y="-30" width="97" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="HEy-TT-8wI">
-                                        <variation key="heightClass=regular-widthClass=compact" constant="50"/>
+                                        <variation key="heightClass=regular-widthClass=compact" constant="30"/>
                                     </constraint>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <variation key="default">
                                     <mask key="constraints">
@@ -1757,12 +1762,13 @@
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="euC-GC-M22">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="0.25098040700000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="QF6-wn-Irs">
                                         <variation key="heightClass=regular-widthClass=compact" constant="40"/>
                                     </constraint>
                                 </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <state key="normal" title="Confirm OTP"/>
                                 <variation key="default">
@@ -1790,7 +1796,7 @@
                                 <variation key="heightClass=regular-widthClass=compact" constant="0.0"/>
                             </constraint>
                             <constraint firstItem="tBp-Os-qV9" firstAttribute="top" secondItem="w55-ke-bC4" secondAttribute="bottom" constant="40" id="LSY-14-7OU">
-                                <variation key="heightClass=regular-widthClass=compact" constant="240"/>
+                                <variation key="heightClass=regular-widthClass=compact" constant="260"/>
                             </constraint>
                             <constraint firstItem="euC-GC-M22" firstAttribute="top" secondItem="tBp-Os-qV9" secondAttribute="bottom" constant="8" id="OT7-Jb-lME"/>
                             <constraint firstItem="2pi-Rl-qfy" firstAttribute="top" secondItem="4z0-ww-OOc" secondAttribute="bottom" constant="608" id="PPp-TI-xAd">
@@ -1854,7 +1860,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CUb-xT-xNu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4993.5" y="-590.25"/>
+            <point key="canvasLocation" x="5014.5" y="-239.25"/>
         </scene>
         <!--Profile-->
         <scene sceneID="8tW-7n-Wf6">
@@ -1897,7 +1903,7 @@
                                         <variation key="heightClass=regular-widthClass=compact" constant="40"/>
                                     </constraint>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <variation key="default">
                                     <mask key="constraints">
@@ -1936,7 +1942,7 @@
                                         <variation key="heightClass=regular-widthClass=compact" constant="40"/>
                                     </constraint>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <variation key="default">
                                     <mask key="constraints">
@@ -1951,12 +1957,13 @@
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jwp-ew-2ON">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="0.25098040700000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="x8y-zc-ejF">
                                         <variation key="heightClass=regular-widthClass=compact" constant="40"/>
                                     </constraint>
                                 </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <state key="normal" title="Update"/>
                                 <variation key="default">
@@ -2073,7 +2080,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jXj-aw-tTl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5706" y="-590.25"/>
+            <point key="canvasLocation" x="4269" y="296.25"/>
         </scene>
         <!--Details-->
         <scene sceneID="Qyb-Yy-66a">
