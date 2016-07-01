@@ -69,7 +69,7 @@ class VCHome: UIViewController {
     }
     
     
-    
+    //MARK: Navigating to Storyboard screens
     // Storyboard id : sid_profile, sid_settings, sid_groups
     @objc private func onLinkTapProfile(notification:NSNotification){
         print("VCHome : onLinkTapProfile   ================ ")
