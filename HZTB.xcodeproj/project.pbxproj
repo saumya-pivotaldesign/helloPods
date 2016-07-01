@@ -45,6 +45,8 @@
 		AE8C05CF1D2503C800CA4005 /* Default~iphone.png in Resources */ = {isa = PBXBuildFile; fileRef = AE8C05C51D2503C800CA4005 /* Default~iphone.png */; };
 		AE8F08B71CF33C8A004048A0 /* VCNewRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE8F08B61CF33C8A004048A0 /* VCNewRequest.swift */; };
 		AE96BB121D129572007DE2A2 /* PIVDUtilREST.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE96BB111D129572007DE2A2 /* PIVDUtilREST.swift */; };
+		AE9789411D26A165002EDAD4 /* VCSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE9789401D26A164002EDAD4 /* VCSettings.swift */; };
+		AE9789431D26A1F5002EDAD4 /* VCGroups.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE9789421D26A1F5002EDAD4 /* VCGroups.swift */; };
 		AEFA53181D1C2B6E00F71803 /* PIVDUtilContact.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEFA53171D1C2B6E00F71803 /* PIVDUtilContact.swift */; };
 /* End PBXBuildFile section */
 
@@ -91,6 +93,8 @@
 		AE8C05C51D2503C800CA4005 /* Default~iphone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default~iphone.png"; sourceTree = "<group>"; };
 		AE8F08B61CF33C8A004048A0 /* VCNewRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VCNewRequest.swift; sourceTree = "<group>"; };
 		AE96BB111D129572007DE2A2 /* PIVDUtilREST.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PIVDUtilREST.swift; sourceTree = "<group>"; };
+		AE9789401D26A164002EDAD4 /* VCSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VCSettings.swift; sourceTree = "<group>"; };
+		AE9789421D26A1F5002EDAD4 /* VCGroups.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VCGroups.swift; sourceTree = "<group>"; };
 		AEC613221CFEC4E700DFD465 /* HZTB.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = HZTB.entitlements; sourceTree = "<group>"; };
 		AEFA53171D1C2B6E00F71803 /* PIVDUtilContact.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PIVDUtilContact.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -152,6 +156,8 @@
 				AE531D651CEAED7C00F6F2A5 /* Main.storyboard */,
 				AE531D6A1CEAED7C00F6F2A5 /* LaunchScreen.storyboard */,
 				AE531D6D1CEAED7C00F6F2A5 /* Info.plist */,
+				AE9789401D26A164002EDAD4 /* VCSettings.swift */,
+				AE9789421D26A1F5002EDAD4 /* VCGroups.swift */,
 			);
 			path = HZTB;
 			sourceTree = "<group>";
@@ -374,12 +380,14 @@
 				AE717FB41CF587DF009DB28B /* DismissMenuAnimator.swift in Sources */,
 				AEFA53181D1C2B6E00F71803 /* PIVDUtilContact.swift in Sources */,
 				AE5649601D1039DF00FF6302 /* VCRegistration.swift in Sources */,
+				AE9789411D26A165002EDAD4 /* VCSettings.swift in Sources */,
 				AE717FBB1CF58840009DB28B /* VCHome.swift in Sources */,
 				AE8F08B71CF33C8A004048A0 /* VCNewRequest.swift in Sources */,
 				AE531D621CEAED7C00F6F2A5 /* AppDelegate.swift in Sources */,
 				AE717FBD1CF58D4F009DB28B /* VCSlideMenu.swift in Sources */,
 				AE717FB91CF587DF009DB28B /* PresentMenuAnimator.swift in Sources */,
 				AE7F15741D228105000AE265 /* VCRegistrationConfirmation.swift in Sources */,
+				AE9789431D26A1F5002EDAD4 /* VCGroups.swift in Sources */,
 				AE4D503C1D23E9F4005C6AE7 /* VCProfile.swift in Sources */,
 				AE717FB71CF587DF009DB28B /* MenuHelper.swift in Sources */,
 				AE96BB121D129572007DE2A2 /* PIVDUtilREST.swift in Sources */,

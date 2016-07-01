@@ -14,6 +14,8 @@ struct PIVDStaticNames {
     internal static let PROFILE_UPDATE_SUCCESS:String = "profileUpdateSuccess"
     // Links
     internal static let LINK_PROFILE_TAP:String = "onProfileLinkTap"
+    internal static let LINK_SETTINGS_TAP:String = "onSettingsLinkTap"
+    internal static let LINK_GROUPS_TAP:String = "onGroupsLinkTap"
     
     // MARK: localstorage keys
     internal static let IS_CONTACT_SAVED:String = "isContactSaved" // saved in storeage as Bool

@@ -47,9 +47,17 @@ extension VCSlideMenu {
     }
     @IBAction func handleTapOnSettingsGesture(sender: UITapGestureRecognizer) {
         print("VCSlideMenu : handleTapOnSettingsGesture : ")
+        closeMenu(self)
+        // Post the notification
+        let notification = NSNotification(name: PIVDStaticNames.LINK_SETTINGS_TAP , object: self, userInfo:nil )
+        NSNotificationCenter.defaultCenter().postNotification(notification)
     }
     @IBAction func handleTapOnGroupsGesture(sender: UITapGestureRecognizer) {
         print("VCSlideMenu : handleTapOnGroupsGesture : ")
+        closeMenu(self)
+        // Post the notification
+        let notification = NSNotification(name: PIVDStaticNames.LINK_GROUPS_TAP , object: self, userInfo:nil )
+        NSNotificationCenter.defaultCenter().postNotification(notification)
     }
 }
 

@@ -28,6 +28,10 @@ class VCHome: UIViewController {
         //Links
         NSNotificationCenter.defaultCenter().addObserver( self, selector:#selector(onLinkTapProfile),
                                                           name: PIVDStaticNames.LINK_PROFILE_TAP, object: nil )
+        NSNotificationCenter.defaultCenter().addObserver( self, selector:#selector(onLinkTapSettings),
+                                                          name: PIVDStaticNames.LINK_SETTINGS_TAP, object: nil )
+        NSNotificationCenter.defaultCenter().addObserver( self, selector:#selector(onLinkTapGroups),
+                                                          name: PIVDStaticNames.LINK_GROUPS_TAP, object: nil )
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -64,18 +68,35 @@ class VCHome: UIViewController {
         //
     }
     
+    
+    
+    // Storyboard id : sid_profile, sid_settings, sid_groups
     @objc private func onLinkTapProfile(notification:NSNotification){
         print("VCHome : onLinkTapProfile   ================ ")
-        // Come back to Home
-        //self.navigationController?.popViewControllerAnimated(true)
-        
         // Move to Profile View
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let vc = storyboard.instantiateViewControllerWithIdentifier("sid_profile") as! VCProfile
         navigationController?.pushViewController(vc, animated: true)
-        
         print("VCHome : onLinkTapProfile / ================ ")
     }
+    @objc private func onLinkTapSettings(notification:NSNotification){
+        print("VCHome : onLinkTapSettings   ================ ")
+        // Move to Settings View
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewControllerWithIdentifier("sid_settings") as! VCSettings
+        navigationController?.pushViewController(vc, animated: true)
+        print("VCHome : onLinkTapSettings / ================ ")
+    }
+    @objc private func onLinkTapGroups(notification:NSNotification){
+        print("VCHome : onLinkTapGroups   ================ ")
+        // Move to Group View
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewControllerWithIdentifier("sid_groups") as! VCGroups
+        navigationController?.pushViewController(vc, animated: true)
+        print("VCHome : onLinkTapGroups / ================ ")
+    }
+    
+    
     
     @objc private func onOTPSuccess(notification:NSNotification){
         print("VCHome : onOTPSuccess   ================ ")
