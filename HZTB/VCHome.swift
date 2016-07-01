@@ -25,6 +25,9 @@ class VCHome: UIViewController {
                                                           name: PIVDStaticNames.OTP_SUCCESS, object: nil )
         NSNotificationCenter.defaultCenter().addObserver( self, selector:#selector(onProfileUpdateSuccess),
                                                           name: PIVDStaticNames.PROFILE_UPDATE_SUCCESS, object: nil )
+        //Links
+        NSNotificationCenter.defaultCenter().addObserver( self, selector:#selector(onLinkTapProfile),
+                                                          name: PIVDStaticNames.LINK_PROFILE_TAP, object: nil )
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -58,7 +61,20 @@ class VCHome: UIViewController {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let vc = storyboard.instantiateViewControllerWithIdentifier("sid_registration_confirmation") as! VCRegistrationConfirmation
         navigationController?.pushViewController(vc, animated: true)
+        //
+    }
+    
+    @objc private func onLinkTapProfile(notification:NSNotification){
+        print("VCHome : onLinkTapProfile   ================ ")
+        // Come back to Home
+        //self.navigationController?.popViewControllerAnimated(true)
         
+        // Move to Profile View
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewControllerWithIdentifier("sid_profile") as! VCProfile
+        navigationController?.pushViewController(vc, animated: true)
+        
+        print("VCHome : onLinkTapProfile / ================ ")
     }
     
     @objc private func onOTPSuccess(notification:NSNotification){

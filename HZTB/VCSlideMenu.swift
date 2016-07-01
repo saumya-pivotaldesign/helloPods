@@ -40,6 +40,10 @@ class VCSlideMenu : UIViewController {
 extension VCSlideMenu {
     @IBAction func handleTapOnProfileGesture(sender: UITapGestureRecognizer) {
         print("VCSlideMenu : handleTapOnProfileGesture : ")
+        closeMenu(self)
+        // Post the notification
+        let notification = NSNotification(name: PIVDStaticNames.LINK_PROFILE_TAP , object: self, userInfo:nil )
+        NSNotificationCenter.defaultCenter().postNotification(notification)
     }
     @IBAction func handleTapOnSettingsGesture(sender: UITapGestureRecognizer) {
         print("VCSlideMenu : handleTapOnSettingsGesture : ")
