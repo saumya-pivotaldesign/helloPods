@@ -35,3 +35,25 @@ class VCSlideMenu : UIViewController {
         dismissViewControllerAnimated(true, completion: nil)
     }
 }
+
+//MARK: Menu Items Gesture Handlers
+extension VCSlideMenu {
+    @IBAction func handleTapOnProfileGesture(sender: UITapGestureRecognizer) {
+        print("VCSlideMenu : handleTapOnProfileGesture : ")
+    }
+    @IBAction func handleTapOnSettingsGesture(sender: UITapGestureRecognizer) {
+        print("VCSlideMenu : handleTapOnSettingsGesture : ")
+    }
+    @IBAction func handleTapOnGroupsGesture(sender: UITapGestureRecognizer) {
+        print("VCSlideMenu : handleTapOnGroupsGesture : ")
+    }
+}
+
+
+
+
+
+
+
+
+//
