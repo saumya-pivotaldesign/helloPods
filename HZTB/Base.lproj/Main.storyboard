@@ -7,23 +7,6 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="6LS-iq-BWa">
-            <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="gZo-L1-IGz" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <viewController id="T4v-QF-fO5" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="zEZ-B0-RTa"/>
-                        <viewControllerLayoutGuide type="bottom" id="Zup-Kh-hh5"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="gj8-Qo-dXH">
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-            </objects>
-            <point key="canvasLocation" x="328.5" y="-545.25"/>
-        </scene>
         <!--Home-->
         <scene sceneID="tne-QT-ifu">
             <objects>

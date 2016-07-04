@@ -10,6 +10,19 @@ Please check [this][4] page in iOS device with this application installed to vie
  
  - [RestKit][7] uses [AFNetworking][8] under the hood
  - [Alamofire][6] is used for networking
+
+
+### Dummy Address
+
+apple apte - 01 2222211111
+apple tree - 01 2222211112
+apple forest - 01 2222211113
+apple one - 01 2222211114
+apple two - 01 2222211115
+
+apple test1 - 01 2222211116
+
+
  
 
 
