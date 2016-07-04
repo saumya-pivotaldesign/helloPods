@@ -170,6 +170,7 @@ class PIVDUtilContact {
                 print("PIVDUtilContact : sendContactsToServer : result  ===========================================")
                 let jsonOBJ = JSON((response.result.value)!)
                 print(jsonOBJ)
+                AppDelegate.getAppDelegate().contactsFromServer = jsonOBJ
                 print("PIVDUtilContact : sendContactsToServer : result / ===========================================")
         }
     }

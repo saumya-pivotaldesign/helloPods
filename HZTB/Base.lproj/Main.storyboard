@@ -2366,6 +2366,15 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="260" id="Vz4-OH-xN7"/>
                                 </constraints>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="UCv-vQ-dPa">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="UCv-vQ-dPa" id="UMw-Wp-L82">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
                                 <variation key="default">
                                     <mask key="constraints">
                                         <exclude reference="Vz4-OH-xN7"/>
@@ -2376,6 +2385,10 @@
                                         <include reference="Vz4-OH-xN7"/>
                                     </mask>
                                 </variation>
+                                <connections>
+                                    <outlet property="dataSource" destination="GRN-x7-Le4" id="KNG-bw-42O"/>
+                                    <outlet property="delegate" destination="GRN-x7-Le4" id="tdF-7K-mek"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

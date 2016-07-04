@@ -9,12 +9,16 @@
 import UIKit
 import Contacts
 
+import SwiftyJSON
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     var contactStore:CNContactStore = CNContactStore()
     var sRegisteredMobileNum:String = ""
+    //
+    var contactsFromServer:JSON = []
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
