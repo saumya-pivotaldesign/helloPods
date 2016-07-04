@@ -148,6 +148,8 @@
 				AE56495F1D1039DF00FF6302 /* VCRegistration.swift */,
 				AE7F15731D228105000AE265 /* VCRegistrationConfirmation.swift */,
 				AE4D503B1D23E9F4005C6AE7 /* VCProfile.swift */,
+				AE9789421D26A1F5002EDAD4 /* VCGroups.swift */,
+				AE9789401D26A164002EDAD4 /* VCSettings.swift */,
 				AE96BB111D129572007DE2A2 /* PIVDUtilREST.swift */,
 				AEFA53171D1C2B6E00F71803 /* PIVDUtilContact.swift */,
 				AE2B48001D1D1A6400EAD4B7 /* PIVDStaticNames.swift */,
@@ -156,8 +158,6 @@
 				AE531D651CEAED7C00F6F2A5 /* Main.storyboard */,
 				AE531D6A1CEAED7C00F6F2A5 /* LaunchScreen.storyboard */,
 				AE531D6D1CEAED7C00F6F2A5 /* Info.plist */,
-				AE9789401D26A164002EDAD4 /* VCSettings.swift */,
-				AE9789421D26A1F5002EDAD4 /* VCGroups.swift */,
 			);
 			path = HZTB;
 			sourceTree = "<group>";
