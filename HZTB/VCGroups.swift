@@ -15,6 +15,7 @@ class VCGroups: UIViewController, UITableViewDelegate, UITableViewDataSource {
     @IBOutlet var tableViewContacts:UITableView!
     
     var items: [String] = ["Item 1","Item 2","Item 3", "Item 4", "Item 5"]
+    //var serverContacts:[AnyObject]!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,6 +34,8 @@ class VCGroups: UIViewController, UITableViewDelegate, UITableViewDataSource {
         //print("XXXXX")
         //print(AppDelegate.getAppDelegate().contactsFromServer["userProfileResponses"].array)
         //print("XXXXX")
+        
+        
         
         
     }
@@ -87,6 +90,21 @@ extension VCGroups {
         print("VCGroups : tableView:didSelectRowAtIndexPath: ")
         
         print("You have selected cell #\(indexPath.row)!")
+        
+        
+        let selectedCell:UITableViewCell = tableView.cellForRowAtIndexPath(indexPath)!
+        selectedCell.contentView.backgroundColor = UIColor.redColor()
+        
+        //var serverContacts = AppDelegate.getAppDelegate().contactsFromServer["userProfileResponses"]
+        /*
+        let tappedItem = listItems[indexPath.row] as ListItem
+        tappedItem.completed = !tappedItem.completed
+        
+        // Store the updated tappedItem back at the listItems index
+        listItems[indexPath.row] = tappedItem
+        
+        tableView.reloadRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.None)
+        */
     }
     
 }
