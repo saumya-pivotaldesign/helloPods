@@ -10,6 +10,9 @@ import Foundation
 import UIKit
 
 class VCGroups: UIViewController {
+    
+    @IBOutlet var tableViewContacts:UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         print("VCGroups : viewDidLoad : ")

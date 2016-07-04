@@ -2359,9 +2359,56 @@
                     <view key="view" contentMode="scaleToFill" id="blg-0J-pWs">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="mQU-gV-uhV">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="260" id="Vz4-OH-xN7"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="Vz4-OH-xN7"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="Vz4-OH-xN7"/>
+                                    </mask>
+                                </variation>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="mQU-gV-uhV" firstAttribute="leading" secondItem="blg-0J-pWs" secondAttribute="leading" id="f7q-h9-EkA"/>
+                            <constraint firstAttribute="trailing" secondItem="mQU-gV-uhV" secondAttribute="trailing" id="oHB-dk-L5o"/>
+                            <constraint firstItem="mQU-gV-uhV" firstAttribute="top" secondItem="68G-AM-CYT" secondAttribute="bottom" id="yza-2I-MrB"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="mQU-gV-uhV"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="f7q-h9-EkA"/>
+                                <exclude reference="oHB-dk-L5o"/>
+                                <exclude reference="yza-2I-MrB"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="mQU-gV-uhV"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="f7q-h9-EkA"/>
+                                <include reference="oHB-dk-L5o"/>
+                                <include reference="yza-2I-MrB"/>
+                            </mask>
+                        </variation>
                     </view>
                     <navigationItem key="navigationItem" title="Groups" id="iJu-xo-EWT"/>
+                    <connections>
+                        <outlet property="tableViewContacts" destination="mQU-gV-uhV" id="54T-ZE-99H"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mFL-yZ-cVZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -3664,7 +3711,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ul5-ue-V4C" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1086" y="1143.75"/>
+            <point key="canvasLocation" x="1086" y="1196.25"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="iO0-6t-0vM">
