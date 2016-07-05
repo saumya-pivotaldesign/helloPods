@@ -23,39 +23,47 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var contactsFromServer:JSON = []
     //
     var realm:Realm?
-    //var pvdUtilLocalStorage:PIVDUtilLocalStorage?
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         print("AppDelegate : application:didFinishLaunchingWithOptions:   ======== ")
-        /*
+        
         do {
             self.realm = try Realm()
             print("initRealm : done :",self.realm)
+            
+            
+            let appInfo:PIVDModel = self.realm!.objects(PIVDModel.self).first!
+            
+            print("appInfo",appInfo)
+            print("appInfo.isDataSaved",appInfo.isDataSaved)
+            
+            if (appInfo.isDataSaved) {
+                print("====== Got Local Data : YES  =======")
+                print(appInfo)
+                print("====== Got Local Data : YES /=======")
+            }else{
+                print("====== Got Local Data : NO  =======")
+                try! realm?.write({
+                    appInfo.isDataSaved = true
+                })
+                print("====== Got Local Data : NO /=======")
+            }
+
             
         } catch let error as NSError {
             print("initRealm : ERROR :")
             print(error)
         }
-        */
-        //self.pvdUtilLocalStorage = PIVDUtilLocalStorage.init(withRealm: self.realm!)
         
+        /*
         if(PIVDUtilLocalStorage.initRealm()){
             print("initRealm : done : PIVDUtilLocalStorage.realmRef=", PIVDUtilLocalStorage.realmRef )
             self.realm = PIVDUtilLocalStorage.realmRef
         }else{
            print("initRealm : ERROR :")
         }
-        
-        let appInfo:PIVDModel = realm!.objects(PIVDModel.self).first!
-        print("isDataSaved",appInfo.isDataSaved)
-        if (appInfo.isDataSaved) {
-            print("====== Got Local Data : YES =======")
-        }else{
-            print("====== Got Local Data : NO =======")
-        }
-        
-        
+        */
         
         
         print("AppDelegate : application:didFinishLaunchingWithOptions: / ======== ")
@@ -208,6 +216,21 @@ extension AppDelegate{
         default:
             completionHandler(accessGranted: false)
         }
+    }
+    // MARK: Contacts from Server
+    func gotContactsFromServer(contacts:JSON) {
+        print("AppDelegate : gotContactsFromServer : ")
+        self.contactsFromServer = contacts
+        //save local data
+        //NSJSONSerialization.JSONObjectWithData(contacts, options: <#T##NSJSONReadingOptions#>)
+        
+        // Insert from NSData containing JSON
+        /*
+        try self.realm!.write {
+            let json = try! NSJSONSerialization.JSONObjectWithData(contacts, options: NSJSONReadingOptions())
+            //realm.create(City.self, value: json, update: true)
+        }*/
+        
     }
 }
 
