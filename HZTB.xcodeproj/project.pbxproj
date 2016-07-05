@@ -11,6 +11,7 @@
 		AE2B48011D1D1A6400EAD4B7 /* PIVDStaticNames.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE2B48001D1D1A6400EAD4B7 /* PIVDStaticNames.swift */; };
 		AE2B48031D1D420B00EAD4B7 /* PIVDContact.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE2B48021D1D420B00EAD4B7 /* PIVDContact.swift */; };
 		AE4D355B1D2BC493006DCEC8 /* PIVDUtilLocalStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4D355A1D2BC493006DCEC8 /* PIVDUtilLocalStorage.swift */; };
+		AE4D355E1D2BE2E9006DCEC8 /* PIVDModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4D355D1D2BE2E9006DCEC8 /* PIVDModel.swift */; };
 		AE4D503C1D23E9F4005C6AE7 /* VCProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4D503B1D23E9F4005C6AE7 /* VCProfile.swift */; };
 		AE531D621CEAED7C00F6F2A5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE531D611CEAED7C00F6F2A5 /* AppDelegate.swift */; };
 		AE531D671CEAED7C00F6F2A5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE531D651CEAED7C00F6F2A5 /* Main.storyboard */; };
@@ -58,6 +59,7 @@
 		AE2B48001D1D1A6400EAD4B7 /* PIVDStaticNames.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PIVDStaticNames.swift; sourceTree = "<group>"; };
 		AE2B48021D1D420B00EAD4B7 /* PIVDContact.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PIVDContact.swift; sourceTree = "<group>"; };
 		AE4D355A1D2BC493006DCEC8 /* PIVDUtilLocalStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PIVDUtilLocalStorage.swift; sourceTree = "<group>"; };
+		AE4D355D1D2BE2E9006DCEC8 /* PIVDModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PIVDModel.swift; sourceTree = "<group>"; };
 		AE4D503B1D23E9F4005C6AE7 /* VCProfile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VCProfile.swift; sourceTree = "<group>"; };
 		AE531D5E1CEAED7C00F6F2A5 /* HZTB.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HZTB.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE531D611CEAED7C00F6F2A5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -121,6 +123,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		AE4D355C1D2BE273006DCEC8 /* models */ = {
+			isa = PBXGroup;
+			children = (
+				AE4D355D1D2BE2E9006DCEC8 /* PIVDModel.swift */,
+			);
+			name = models;
+			sourceTree = "<group>";
+		};
 		AE531D551CEAED7B00F6F2A5 = {
 			isa = PBXGroup;
 			children = (
@@ -146,9 +156,9 @@
 				AEC613221CFEC4E700DFD465 /* HZTB.entitlements */,
 				AE531D611CEAED7C00F6F2A5 /* AppDelegate.swift */,
 				AE717FAD1CF587C2009DB28B /* SlideMenu */,
-				AE8F08B61CF33C8A004048A0 /* VCNewRequest.swift */,
-				AE56495F1D1039DF00FF6302 /* VCRegistration.swift */,
 				AE7F15731D228105000AE265 /* VCRegistrationConfirmation.swift */,
+				AE56495F1D1039DF00FF6302 /* VCRegistration.swift */,
+				AE8F08B61CF33C8A004048A0 /* VCNewRequest.swift */,
 				AE4D503B1D23E9F4005C6AE7 /* VCProfile.swift */,
 				AE9789421D26A1F5002EDAD4 /* VCGroups.swift */,
 				AE9789401D26A164002EDAD4 /* VCSettings.swift */,
@@ -157,6 +167,7 @@
 				AE4D355A1D2BC493006DCEC8 /* PIVDUtilLocalStorage.swift */,
 				AE2B48001D1D1A6400EAD4B7 /* PIVDStaticNames.swift */,
 				AE2B48021D1D420B00EAD4B7 /* PIVDContact.swift */,
+				AE4D355C1D2BE273006DCEC8 /* models */,
 				AE531D681CEAED7C00F6F2A5 /* Assets.xcassets */,
 				AE531D651CEAED7C00F6F2A5 /* Main.storyboard */,
 				AE531D6A1CEAED7C00F6F2A5 /* LaunchScreen.storyboard */,
@@ -387,6 +398,7 @@
 				AE9789411D26A165002EDAD4 /* VCSettings.swift in Sources */,
 				AE717FBB1CF58840009DB28B /* VCHome.swift in Sources */,
 				AE8F08B71CF33C8A004048A0 /* VCNewRequest.swift in Sources */,
+				AE4D355E1D2BE2E9006DCEC8 /* PIVDModel.swift in Sources */,
 				AE531D621CEAED7C00F6F2A5 /* AppDelegate.swift in Sources */,
 				AE717FBD1CF58D4F009DB28B /* VCSlideMenu.swift in Sources */,
 				AE717FB91CF587DF009DB28B /* PresentMenuAnimator.swift in Sources */,

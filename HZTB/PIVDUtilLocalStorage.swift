@@ -8,30 +8,43 @@
 
 import Foundation
 import Realm
+import RealmSwift
 
-class PIVDUtilLocalStorage {
+public class PIVDUtilLocalStorage {
+    
+    public static var realmRef:Realm?
+    
+    /*
+    init( withRealm:Realm ){
+        self.realmRef = withRealm
+    }*/
+    
+    
     public static func testSave(){
         print("PIVDUtilLocalStorage : testSave :")
+        let appInfo = PIVDModel()
+        try! realmRef?.write({ 
+            realmRef!.add(appInfo)
+        })
     }
     public static func testGet(){
         print("PIVDUtilLocalStorage : testGet :")
+        let appInfo = realmRef!.objects(PIVDModel.self)
+        print(appInfo)
     }
     
-    public static func initRealm() -> RLMRealm {
+    public static func initRealm() -> Bool {
         print("PIVDUtilLocalStorage : initRealm :")
-        let RealmRef:RLMRealm
-        
         do {
-            RealmRef = try RLMRealm()
-            
-            print("PIVDUtilLocalStorage : initRealm : done:",RealmRef)
-            
+            PIVDUtilLocalStorage.realmRef = try Realm()
+            print("PIVDUtilLocalStorage : initRealm : done:",PIVDUtilLocalStorage.realmRef)
+            return true
         } catch let error as NSError {
             print("PIVDUtilLocalStorage : initRealm : ERROR:")
             print(error)
         }
+        return false
         
-        return RealmRef
     }
     
 }

@@ -11,6 +11,7 @@ import Contacts
 
 import SwiftyJSON
 import Realm
+import RealmSwift
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -21,14 +22,33 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     //
     var contactsFromServer:JSON = []
     //
-    var realm:RLMRealm?
+    var realm:Realm?
+    //var pvdUtilLocalStorage:PIVDUtilLocalStorage?
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        print("AppDelegate : application:didFinishLaunchingWithOptions:")
+        print("AppDelegate : application:didFinishLaunchingWithOptions:   ======== ")
+        /*
+        do {
+            self.realm = try Realm()
+            print("initRealm : done :",self.realm)
+            
+        } catch let error as NSError {
+            print("initRealm : ERROR :")
+            print(error)
+        }
+        */
+        //self.pvdUtilLocalStorage = PIVDUtilLocalStorage.init(withRealm: self.realm!)
         
-        self.realm = PIVDUtilLocalStorage.initRealm()
+        if(PIVDUtilLocalStorage.initRealm()){
+            print("initRealm : done : PIVDUtilLocalStorage.realmRef=", PIVDUtilLocalStorage.realmRef )
+            self.realm = PIVDUtilLocalStorage.realmRef
+        }else{
+           print("initRealm : ERROR :")
+        }
         
+        
+        print("AppDelegate : application:didFinishLaunchingWithOptions: / ======== ")
         // Override point for customization after application launch.
         return true
     }
