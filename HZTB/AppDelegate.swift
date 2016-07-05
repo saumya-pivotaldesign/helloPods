@@ -41,6 +41,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             if (appInfo.isDataSaved) {
                 print("====== Got Local Data : YES  =======")
                 print(appInfo)
+                /*
+                try! realm?.write({
+                    appInfo.isDataSaved = false
+                })
+                */
                 print("====== Got Local Data : YES /=======")
             }else{
                 print("====== Got Local Data : NO  =======")
