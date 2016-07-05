@@ -47,6 +47,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
            print("initRealm : ERROR :")
         }
         
+        let appInfo:PIVDModel = realm!.objects(PIVDModel.self).first!
+        print("isDataSaved",appInfo.isDataSaved)
+        if (appInfo.isDataSaved) {
+            print("====== Got Local Data : YES =======")
+        }else{
+            print("====== Got Local Data : NO =======")
+        }
+        
+        
+        
         
         print("AppDelegate : application:didFinishLaunchingWithOptions: / ======== ")
         // Override point for customization after application launch.
