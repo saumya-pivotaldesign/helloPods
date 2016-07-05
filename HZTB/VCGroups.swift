@@ -21,6 +21,8 @@ class VCGroups: UIViewController, UITableViewDelegate, UITableViewDataSource {
         super.viewDidLoad()
         print("VCGroups : viewDidLoad : ")
         
+        print("Realm:",AppDelegate.getAppDelegate().realm)
+        
         // self.tableViewContacts.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell")
         
         // print(AppDelegate.getAppDelegate().contactStore)
