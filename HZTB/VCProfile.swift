@@ -90,8 +90,14 @@ extension VCProfile {
     
     private func setStyleCircleForImage(imgView:UIImageView){
         print("VCProfile : setStyleCircleForImage : ")
+        
+        imgProfile!.clipsToBounds = true
+        imgProfile!.layer.cornerRadius = 100
+ 
+        /*
         imgView.layer.cornerRadius = imgView.frame.size.height / 1.3
         //imgView.layer.cornerRadius = imgView.frame.size.width / 2.5
         imgView.clipsToBounds = true
+        */
     }
 }

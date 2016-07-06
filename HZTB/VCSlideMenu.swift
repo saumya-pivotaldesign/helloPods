@@ -76,9 +76,14 @@ extension VCSlideMenu {
 
     private func setStyleCircleForImage(imgView:UIImageView){
         print("VCSlideMenu : setStyleCircleForImage : ")
+        /*
         imgView.layer.cornerRadius = imgView.frame.size.height / 1.3
         imgView.layer.cornerRadius = imgView.frame.size.width / 2.5
         imgView.clipsToBounds = true
+        */
+        
+        imgView.clipsToBounds = true
+        imgView.layer.cornerRadius = 100
     }
     
 }
