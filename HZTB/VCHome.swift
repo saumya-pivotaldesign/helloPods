@@ -18,8 +18,14 @@ class VCHome: UIViewController {
         super.viewDidLoad()
         //
         print("VCHome : viewDidLoad")
-        // Color the TopBar
+        
+        //MARK: TopBar Color customisation
         self.navigationController?.navigationBar.barTintColor = UIColor.init(red: 236/255, green: 30/255, blue: 121/255, alpha: 1.0)
+        self.navigationController?.navigationBar.tintColor = UIColor.whiteColor() // Font color of the navigation items
+        // title color
+        let titleDict: NSDictionary = [NSForegroundColorAttributeName: UIColor.whiteColor()]
+        self.navigationController!.navigationBar.titleTextAttributes = titleDict as? [String : AnyObject]
+        
         //MARK: EventHandler Registrations
         NSNotificationCenter.defaultCenter().addObserver( self, selector:#selector(onRegistrationNotification),
                                                           name: PIVDStaticNames.REGISTRATION_SUCCESS, object: nil )
