@@ -4,7 +4,9 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--Home-->
@@ -1548,18 +1550,22 @@
                                     <action selector="closeMenu:" destination="HqR-qp-ctM" eventType="touchUpInside" id="f9Y-Uu-Ey2"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Bg" translatesAutoresizingMaskIntoConstraints="NO" id="qOj-kA-78d">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="Bg" translatesAutoresizingMaskIntoConstraints="NO" id="qOj-kA-78d">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="200" id="5iR-N2-va0"/>
+                                    <constraint firstAttribute="width" secondItem="qOj-kA-78d" secondAttribute="height" multiplier="4:3" id="K9v-mJ-zZV"/>
                                     <constraint firstAttribute="height" constant="128" id="VVd-s1-v1b">
                                         <variation key="heightClass=regular-widthClass=compact" constant="200"/>
                                     </constraint>
+                                    <constraint firstAttribute="width" secondItem="qOj-kA-78d" secondAttribute="height" multiplier="1:1" id="g1u-hi-e0P"/>
                                 </constraints>
                                 <variation key="default">
                                     <mask key="constraints">
                                         <exclude reference="5iR-N2-va0"/>
+                                        <exclude reference="K9v-mJ-zZV"/>
                                         <exclude reference="VVd-s1-v1b"/>
+                                        <exclude reference="g1u-hi-e0P"/>
                                     </mask>
                                 </variation>
                                 <variation key="heightClass=regular-widthClass=compact">
@@ -1886,13 +1892,16 @@
                                 <variation key="heightClass=regular-widthClass=compact" constant="0.0"/>
                             </constraint>
                             <constraint firstItem="UkY-S6-pH2" firstAttribute="top" secondItem="hmc-1q-DsY" secondAttribute="bottom" id="VuK-Cg-6J2"/>
-                            <constraint firstItem="qOj-kA-78d" firstAttribute="top" secondItem="fJL-4f-HTf" secondAttribute="bottom" id="Xtq-Ks-Ifi"/>
+                            <constraint firstItem="qOj-kA-78d" firstAttribute="top" secondItem="fJL-4f-HTf" secondAttribute="bottom" id="Xtq-Ks-Ifi">
+                                <variation key="heightClass=regular-widthClass=compact" constant="40"/>
+                            </constraint>
                             <constraint firstItem="hmc-1q-DsY" firstAttribute="leading" secondItem="2aT-bf-pK0" secondAttribute="trailing" id="Z7S-EC-p5A"/>
                             <constraint firstItem="E5f-M1-i3a" firstAttribute="top" secondItem="qOj-kA-78d" secondAttribute="bottom" constant="15" id="ZM8-j6-0MW">
                                 <variation key="heightClass=regular-widthClass=compact" constant="60"/>
                             </constraint>
                             <constraint firstItem="hmc-1q-DsY" firstAttribute="leading" secondItem="E5f-M1-i3a" secondAttribute="trailing" constant="40" id="ZhH-Dt-ayR"/>
                             <constraint firstItem="hmc-1q-DsY" firstAttribute="top" secondItem="fJL-4f-HTf" secondAttribute="bottom" id="d6g-6g-L1j"/>
+                            <constraint firstItem="qOj-kA-78d" firstAttribute="width" secondItem="cUA-tC-bM9" secondAttribute="width" multiplier="1:2" id="im2-La-eRW"/>
                             <constraint firstItem="hmc-1q-DsY" firstAttribute="leading" secondItem="kCD-nJ-kCo" secondAttribute="trailing" id="n8M-VL-DVg"/>
                         </constraints>
                         <variation key="default">
@@ -1907,6 +1916,7 @@
                             <mask key="constraints">
                                 <exclude reference="5bA-eH-UBf"/>
                                 <exclude reference="Xtq-Ks-Ifi"/>
+                                <exclude reference="im2-La-eRW"/>
                                 <exclude reference="1XX-ac-ygL"/>
                                 <exclude reference="29E-tR-Moh"/>
                                 <exclude reference="ZM8-j6-0MW"/>

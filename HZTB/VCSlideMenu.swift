@@ -69,18 +69,15 @@ extension VCSlideMenu {
 //MARK: Circular Image
 extension VCSlideMenu {
     override func viewWillAppear(animated: Bool) {
+        print("VCSlideMenu : viewWillAppear : ")
         super.viewWillAppear(animated)
-        
-        //self.performSelector(@selector(setStyleCircleForImage), withObject: _img)))
-        
-        //self.performSelector(setStyleCircleForImage(profileImage) , withObject: _img, afterDelay: 0)
-        
         setStyleCircleForImage(profileImage!)
-        
     }
 
     private func setStyleCircleForImage(imgView:UIImageView){
-        imgView.layer.cornerRadius = imgView.frame.size.height / 2.0
+        print("VCSlideMenu : setStyleCircleForImage : ")
+        imgView.layer.cornerRadius = imgView.frame.size.height / 1.3
+        //imgView.layer.cornerRadius = imgView.frame.size.width / 2.5
         imgView.clipsToBounds = true
     }
     
