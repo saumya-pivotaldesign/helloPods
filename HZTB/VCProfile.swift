@@ -18,9 +18,15 @@ class VCProfile: UIViewController {
     @IBOutlet var tName:UITextField?
     @IBOutlet var tEmail:UITextField?
     
+    @IBOutlet var imgProfile:UIImageView?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         print("VCProfile : viewDidLoad : ")
+    }
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        setStyleCircleForImage(imgProfile!)
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

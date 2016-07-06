@@ -1161,6 +1161,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="1ze-bE-hUb" sceneMemberID="viewController">
                     <toolbarItems/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="Pvs-JJ-4AH">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -2726,6 +2727,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Profile" id="aRR-ag-UOC"/>
                     <connections>
+                        <outlet property="imgProfile" destination="YPg-0V-pjK" id="Wo9-82-bVH"/>
                         <outlet property="tEmail" destination="QcD-sE-zRS" id="Ke3-h4-Tix"/>
                         <outlet property="tName" destination="uSe-Kq-wKX" id="O1k-pA-6pO"/>
                     </connections>
