@@ -1570,7 +1570,7 @@
                                     <action selector="closeMenu:" destination="HqR-qp-ctM" eventType="touchUpInside" id="f9Y-Uu-Ey2"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="Bg" translatesAutoresizingMaskIntoConstraints="NO" id="qOj-kA-78d">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="Profile-Pic-2200x2200.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="qOj-kA-78d">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="200" id="5iR-N2-va0"/>
@@ -2568,7 +2568,7 @@
                                     <action selector="onUpdateProfileTap" destination="gdO-F2-nPF" eventType="touchUpInside" id="cAk-OZ-gOi"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Bg" translatesAutoresizingMaskIntoConstraints="NO" id="YPg-0V-pjK">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Profile-Pic-2200x2200.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="YPg-0V-pjK">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -3840,6 +3840,7 @@
     </scenes>
     <resources>
         <image name="Bg" width="16" height="16"/>
+        <image name="Profile-Pic-2200x2200.jpg" width="2200" height="2200"/>
         <image name="requests" width="16" height="16"/>
         <image name="sent" width="16" height="16"/>
         <image name="store" width="16" height="16"/>

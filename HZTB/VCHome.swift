@@ -18,6 +18,8 @@ class VCHome: UIViewController {
         super.viewDidLoad()
         //
         print("VCHome : viewDidLoad")
+        // Color the TopBar
+        self.navigationController?.navigationBar.barTintColor = UIColor.init(red: 236/255, green: 30/255, blue: 121/255, alpha: 1.0)
         //MARK: EventHandler Registrations
         NSNotificationCenter.defaultCenter().addObserver( self, selector:#selector(onRegistrationNotification),
                                                           name: PIVDStaticNames.REGISTRATION_SUCCESS, object: nil )
