@@ -9,6 +9,11 @@
 import UIKit
 
 class VCSlideMenu : UIViewController {
+    
+    //MARK: circular Image
+    @IBOutlet var profileImage:UIImageView?
+    
+    
     // 1
     var interactor:Interactor? = nil
     // 2
@@ -59,6 +64,26 @@ extension VCSlideMenu {
         let notification = NSNotification(name: PIVDStaticNames.LINK_GROUPS_TAP , object: self, userInfo:nil )
         NSNotificationCenter.defaultCenter().postNotification(notification)
     }
+}
+
+//MARK: Circular Image
+extension VCSlideMenu {
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        //self.performSelector(@selector(setStyleCircleForImage), withObject: _img)))
+        
+        //self.performSelector(setStyleCircleForImage(profileImage) , withObject: _img, afterDelay: 0)
+        
+        setStyleCircleForImage(profileImage!)
+        
+    }
+
+    private func setStyleCircleForImage(imgView:UIImageView){
+        imgView.layer.cornerRadius = imgView.frame.size.height / 2.0
+        imgView.clipsToBounds = true
+    }
+    
 }
 
 
