@@ -9,11 +9,14 @@
 import UIKit
 import Alamofire
 import SwiftyJSON
+import RealmSwift
 
 class VCRegistrationConfirmation: UIViewController {
     
     @IBOutlet var bg:UIImageView?
     @IBOutlet var otpField:UITextField!
+    
+    public var registeredUserInfo:JSON?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -120,8 +123,15 @@ extension VCRegistrationConfirmation {
                     print("SUCCESS : ===== ")
                 }
                 */
+                
+                
+                
+                
                 if(jsonOBJ["isValidateOTPSuccesful"].isExists()==true){
                     print("SUCCESS")
+                    
+                    self.registeredUserInfo = jsonOBJ
+                    
                     //AppDelegate.getAppDelegate().showMessage("OTP Validation Success","Welcome to HZTB!")
                     self.onOTPSuccess()
                 }else{

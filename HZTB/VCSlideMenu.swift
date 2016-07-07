@@ -12,6 +12,7 @@ class VCSlideMenu : UIViewController {
     
     //MARK: circular Image
     @IBOutlet var profileImage:UIImageView?
+    @IBOutlet var profileName:UILabel?
     
     
     // 1
@@ -72,6 +73,9 @@ extension VCSlideMenu {
         print("VCSlideMenu : viewWillAppear : ")
         super.viewWillAppear(animated)
         setStyleCircleForImage(profileImage!)
+        //Update the profile Info
+        let s:String = AppDelegate.getAppDelegate().sRegisteredUserName
+        self.profileName?.text = s;
     }
 
     private func setStyleCircleForImage(imgView:UIImageView){

@@ -20,6 +20,8 @@ class VCProfile: UIViewController {
     
     @IBOutlet var imgProfile:UIImageView?
     
+    public var registeredUserInfo:JSON?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         print("VCProfile : viewDidLoad : ")
@@ -27,6 +29,12 @@ class VCProfile: UIViewController {
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         setStyleCircleForImage(imgProfile!)
+        //
+        let sName:String = AppDelegate.getAppDelegate().sRegisteredUserName
+        let sEmail:String = AppDelegate.getAppDelegate().sRegisteredUserEmail
+        
+        tName?.text = sName
+        tEmail?.text = sEmail
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -75,6 +83,8 @@ extension VCProfile {
                 //let json = JSON(data: dataFromNetworking)
                 let jsonOBJ = JSON((response.result.value)!)
                 print("jsonOBJ=",jsonOBJ)
+                
+                self.registeredUserInfo = jsonOBJ
                 
                 //AppDelegate.getAppDelegate().showMessage("Updated your profile.","Profile")
                 

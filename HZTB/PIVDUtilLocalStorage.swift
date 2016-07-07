@@ -10,6 +10,7 @@ import Foundation
 import Realm
 import RealmSwift
 
+
 public class PIVDUtilLocalStorage {
     
     public static var realmRef:Realm?
@@ -44,7 +45,12 @@ public class PIVDUtilLocalStorage {
             print(error)
         }
         return false
-        
+    }
+    
+    public static func saveUserData(realmRef:Realm){
+        print("PIVDUtilLocalStorage : saveUserData :")
+        let appInfo = realmRef.objects(PIVDModel.self)
+        print(appInfo)
     }
     
 }

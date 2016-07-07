@@ -2019,6 +2019,7 @@
                     </view>
                     <connections>
                         <outlet property="profileImage" destination="qOj-kA-78d" id="mtz-Kn-X9i"/>
+                        <outlet property="profileName" destination="E5f-M1-i3a" id="Rde-BG-14X"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bvT-vS-Fgn" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -14,4 +14,11 @@ class PIVDModel: Object {
     dynamic var appName:String = "How is this Buddy"
     dynamic var appVersion:String = "1.0.0"
     dynamic var isDataSaved:Bool = false
+    
+    // User data
+    dynamic var userId:String = ""
+    dynamic var mobileNumber:String = ""
+    
+    dynamic var emailAddress:String = ""
+    dynamic var name:String = ""
 }

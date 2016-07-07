@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SwiftyJSON
 
 // MARK: VCHome is ViewController
 class VCHome: UIViewController {
@@ -108,10 +109,27 @@ class VCHome: UIViewController {
     
     @objc private func onOTPSuccess(notification:NSNotification){
         print("VCHome : onOTPSuccess   ================ ")
-        // Come back to Home
+        // 1. Come back to Home
         self.navigationController?.popViewControllerAnimated(true)
+        //
+        //PIVDUtilLocalStorage.saveUserData(AppDelegate.getAppDelegate().realm!)
+        let myViewController:VCRegistrationConfirmation = notification.object as! VCRegistrationConfirmation
+        let resultJson:JSON = myViewController.registeredUserInfo!
         
-        // Move to Profile View
+        //print("  ======")
+        //print("result", resultJson)
+        //print(resultJson["userId"])
+        //print(resultJson["mobileNumber"])
+        //print(AppDelegate.getAppDelegate().sRegisteredMobileNum)
+        
+        // 2. Fix: Write a Setter for these things
+        AppDelegate.getAppDelegate().sRegisteredUserId = resultJson["userId"].string!
+        AppDelegate.getAppDelegate().sRegisteredMobileNum = resultJson["mobileNumber"].string!
+        
+        //print("/ ======")
+        
+        
+        // 3. Move to Profile View
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let vc = storyboard.instantiateViewControllerWithIdentifier("sid_profile") as! VCProfile
         navigationController?.pushViewController(vc, animated: true)
@@ -121,9 +139,17 @@ class VCHome: UIViewController {
     
     @objc private func onProfileUpdateSuccess(notification:NSNotification){
         print("VCHome : onProfileUpdateSuccess    ================ ")
-        // Come back to Home
+        // 1. Come back to Home
         self.navigationController?.popViewControllerAnimated(true)
-        //
+        
+        // 2.
+        let myViewController:VCProfile = notification.object as! VCProfile
+        let resultJson:JSON = myViewController.registeredUserInfo!
+        // 3. Fix: Write a Setter for these things
+        AppDelegate.getAppDelegate().sRegisteredUserName = resultJson["name"].string!
+        AppDelegate.getAppDelegate().sRegisteredUserEmail = resultJson["emailAddress"].string!
+        
+        // 4.
         syncTheAddressbookWithServer()
         print("VCHome : onProfileUpdateSuccess  / ================ ")
     }
