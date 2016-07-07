@@ -175,6 +175,16 @@ class VCHome: UIViewController {
         navigationController?.pushViewController(vc, animated: true)
     }
     
+    @IBAction func onSentReceivedTap(sender:AnyObject){
+        print("VCHome : onSentReceivedTap : ")
+    }
+    @IBAction func onReceivedGivenTap(sender:AnyObject){
+        print("VCHome : onReceivedGivenTap : ")
+    }
+    @IBAction func onInStoreNowTap(sender:AnyObject){
+        print("VCHome : onInStoreNowTap : ")
+    }
+    
 }
 
 
