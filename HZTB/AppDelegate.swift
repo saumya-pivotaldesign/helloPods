@@ -28,6 +28,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     //
     var realm:Realm?
     var pivdModel:PIVDModel?
+    //
+    var utilLocalStorage:PIVDUtilLocalStorage?
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
@@ -47,6 +49,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             print("pivModel.count:", pivModel.count)
             print("pivModel:",pivModel)
             
+            
+            
             // 3. check and save if its not saved
             if(pivModel.count == 0){
                 print("=== No Data === XXX ")
@@ -59,6 +63,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 print("=== Saved Data ===")
                 self.pivdModel = pivModel.first!
                 let appInfo:PIVDModel = pivModel.first!
+                
+                self.utilLocalStorage = PIVDUtilLocalStorage(withRealm: self.realm!,andPivdModel: pivModel.first!)
                 print("appInfo:",appInfo)
             }
             
@@ -264,22 +270,9 @@ extension AppDelegate{
         
         sRegisteredUserId = userId
         sRegisteredMobileNum = mobileNumber
-        //
-        //let pivdModel:PIVDModel =  self.realm!.objects(PIVDModel.self).first!
-        //
-        do{
-            self.realm?.beginWrite()
-            self.pivdModel!.registeredUserId = userId
-            self.pivdModel!.registeredMobileNumber = mobileNumber
-            
-            try self.realm?.commitWrite()
-            print("Write SUCCESS === ")
-        }catch let error as NSError{
-            print("Write ERROR  === ")
-            print(error)
-            print("Write ERROR /=== ")
-        }
-        //print(pivdModel)
+        
+        self.utilLocalStorage?.saveUserId(userId, AndPhone: mobileNumber)
+        
     }//updateRegisteredUser
     func updateRegisteredUser(name:String,email:String) {
         print("AppDelegate : updateRegisteredUser : name:email: ")
@@ -287,19 +280,8 @@ extension AppDelegate{
         sRegisteredUserName = name
         sRegisteredUserEmail = email
         
-        do{
-            self.realm?.beginWrite()
-            self.pivdModel!.registeredName = name
-            self.pivdModel!.registeredEmailAddress = email
-            
-            try self.realm?.commitWrite()
-            print("Write SUCCESS === ")
-        }catch let error as NSError{
-            print("Write ERROR  === ")
-            print(error)
-            print("Write ERROR /=== ")
-        }
-        //print(pivdModel)
+        self.utilLocalStorage?.saveName(name, Email: email)
+        
     }//updateRegisteredUser
     
 }//AppDelegate

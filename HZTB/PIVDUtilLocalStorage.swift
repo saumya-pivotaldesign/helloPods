@@ -13,44 +13,55 @@ import RealmSwift
 
 public class PIVDUtilLocalStorage {
     
-    public static var realmRef:Realm?
+    private var realmRef:Realm?
+    private var pivdModel:PIVDModel?
     
-    /*
-    init( withRealm:Realm ){
+    
+    init( withRealm:Realm,andPivdModel:PIVDModel ){
+        print("PIVDUtilLocalStorage:init:")
+        
         self.realmRef = withRealm
-    }*/
-    
-    
-    public static func testSave(){
-        print("PIVDUtilLocalStorage : testSave :")
-        let appInfo = PIVDModel()
-        try! realmRef?.write({ 
-            realmRef!.add(appInfo)
-        })
-    }
-    public static func testGet(){
-        print("PIVDUtilLocalStorage : testGet :")
-        let appInfo = realmRef!.objects(PIVDModel.self)
-        print(appInfo)
+        self.pivdModel = andPivdModel
     }
     
-    public static func initRealm() -> Bool {
-        print("PIVDUtilLocalStorage : initRealm :")
-        do {
-            PIVDUtilLocalStorage.realmRef = try Realm()
-            print("PIVDUtilLocalStorage : initRealm : done:",PIVDUtilLocalStorage.realmRef)
-            return true
-        } catch let error as NSError {
-            print("PIVDUtilLocalStorage : initRealm : ERROR:")
+    public func saveUserId(userId:String,AndPhone:String){
+        print("PIVDUtilLocalStorage: saveUserId:AndPhone:   ===")
+        do{
+            self.realmRef?.beginWrite()
+            
+            self.pivdModel!.registeredUserId = userId
+            self.pivdModel!.registeredMobileNumber = AndPhone
+            
+            try self.realmRef?.commitWrite()
+            
+            print("Write SUCCESS === ")
+            
+        }catch let error as NSError{
+            print("Write ERROR  === ")
             print(error)
+            print("Write ERROR /=== ")
         }
-        return false
+        print("PIVDUtilLocalStorage: saveUserId:AndPhone: / ===")
     }
     
-    public static func saveUserData(realmRef:Realm){
-        print("PIVDUtilLocalStorage : saveUserData :")
-        let appInfo = realmRef.objects(PIVDModel.self)
-        print(appInfo)
+    public func saveName(name:String,Email:String){
+        print("PIVDUtilLocalStorage: saveName:Email:   ===")
+        do{
+            self.realmRef?.beginWrite()
+            
+            self.pivdModel!.registeredName = name
+            self.pivdModel!.registeredEmailAddress = Email
+            
+            try self.realmRef?.commitWrite()
+            
+            print("Write SUCCESS === ")
+            
+        }catch let error as NSError{
+            print("Write ERROR  === ")
+            print(error)
+            print("Write ERROR /=== ")
+        }
+        print("PIVDUtilLocalStorage: saveName:Email: / ===")
     }
     
 }
