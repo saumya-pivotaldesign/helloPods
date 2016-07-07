@@ -16,9 +16,9 @@ class PIVDModel: Object {
     dynamic var isDataSaved:Bool = false
     
     // User data
-    dynamic var userId:String = ""
-    dynamic var mobileNumber:String = ""
+    dynamic var registeredUserId:String = ""
+    dynamic var registeredMobileNumber:String = ""
     
-    dynamic var emailAddress:String = ""
-    dynamic var name:String = ""
+    dynamic var registeredEmailAddress:String = ""
+    dynamic var registeredName:String = ""
 }

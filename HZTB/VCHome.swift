@@ -123,8 +123,14 @@ class VCHome: UIViewController {
         //print(AppDelegate.getAppDelegate().sRegisteredMobileNum)
         
         // 2. Fix: Write a Setter for these things
-        AppDelegate.getAppDelegate().sRegisteredUserId = resultJson["userId"].string!
-        AppDelegate.getAppDelegate().sRegisteredMobileNum = resultJson["mobileNumber"].string!
+        // AppDelegate.getAppDelegate().sRegisteredUserId = resultJson["userId"].string!
+        // AppDelegate.getAppDelegate().sRegisteredMobileNum = resultJson["mobileNumber"].string!
+        
+        let sId:String = resultJson["userId"].string!
+        let sNum:String = resultJson["mobileNumber"].string!
+        AppDelegate.getAppDelegate().updateRegisteredUser(sId, mobileNumber: sNum)
+        
+        
         
         //print("/ ======")
         
@@ -146,8 +152,12 @@ class VCHome: UIViewController {
         let myViewController:VCProfile = notification.object as! VCProfile
         let resultJson:JSON = myViewController.registeredUserInfo!
         // 3. Fix: Write a Setter for these things
-        AppDelegate.getAppDelegate().sRegisteredUserName = resultJson["name"].string!
-        AppDelegate.getAppDelegate().sRegisteredUserEmail = resultJson["emailAddress"].string!
+        // AppDelegate.getAppDelegate().sRegisteredUserName = resultJson["name"].string!
+        // AppDelegate.getAppDelegate().sRegisteredUserEmail = resultJson["emailAddress"].string!
+        
+        let sName:String = resultJson["name"].string!
+        let sEmail:String = resultJson["emailAddress"].string!
+        AppDelegate.getAppDelegate().updateRegisteredUser(sName, email: sEmail)
         
         // 4.
         syncTheAddressbookWithServer()

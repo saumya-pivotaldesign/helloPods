@@ -27,16 +27,42 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var contactsFromServer:JSON = []
     //
     var realm:Realm?
+    var pivdModel:PIVDModel?
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         print("AppDelegate : application:didFinishLaunchingWithOptions:   ======== ")
         
         do {
+            
+            //ref : http://stackoverflow.com/questions/34598268/realm-migration-doesnt-work
+            
+            // 1. config
+            Realm.Configuration.defaultConfiguration.deleteRealmIfMigrationNeeded = true
+            
+            // 2. instantiate
             self.realm = try Realm()
             print("initRealm : done :",self.realm)
+            let pivModel = self.realm!.objects(PIVDModel.self)
+            print("pivModel.count:", pivModel.count)
+            print("pivModel:",pivModel)
             
+            // 3. check and save if its not saved
+            if(pivModel.count == 0){
+                print("=== No Data === XXX ")
+                let appInfo:PIVDModel = PIVDModel()
+                appInfo.isDataSaved = true
+                try! self.realm?.write({
+                    self.realm!.add(appInfo)
+                })
+            }else{
+                print("=== Saved Data ===")
+                self.pivdModel = pivModel.first!
+                let appInfo:PIVDModel = pivModel.first!
+                print("appInfo:",appInfo)
+            }
             
+            /*
             let appInfo:PIVDModel = self.realm!.objects(PIVDModel.self).first!
             
             print("appInfo",appInfo)
@@ -57,23 +83,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                     appInfo.isDataSaved = true
                 })
                 print("====== Got Local Data : NO /=======")
-            }
+            }*/
 
             
         } catch let error as NSError {
             print("initRealm : ERROR :")
             print(error)
         }
-        
-        /*
-        if(PIVDUtilLocalStorage.initRealm()){
-            print("initRealm : done : PIVDUtilLocalStorage.realmRef=", PIVDUtilLocalStorage.realmRef )
-            self.realm = PIVDUtilLocalStorage.realmRef
-        }else{
-           print("initRealm : ERROR :")
-        }
-        */
-        
         
         print("AppDelegate : application:didFinishLaunchingWithOptions: / ======== ")
         // Override point for customization after application launch.
@@ -241,7 +257,52 @@ extension AppDelegate{
         }*/
         
     }
-}
+    
+    // MARK: Update userinfo
+    func updateRegisteredUser(userId:String,mobileNumber:String) {
+        print("AppDelegate : updateRegisteredUser : userId:mobileNumber: ")
+        
+        sRegisteredUserId = userId
+        sRegisteredMobileNum = mobileNumber
+        //
+        //let pivdModel:PIVDModel =  self.realm!.objects(PIVDModel.self).first!
+        //
+        do{
+            self.realm?.beginWrite()
+            self.pivdModel!.registeredUserId = userId
+            self.pivdModel!.registeredMobileNumber = mobileNumber
+            
+            try self.realm?.commitWrite()
+            print("Write SUCCESS === ")
+        }catch let error as NSError{
+            print("Write ERROR  === ")
+            print(error)
+            print("Write ERROR /=== ")
+        }
+        //print(pivdModel)
+    }//updateRegisteredUser
+    func updateRegisteredUser(name:String,email:String) {
+        print("AppDelegate : updateRegisteredUser : name:email: ")
+        
+        sRegisteredUserName = name
+        sRegisteredUserEmail = email
+        
+        do{
+            self.realm?.beginWrite()
+            self.pivdModel!.registeredName = name
+            self.pivdModel!.registeredEmailAddress = email
+            
+            try self.realm?.commitWrite()
+            print("Write SUCCESS === ")
+        }catch let error as NSError{
+            print("Write ERROR  === ")
+            print(error)
+            print("Write ERROR /=== ")
+        }
+        //print(pivdModel)
+    }//updateRegisteredUser
+    
+}//AppDelegate
 
 
 
