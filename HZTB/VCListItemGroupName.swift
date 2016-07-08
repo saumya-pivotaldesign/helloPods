@@ -8,18 +8,31 @@
 
 import UIKit
 
+import SwiftyJSON
 
 class VCListItemGroupName: UITableViewCell {
+    
+    private var dataObj:JSON?
     
     @IBOutlet var labelGroupName:UILabel?
     
     @IBAction func onEditTap(sender:AnyObject){
         print("VCListItemGroupName:onEditTap:")
-        print(sender)
+        print(dataObj)
     }
     @IBAction func onDeleteTap(sender:AnyObject){
         print("VCListItemGroupName:onDeleteTap:")
-        print(sender)
+        print(dataObj)
+    }
+    
+    // Setter
+    internal func setDataObj(data:JSON){
+        print("VCListItemGroupName:setData:",data)
+        self.dataObj=data
+        
+        //self.labelGroupName = self.aGroups![indexPath.row]["groupName"].string
+        //cell.labelGroupName?.text = sGroupName
+        self.labelGroupName?.text = self.dataObj!["groupName"].string
     }
     
    

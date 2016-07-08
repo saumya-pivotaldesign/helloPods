@@ -122,8 +122,9 @@ extension VCGroups {
         */
         
         let cell:VCListItemGroupName = self.tableViewContacts.dequeueReusableCellWithIdentifier("cell")! as! VCListItemGroupName
-        let sGroupName = self.aGroups![indexPath.row]["groupName"].string
-        cell.labelGroupName?.text = sGroupName
+        //let sGroupName = self.aGroups![indexPath.row]["groupName"].string
+        //cell.labelGroupName?.text = sGroupName
+        cell.setDataObj(self.aGroups![indexPath.row])
         
         return cell
     }
