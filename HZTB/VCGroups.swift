@@ -115,9 +115,15 @@ extension VCGroups {
         
         //cell.textLabel?.text = AppDelegate.getAppDelegate().contactsFromServer["userProfileResponses"].array![indexPath.row]["name"]
         
+        /*
         let cell:UITableViewCell = self.tableViewContacts.dequeueReusableCellWithIdentifier("cell")! as UITableViewCell
         let sGroupName = self.aGroups![indexPath.row]["groupName"].string
         cell.textLabel?.text = sGroupName
+        */
+        
+        let cell:VCListItemGroupName = self.tableViewContacts.dequeueReusableCellWithIdentifier("cell")! as! VCListItemGroupName
+        let sGroupName = self.aGroups![indexPath.row]["groupName"].string
+        cell.labelGroupName?.text = sGroupName
         
         return cell
     }

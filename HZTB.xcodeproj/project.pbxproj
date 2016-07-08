@@ -84,6 +84,7 @@
 		AEF692CE1D2F9DF2002FBD1D /* Walkway SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AEF692CA1D2F9DF2002FBD1D /* Walkway SemiBold.ttf */; };
 		AEF692CF1D2F9DF2002FBD1D /* Walkway UltraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AEF692CB1D2F9DF2002FBD1D /* Walkway UltraBold.ttf */; };
 		AEF692D01D2F9E28002FBD1D /* Walkway Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AEF692C91D2F9DF2002FBD1D /* Walkway Bold.ttf */; };
+		AEF692D21D2FDD89002FBD1D /* VCListItemGroupName.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF692D11D2FDD89002FBD1D /* VCListItemGroupName.swift */; };
 		AEFA53181D1C2B6E00F71803 /* PIVDUtilContact.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEFA53171D1C2B6E00F71803 /* PIVDUtilContact.swift */; };
 /* End PBXBuildFile section */
 
@@ -170,6 +171,7 @@
 		AEF692C91D2F9DF2002FBD1D /* Walkway Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Walkway Bold.ttf"; sourceTree = "<group>"; };
 		AEF692CA1D2F9DF2002FBD1D /* Walkway SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Walkway SemiBold.ttf"; sourceTree = "<group>"; };
 		AEF692CB1D2F9DF2002FBD1D /* Walkway UltraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Walkway UltraBold.ttf"; sourceTree = "<group>"; };
+		AEF692D11D2FDD89002FBD1D /* VCListItemGroupName.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VCListItemGroupName.swift; sourceTree = "<group>"; };
 		AEFA53171D1C2B6E00F71803 /* PIVDUtilContact.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PIVDUtilContact.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -233,6 +235,7 @@
 				AE8F08B61CF33C8A004048A0 /* VCNewRequest.swift */,
 				AE4D503B1D23E9F4005C6AE7 /* VCProfile.swift */,
 				AE9789421D26A1F5002EDAD4 /* VCGroups.swift */,
+				AEF692D11D2FDD89002FBD1D /* VCListItemGroupName.swift */,
 				AE9789401D26A164002EDAD4 /* VCSettings.swift */,
 				AE96BB111D129572007DE2A2 /* PIVDUtilREST.swift */,
 				AEFA53171D1C2B6E00F71803 /* PIVDUtilContact.swift */,
@@ -587,6 +590,7 @@
 				AE4D503C1D23E9F4005C6AE7 /* VCProfile.swift in Sources */,
 				AE717FB71CF587DF009DB28B /* MenuHelper.swift in Sources */,
 				AE96BB121D129572007DE2A2 /* PIVDUtilREST.swift in Sources */,
+				AEF692D21D2FDD89002FBD1D /* VCListItemGroupName.swift in Sources */,
 				AE2B48031D1D420B00EAD4B7 /* PIVDContact.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
