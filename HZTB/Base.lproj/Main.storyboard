@@ -12,6 +12,11 @@
         <mutableArray key="Walkway Black.ttf">
             <string>WalkwayBlack</string>
         </mutableArray>
+        <mutableArray key="Walkway SemiBold.ttf">
+            <string>WalkwaySemiBold</string>
+            <string>WalkwaySemiBold</string>
+            <string>WalkwaySemiBold</string>
+        </mutableArray>
     </customFonts>
     <scenes>
         <!--Home-->
@@ -1655,7 +1660,7 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="V5i-VG-cG3"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                        <fontDescription key="fontDescription" name="WalkwaySemiBold" family="Walkway SemiBold" pointSize="30"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                         <variation key="default">
@@ -1747,7 +1752,7 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="TTt-Vn-VFk"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                        <fontDescription key="fontDescription" name="WalkwaySemiBold" family="Walkway SemiBold" pointSize="30"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                         <variation key="default">
@@ -1838,7 +1843,7 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="Bhi-sn-KMv"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                        <fontDescription key="fontDescription" name="WalkwaySemiBold" family="Walkway SemiBold" pointSize="30"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                         <variation key="default">

@@ -45,6 +45,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 print("== \(names)")
             }
         }*/
+        
+        // Code for custom font dynamically
+        /*
+         let label: UILabel = UILabel(frame: CGRectMake(0, 0, self.view.frame.size.width, 120))
+         label.textAlignment = NSTextAlignment.Center
+         label.text = "Using Custom Fonts"
+         label.font = UIFont(name: "QuicksandDash-Regular", size: 35)
+         label.backgroundColor = UIColor.whiteColor()
+         self.view.addSubview(label)
+         */
+        
+        
         //MARK: init Realm
         do {
             
