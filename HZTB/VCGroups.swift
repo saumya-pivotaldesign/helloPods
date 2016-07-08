@@ -21,7 +21,7 @@ class VCGroups: UIViewController, UITableViewDelegate, UITableViewDataSource {
         super.viewDidLoad()
         print("VCGroups : viewDidLoad : ")
         
-        print("Realm:",AppDelegate.getAppDelegate().realm)
+        //print("Realm:",AppDelegate.getAppDelegate().realm)
         
         // self.tableViewContacts.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell")
         
@@ -37,7 +37,7 @@ class VCGroups: UIViewController, UITableViewDelegate, UITableViewDataSource {
         //print(AppDelegate.getAppDelegate().contactsFromServer["userProfileResponses"].array)
         //print("XXXXX")
         
-        
+        PIVDUtilContact.getGroupsFromServer(self)
         
         
     }
@@ -45,6 +45,19 @@ class VCGroups: UIViewController, UITableViewDelegate, UITableViewDataSource {
         super.didReceiveMemoryWarning()
         print("VCGroups : didReceiveMemoryWarning : ")
     }
+    
+    internal func onGotGroupsFromServer(result:JSON){
+        print("VCGroups : onGotGroupsFromServer :   ===")
+        let aGroups = result.array
+        //let n = jsonOBJ.array?.count
+        for group in aGroups! {
+            print("VCGroups : Group   ================= ")
+            print(group["groupName"].string)
+            print(group)
+            print("VCGroups : Group / ================= ")
+        }
+        print("VCGroups : onGotGroupsFromServer : / ===")
+    }// /onGotGroupsFromServer
 }
 
 //MARK: TableView delegates

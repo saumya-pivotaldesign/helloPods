@@ -176,6 +176,57 @@ class PIVDUtilContact {
         }
     }
     
+    static func getGroupsFromServer(caller:UIViewController){
+        print("PIVDUtilContact : getGroupsFromServer :   ===== ")
+        
+        let url = "http://hztb-dev.us-east-1.elasticbeanstalk.com/group/listGroups"
+        
+        let headers = [
+            "Content-Type":"application/json",
+            "Accept":"application/json",
+            "Accept-Language":"en-US",
+            "Cache-Control":"no-store",
+            "REQUEST_ID":"1"
+        ]
+        
+        //let sID = AppDelegate.getAppDelegate().sRegisteredUserId
+        let sID = "1" // dummy: as the actual does not have groups yet
+        let parameters = [ "userId" : sID ]
+        
+        print("parameters:",parameters)
+        
+        Alamofire.request(.POST, url,headers:headers, parameters:parameters , encoding: .JSON)
+            .responseJSON { (response) in
+                
+                print("PIVDUtilContact : getGroupsFromServer : result  ===========================================")
+                let jsonOBJ = JSON((response.result.value)!)
+                
+                //print(jsonOBJ)
+                
+                /*
+                let aGroups = jsonOBJ.array
+                
+                //let n = jsonOBJ.array?.count
+                for group in aGroups! {
+                    print("Group   ================= ")
+                    print(group["groupName"].string)
+                    print(group)
+                    print("Group / ================= ")
+                }
+                */
+                
+                if(caller is VCGroups){
+                    (caller as! VCGroups).onGotGroupsFromServer(jsonOBJ)
+                }
+                print("PIVDUtilContact : getGroupsFromServer : result / ===========================================")
+                
+        }
+        
+        print("PIVDUtilContact : getGroupsFromServer : / ===== ")
+    }
+    
+    
+    
     
     
     

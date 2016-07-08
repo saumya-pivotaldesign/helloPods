@@ -196,6 +196,7 @@
 		AE4D355C1D2BE273006DCEC8 /* models */ = {
 			isa = PBXGroup;
 			children = (
+				AE2B48021D1D420B00EAD4B7 /* PIVDContact.swift */,
 				AE4D355D1D2BE2E9006DCEC8 /* PIVDModel.swift */,
 			);
 			name = models;
@@ -237,7 +238,6 @@
 				AEFA53171D1C2B6E00F71803 /* PIVDUtilContact.swift */,
 				AE4D355A1D2BC493006DCEC8 /* PIVDUtilLocalStorage.swift */,
 				AE2B48001D1D1A6400EAD4B7 /* PIVDStaticNames.swift */,
-				AE2B48021D1D420B00EAD4B7 /* PIVDContact.swift */,
 				AE4D355C1D2BE273006DCEC8 /* models */,
 				AE531D681CEAED7C00F6F2A5 /* Assets.xcassets */,
 				AE531D651CEAED7C00F6F2A5 /* Main.storyboard */,
