@@ -80,6 +80,10 @@
 		AE96BB121D129572007DE2A2 /* PIVDUtilREST.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE96BB111D129572007DE2A2 /* PIVDUtilREST.swift */; };
 		AE9789411D26A165002EDAD4 /* VCSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE9789401D26A164002EDAD4 /* VCSettings.swift */; };
 		AE9789431D26A1F5002EDAD4 /* VCGroups.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE9789421D26A1F5002EDAD4 /* VCGroups.swift */; };
+		AEF692CC1D2F9DF2002FBD1D /* Walkway Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AEF692C81D2F9DF2002FBD1D /* Walkway Black.ttf */; };
+		AEF692CE1D2F9DF2002FBD1D /* Walkway SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AEF692CA1D2F9DF2002FBD1D /* Walkway SemiBold.ttf */; };
+		AEF692CF1D2F9DF2002FBD1D /* Walkway UltraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AEF692CB1D2F9DF2002FBD1D /* Walkway UltraBold.ttf */; };
+		AEF692D01D2F9E28002FBD1D /* Walkway Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AEF692C91D2F9DF2002FBD1D /* Walkway Bold.ttf */; };
 		AEFA53181D1C2B6E00F71803 /* PIVDUtilContact.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEFA53171D1C2B6E00F71803 /* PIVDUtilContact.swift */; };
 /* End PBXBuildFile section */
 
@@ -162,6 +166,10 @@
 		AE9789401D26A164002EDAD4 /* VCSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VCSettings.swift; sourceTree = "<group>"; };
 		AE9789421D26A1F5002EDAD4 /* VCGroups.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VCGroups.swift; sourceTree = "<group>"; };
 		AEC613221CFEC4E700DFD465 /* HZTB.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = HZTB.entitlements; sourceTree = "<group>"; };
+		AEF692C81D2F9DF2002FBD1D /* Walkway Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Walkway Black.ttf"; sourceTree = "<group>"; };
+		AEF692C91D2F9DF2002FBD1D /* Walkway Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Walkway Bold.ttf"; sourceTree = "<group>"; };
+		AEF692CA1D2F9DF2002FBD1D /* Walkway SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Walkway SemiBold.ttf"; sourceTree = "<group>"; };
+		AEF692CB1D2F9DF2002FBD1D /* Walkway UltraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Walkway UltraBold.ttf"; sourceTree = "<group>"; };
 		AEFA53171D1C2B6E00F71803 /* PIVDUtilContact.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PIVDUtilContact.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -214,6 +222,7 @@
 		AE531D601CEAED7C00F6F2A5 /* HZTB */ = {
 			isa = PBXGroup;
 			children = (
+				AEF692C31D2F9D7B002FBD1D /* fonts */,
 				AE8C05A11D24FC1A00CA4005 /* images */,
 				AEC613221CFEC4E700DFD465 /* HZTB.entitlements */,
 				AE531D611CEAED7C00F6F2A5 /* AppDelegate.swift */,
@@ -357,6 +366,17 @@
 			name = splashscreen;
 			sourceTree = "<group>";
 		};
+		AEF692C31D2F9D7B002FBD1D /* fonts */ = {
+			isa = PBXGroup;
+			children = (
+				AEF692C81D2F9DF2002FBD1D /* Walkway Black.ttf */,
+				AEF692C91D2F9DF2002FBD1D /* Walkway Bold.ttf */,
+				AEF692CA1D2F9DF2002FBD1D /* Walkway SemiBold.ttf */,
+				AEF692CB1D2F9DF2002FBD1D /* Walkway UltraBold.ttf */,
+			);
+			name = fonts;
+			sourceTree = "<group>";
+		};
 		E7B74A2DFF1802F02C987AD6 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -435,6 +455,7 @@
 			files = (
 				AE8C05B91D24FDAC00CA4005 /* Bg@2x~iphone.png in Resources */,
 				AE60028F1D2D078F004E752A /* sent-Landscape~ipad.png in Resources */,
+				AEF692CF1D2F9DF2002FBD1D /* Walkway UltraBold.ttf in Resources */,
 				AE6002931D2D078F004E752A /* sent~iphone.png in Resources */,
 				AE8C05B61D24FDAC00CA4005 /* Bg-Landscape~ipad.png in Resources */,
 				AE60029B1D2D078F004E752A /* store-Portrait~ipad.png in Resources */,
@@ -462,11 +483,14 @@
 				AE6002961D2D078F004E752A /* store-736h.png in Resources */,
 				AE8C05C91D2503C800CA4005 /* Default-Landscape-736h.png in Resources */,
 				AE6002991D2D078F004E752A /* store-Landscape~ipad.png in Resources */,
+				AEF692CC1D2F9DF2002FBD1D /* Walkway Black.ttf in Resources */,
 				AE6002941D2D078F004E752A /* store-568h@2x~iphone.png in Resources */,
 				AE6002881D2D078F004E752A /* requests@2x~iphone.png in Resources */,
 				AE8C05B11D24FDAC00CA4005 /* Bg-568h@2x~iphone.png in Resources */,
 				AE6002901D2D078F004E752A /* sent-Portrait@2x~ipad.png in Resources */,
+				AEF692D01D2F9E28002FBD1D /* Walkway Bold.ttf in Resources */,
 				AE8C05B71D24FDAC00CA4005 /* Bg-Portrait@2x~ipad.png in Resources */,
+				AEF692CE1D2F9DF2002FBD1D /* Walkway SemiBold.ttf in Resources */,
 				AE6002841D2D078F004E752A /* requests-Landscape@2x~ipad.png in Resources */,
 				AE60029C1D2D078F004E752A /* store@2x~iphone.png in Resources */,
 				AE60028E1D2D078F004E752A /* sent-Landscape@2x~ipad.png in Resources */,

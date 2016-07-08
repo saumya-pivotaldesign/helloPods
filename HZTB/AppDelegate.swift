@@ -35,6 +35,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         print("AppDelegate : application:didFinishLaunchingWithOptions:   ======== ")
         
+        //MARK: log Font Family Names
+        /*
+        for family: String in UIFont.familyNames()
+        {
+            print("\(family)")
+            for names: String in UIFont.fontNamesForFamilyName(family)
+            {
+                print("== \(names)")
+            }
+        }*/
+        //MARK: init Realm
         do {
             
             //ref : http://stackoverflow.com/questions/34598268/realm-migration-doesnt-work

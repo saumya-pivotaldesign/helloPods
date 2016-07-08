@@ -46,6 +46,13 @@
 	<array>
 		<string>armv7</string>
 	</array>
+	<key>UIAppFonts</key>
+	<array>
+		<string>Walkway Black.ttf</string>
+		<string>Walkway Bold.ttf</string>
+		<string>Walkway SemiBold.ttf</string>
+		<string>Walkway UltraBold.ttf</string>
+	</array>
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
