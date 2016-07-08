@@ -2459,41 +2459,75 @@
                                         <exclude reference="Vz4-OH-xN7"/>
                                     </mask>
                                 </variation>
-                                <variation key="heightClass=regular-widthClass=compact">
-                                    <mask key="constraints">
-                                        <include reference="Vz4-OH-xN7"/>
-                                    </mask>
-                                </variation>
                                 <connections>
                                     <outlet property="dataSource" destination="GRN-x7-Le4" id="KNG-bw-42O"/>
                                     <outlet property="delegate" destination="GRN-x7-Le4" id="tdF-7K-mek"/>
                                 </connections>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tzn-my-0du">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="dRt-Ab-3LY"/>
+                                </constraints>
+                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Create Group"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="dRt-Ab-3LY"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="dRt-Ab-3LY"/>
+                                    </mask>
+                                </variation>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="Tzn-my-0du" firstAttribute="top" secondItem="68G-AM-CYT" secondAttribute="bottom" constant="8" id="6j1-fB-qtb"/>
+                            <constraint firstItem="mQU-gV-uhV" firstAttribute="top" secondItem="Tzn-my-0du" secondAttribute="bottom" constant="20" id="DYT-nG-1oI"/>
+                            <constraint firstItem="MjH-qh-r3X" firstAttribute="top" secondItem="mQU-gV-uhV" secondAttribute="bottom" constant="8" id="OcR-kG-n7L"/>
+                            <constraint firstItem="Tzn-my-0du" firstAttribute="leading" secondItem="blg-0J-pWs" secondAttribute="leading" constant="20" id="QFx-8x-d0k"/>
+                            <constraint firstItem="mQU-gV-uhV" firstAttribute="top" secondItem="Tzn-my-0du" secondAttribute="bottom" constant="8" id="dBt-tw-9Jf"/>
                             <constraint firstItem="mQU-gV-uhV" firstAttribute="leading" secondItem="blg-0J-pWs" secondAttribute="leading" id="f7q-h9-EkA"/>
                             <constraint firstAttribute="trailing" secondItem="mQU-gV-uhV" secondAttribute="trailing" id="oHB-dk-L5o"/>
-                            <constraint firstItem="mQU-gV-uhV" firstAttribute="top" secondItem="68G-AM-CYT" secondAttribute="bottom" id="yza-2I-MrB"/>
+                            <constraint firstAttribute="trailing" secondItem="Tzn-my-0du" secondAttribute="trailing" constant="20" id="wCY-rH-4gt"/>
+                            <constraint firstItem="mQU-gV-uhV" firstAttribute="top" secondItem="68G-AM-CYT" secondAttribute="bottom" id="yza-2I-MrB">
+                                <variation key="heightClass=regular-widthClass=compact" constant="100"/>
+                            </constraint>
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="mQU-gV-uhV"/>
+                                <exclude reference="Tzn-my-0du"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="6j1-fB-qtb"/>
+                                <exclude reference="QFx-8x-d0k"/>
+                                <exclude reference="wCY-rH-4gt"/>
+                                <exclude reference="DYT-nG-1oI"/>
+                                <exclude reference="dBt-tw-9Jf"/>
                                 <exclude reference="f7q-h9-EkA"/>
                                 <exclude reference="oHB-dk-L5o"/>
                                 <exclude reference="yza-2I-MrB"/>
+                                <exclude reference="OcR-kG-n7L"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
                             <mask key="subviews">
                                 <include reference="mQU-gV-uhV"/>
+                                <include reference="Tzn-my-0du"/>
                             </mask>
                             <mask key="constraints">
+                                <include reference="6j1-fB-qtb"/>
+                                <include reference="QFx-8x-d0k"/>
+                                <include reference="wCY-rH-4gt"/>
+                                <include reference="dBt-tw-9Jf"/>
                                 <include reference="f7q-h9-EkA"/>
                                 <include reference="oHB-dk-L5o"/>
-                                <include reference="yza-2I-MrB"/>
+                                <include reference="OcR-kG-n7L"/>
                             </mask>
                         </variation>
                     </view>
