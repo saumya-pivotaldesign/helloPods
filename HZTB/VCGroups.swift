@@ -14,6 +14,10 @@ class VCGroups: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet var tableViewContacts:UITableView!
     
+    var jsonGroups:JSON?
+    var aGroups:[JSON]?
+    var nGroups:Int = 0
+    
     var items: [String] = ["Item 1","Item 2","Item 3", "Item 4", "Item 5"]
     //var serverContacts:[AnyObject]!
     
@@ -48,6 +52,12 @@ class VCGroups: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     internal func onGotGroupsFromServer(result:JSON){
         print("VCGroups : onGotGroupsFromServer :   ===")
+        
+        self.jsonGroups = result
+        self.aGroups = result.array
+        self.nGroups = self.aGroups!.count
+        
+        
         let aGroups = result.array
         //let n = jsonOBJ.array?.count
         for group in aGroups! {
@@ -57,6 +67,9 @@ class VCGroups: UIViewController, UITableViewDelegate, UITableViewDataSource {
             print("VCGroups : Group / ================= ")
         }
         print("VCGroups : onGotGroupsFromServer : / ===")
+        
+        self.tableViewContacts.reloadData()
+        
     }// /onGotGroupsFromServer
 }
 
@@ -65,37 +78,46 @@ extension VCGroups {
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         print("VCGroups : tableView:numberOfRowsInSection: ")
         //return self.items.count;
+        //return AppDelegate.getAppDelegate().contactsFromServer["userProfileResponses"].count
         
-        return AppDelegate.getAppDelegate().contactsFromServer["userProfileResponses"].count
+        print("VCGroups : tableView:numberOfRowsInSection: nGroups",nGroups)
+        
+        return nGroups
     }
     
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         print("VCGroups : tableView:cellForRowAtIndexPath: ")
+        
         //print(indexPath.row,self.items[indexPath.row])
-        
+
         //let cell:UITableViewCell = self.tableViewContacts.dequeueReusableCellWithIdentifier("cell") as? UITableViewCell
-        
-        let cell:UITableViewCell = self.tableViewContacts.dequeueReusableCellWithIdentifier("cell")! as UITableViewCell
         //cell.textLabel?.text = self.items[indexPath.row]
         
         //print("xxxxx")
         //print(AppDelegate.getAppDelegate().contactsFromServer["userProfileResponses"].array![indexPath.row]["name"])
         
+        /*
+        let cell:UITableViewCell = self.tableViewContacts.dequeueReusableCellWithIdentifier("cell")! as UITableViewCell
+        
         let sName = AppDelegate.getAppDelegate().contactsFromServer["userProfileResponses"].array![indexPath.row]["name"].string
         let sEmailAddress = AppDelegate.getAppDelegate().contactsFromServer["userProfileResponses"].array![indexPath.row]["emailAddress"].string
         let sMobileNumber = AppDelegate.getAppDelegate().contactsFromServer["userProfileResponses"].array![indexPath.row]["mobileNumber"].string
+         
+        cell.textLabel?.text = sName!+" "+sEmailAddress!+" "+sMobileNumber!
+        */
         
         //print(sMobileNumber)
         //print("xxxxx")
         
-        
         //cell.textLabel?.text = sEmailAddress
         //cell.textLabel?.text = sMobileNumber
         
-        cell.textLabel?.text = sName!+" "+sEmailAddress!+" "+sMobileNumber!
-        
         //cell.textLabel?.text = AppDelegate.getAppDelegate().contactsFromServer["userProfileResponses"].array![indexPath.row]["name"]
+        
+        let cell:UITableViewCell = self.tableViewContacts.dequeueReusableCellWithIdentifier("cell")! as UITableViewCell
+        let sGroupName = self.aGroups![indexPath.row]["groupName"].string
+        cell.textLabel?.text = sGroupName
         
         return cell
     }
