@@ -14,9 +14,9 @@ class VCGroupCreate: UIViewController, UITableViewDelegate, UITableViewDataSourc
     
     @IBOutlet var tableViewContacts:UITableView!
     
-    var jsonGroups:JSON?
-    var aGroups:[JSON]?
-    var nGroups:Int = 0
+    var jsonContacts:JSON?
+    var aContacts:[JSON]?
+    var nContacts:Int = 0
     
     var items: [String] = ["Item 1","Item 2","Item 3", "Item 4", "Item 5"]
     
@@ -25,6 +25,17 @@ class VCGroupCreate: UIViewController, UITableViewDelegate, UITableViewDataSourc
         super.viewDidLoad()
         //
         print("VCGroupCreate : viewDidLoad :")
+        
+        self.jsonContacts = AppDelegate.getAppDelegate().contactsFromServer["userProfileResponses"]
+        self.aContacts = AppDelegate.getAppDelegate().contactsFromServer["userProfileResponses"].array
+        self.nContacts = AppDelegate.getAppDelegate().contactsFromServer["userProfileResponses"].count
+        self.tableViewContacts.reloadData()
+        
+        print("VCGroupCreate : viewDidLoad : ===================================== ")
+        print("VCGroupCreate : viewDidLoad : self.nContacts",self.nContacts)
+        print("VCGroupCreate : viewDidLoad : self.jsonContacts",self.jsonContacts)
+        print("VCGroupCreate : viewDidLoad : self.aContacts",self.aContacts)
+        print("VCGroupCreate : viewDidLoad : ===================================== ")
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -35,24 +46,30 @@ class VCGroupCreate: UIViewController, UITableViewDelegate, UITableViewDataSourc
 //MARK: tableView protocol confirmation
 extension VCGroupCreate {
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        print("VCGroups : tableView:numberOfRowsInSection: ")
-        return self.items.count;
+        print("VCGroupCreate : tableView:numberOfRowsInSection: ")
+        print("nContacts : ",self.nContacts)
+        
+        //return self.items.count
         
         //return AppDelegate.getAppDelegate().contactsFromServer["userProfileResponses"].count
         
         //print("VCGroups : tableView:numberOfRowsInSection: nGroups",nGroups)
         
-        //return nGroups
+        return nContacts
     }
     
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        print("VCGroups : tableView:cellForRowAtIndexPath: ")
+        print("VCGroupCreate : tableView:cellForRowAtIndexPath: ")
         
         //print(indexPath.row,self.items[indexPath.row])
         
         let cell:UITableViewCell = self.tableViewContacts.dequeueReusableCellWithIdentifier("cell")! as UITableViewCell
-        cell.textLabel?.text = self.items[indexPath.row]
+        //cell.textLabel?.text = self.items[indexPath.row]
+        
+        print("VCGroupCreate : tableView:cellForRowAtIndexPath: self.aContacts![indexPath.row].string=",self.aContacts![indexPath.row]["name"].string)
+        
+        cell.textLabel?.text = self.aContacts![indexPath.row]["name"].string
         
         //print("xxxxx")
         //print(AppDelegate.getAppDelegate().contactsFromServer["userProfileResponses"].array![indexPath.row]["name"])
@@ -92,7 +109,7 @@ extension VCGroupCreate {
     
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        print("VCGroups : tableView:didSelectRowAtIndexPath: ")
+        print("VCGroupCreate : tableView:didSelectRowAtIndexPath: ")
         
         print("You have selected cell #\(indexPath.row)!")
         
