@@ -41,9 +41,14 @@ class VCGroups: UIViewController, UITableViewDelegate, UITableViewDataSource {
         //print(AppDelegate.getAppDelegate().contactsFromServer["userProfileResponses"].array)
         //print("XXXXX")
         
+        //PIVDUtilContact.getGroupsFromServer(self)
+        
+        
+    }
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        print("VCGroups : viewWillAppear : ")
         PIVDUtilContact.getGroupsFromServer(self)
-        
-        
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

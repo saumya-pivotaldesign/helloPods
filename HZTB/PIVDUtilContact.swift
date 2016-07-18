@@ -190,7 +190,9 @@ class PIVDUtilContact {
         ]
         
         //let sID = AppDelegate.getAppDelegate().sRegisteredUserId
-        let sID = "1" // dummy: as the actual does not have groups yet
+        //let sID = "1" // dummy: as the actual does not have groups yet
+        
+        let sID = AppDelegate.getAppDelegate().sRegisteredUserId
         let parameters = [ "userId" : sID ]
         
         print("parameters:",parameters)

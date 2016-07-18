@@ -2767,6 +2767,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="groupNameTextField" destination="WzZ-X2-elO" id="eno-o5-I3o"/>
                         <outlet property="tableViewContacts" destination="1rR-LM-URe" id="GZa-f1-gdu"/>
                     </connections>
                 </viewController>

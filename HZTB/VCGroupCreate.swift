@@ -9,10 +9,12 @@
 import Foundation
 import UIKit
 import SwiftyJSON
+import Alamofire
 
 class VCGroupCreate: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet var tableViewContacts:UITableView!
+    @IBOutlet var groupNameTextField:UITextField!
     
     var jsonContacts:JSON?
     var aContacts:[JSON]?
@@ -160,5 +162,48 @@ extension VCGroupCreate {
         print("VCGroupCreate:callServerForCreateGroup:")
         print(self.selectedIds)
         print(AppDelegate.getAppDelegate().sRegisteredUserId)
+        print(self.groupNameTextField.text)
+        
+        // ================= START : createGroup ==========================
+        let url = "http://hztb-dev.us-east-1.elasticbeanstalk.com/group/createGroup"
+        
+        let headers = [
+            "Content-Type":"application/json",
+            "Accept":"application/json",
+            "Accept-Language":"en-US",
+            "REQUEST_ID":"1",
+            "Cache-Control":"no-store"
+        ]
+        let parameters = [
+            "groupName" : self.groupNameTextField.text! as String,
+            "userId" : AppDelegate.getAppDelegate().sRegisteredUserId,
+            "addMembers":self.selectedIds
+        ]
+        Alamofire.request(.POST, url,headers:headers, parameters:parameters as? [String : AnyObject] , encoding: .JSON)
+            .responseJSON { (response) in
+                
+                print("post : request=",response.request)
+                print("post : response=",response.response)
+                print("post : data=",response.data)
+                print("post : result=",response.result)
+                // SwiftyJSON
+                //let json = JSON(data: dataFromNetworking)
+                let jsonOBJ = JSON((response.result.value)!)
+                
+                print("===========================================")
+                print("jsonOBJ=",jsonOBJ)
+                print("jsonOBJ.status=",jsonOBJ["status"])
+                //print("jsonOBJ[0]=",jsonOBJ[0])
+                //print("jsonOBJ[1]=",jsonOBJ[1])
+                //print("jsonOBJ['json']=",jsonOBJ["json"])
+                //print("jsonOBJ[\"json\"][\"foo\"]=",jsonOBJ["json"]["foo"])
+                print("===========================================")
+        }
+        // ================= END : createGroup ==========================
+ 
+        
     }
+    
+    
+    
 }
