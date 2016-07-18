@@ -19,6 +19,7 @@ class VCGroupCreate: UIViewController, UITableViewDelegate, UITableViewDataSourc
     var nContacts:Int = 0
     
     var items: [String] = ["Item 1","Item 2","Item 3", "Item 4", "Item 5"]
+    var selectedIds:[String] = []
     
     
     override func viewDidLoad() {
@@ -105,8 +106,7 @@ extension VCGroupCreate {
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         print("VCGroupCreate : tableView:didSelectRowAtIndexPath: ")
-        
-        print("You have selected cell #\(indexPath.row)!")
+        //print("You have selected cell #\(indexPath.row)!")
         
         
         //let selectedCell:UITableViewCell = tableView.cellForRowAtIndexPath(indexPath)!
@@ -115,16 +115,27 @@ extension VCGroupCreate {
         
         let selectedCell:VCListItemContactName = tableView.cellForRowAtIndexPath(indexPath)! as! VCListItemContactName
         
+        //print("data:",selectedCell.getDataObj())
+        let userId:String = selectedCell.getDataObj()["userId"].string!
+        //print("userId:",userId)
+        //print("myId:",AppDelegate.getAppDelegate().sRegisteredUserId)
+        
         //select/de-select
         if (selectedCell.accessoryType == UITableViewCellAccessoryType.Checkmark) {
             selectedCell.accessoryType = UITableViewCellAccessoryType.None
+            //print("xxxxxxxxxx Remove xxxxxxxxxx",userId)
+            let i = self.selectedIds.indexOf(userId)
+            //print("index",i)
+            self.selectedIds.removeAtIndex(i!)
         }else{
             selectedCell.accessoryType = UITableViewCellAccessoryType.Checkmark
+            self.selectedIds.append(userId)
         }
         
-        //print("data:",selectedCell.getDataObj())
-        let userId:String = selectedCell.getDataObj()["userId"].string!
-        print("userId:",userId)
+        print(self.selectedIds)
+        
+        
+        
         
         //var serverContacts = AppDelegate.getAppDelegate().contactsFromServer["userProfileResponses"]
         /*
