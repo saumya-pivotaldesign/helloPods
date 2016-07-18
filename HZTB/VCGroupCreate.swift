@@ -63,13 +63,10 @@ extension VCGroupCreate {
         print("VCGroupCreate : tableView:cellForRowAtIndexPath: ")
         
         //print(indexPath.row,self.items[indexPath.row])
-        
+        /*
         let cell:UITableViewCell = self.tableViewContacts.dequeueReusableCellWithIdentifier("cell")! as UITableViewCell
-        //cell.textLabel?.text = self.items[indexPath.row]
-        
-        print("VCGroupCreate : tableView:cellForRowAtIndexPath: self.aContacts![indexPath.row].string=",self.aContacts![indexPath.row]["name"].string)
-        
         cell.textLabel?.text = self.aContacts![indexPath.row]["name"].string
+        */
         
         //print("xxxxx")
         //print(AppDelegate.getAppDelegate().contactsFromServer["userProfileResponses"].array![indexPath.row]["name"])
@@ -98,12 +95,10 @@ extension VCGroupCreate {
          cell.textLabel?.text = sGroupName
          */
         
-        /*
-        let cell:VCListItemGroupName = self.tableViewContacts.dequeueReusableCellWithIdentifier("cell")! as! VCListItemGroupName
-        //let sGroupName = self.aGroups![indexPath.row]["groupName"].string
-        //cell.labelGroupName?.text = sGroupName
-        cell.setDataObj(self.aGroups![indexPath.row])
-        */
+        
+        let cell:VCListItemContactName = self.tableViewContacts.dequeueReusableCellWithIdentifier("cell")! as! VCListItemContactName
+        cell.setDataObj(self.aContacts![indexPath.row])
+        
         return cell
     }
     
@@ -114,8 +109,22 @@ extension VCGroupCreate {
         print("You have selected cell #\(indexPath.row)!")
         
         
-        let selectedCell:UITableViewCell = tableView.cellForRowAtIndexPath(indexPath)!
-        selectedCell.contentView.backgroundColor = UIColor.redColor()
+        //let selectedCell:UITableViewCell = tableView.cellForRowAtIndexPath(indexPath)!
+        //selectedCell.contentView.backgroundColor = UIColor.redColor()
+        //selectedCell.accessoryType = UITableViewCellAccessoryType.Checkmark
+        
+        let selectedCell:VCListItemContactName = tableView.cellForRowAtIndexPath(indexPath)! as! VCListItemContactName
+        
+        //select/de-select
+        if (selectedCell.accessoryType == UITableViewCellAccessoryType.Checkmark) {
+            selectedCell.accessoryType = UITableViewCellAccessoryType.None
+        }else{
+            selectedCell.accessoryType = UITableViewCellAccessoryType.Checkmark
+        }
+        
+        //print("data:",selectedCell.getDataObj())
+        let userId:String = selectedCell.getDataObj()["userId"].string!
+        print("userId:",userId)
         
         //var serverContacts = AppDelegate.getAppDelegate().contactsFromServer["userProfileResponses"]
         /*

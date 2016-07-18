@@ -2613,16 +2613,85 @@
                     <view key="view" contentMode="scaleToFill" id="DRQ-3u-Y1h">
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="1rR-LM-URe">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="60" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="1rR-LM-URe">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="lhe-3M-Loi">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="60" id="lhe-3M-Loi" customClass="VCListItemContactName" customModule="HZTB" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="lhe-3M-Loi" id="xdy-Ar-DDd">
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LXE-oH-vrs">
+                                                    <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                    <variation key="heightClass=regular-widthClass=compact" ambiguous="YES" misplaced="YES">
+                                                        <rect key="frame" x="8" y="8" width="326" height="14"/>
+                                                    </variation>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Number" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3ay-dw-Xt8">
+                                                    <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                    <variation key="heightClass=regular-widthClass=compact" ambiguous="YES" misplaced="YES">
+                                                        <rect key="frame" x="8" y="30" width="326" height="21"/>
+                                                    </variation>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="3ay-dw-Xt8" firstAttribute="top" secondItem="LXE-oH-vrs" secondAttribute="bottom" constant="8" id="BOC-Hm-WWw">
+                                                    <variation key="heightClass=regular-widthClass=compact" constant="8"/>
+                                                </constraint>
+                                                <constraint firstAttribute="trailing" secondItem="LXE-oH-vrs" secondAttribute="trailing" constant="50" id="Jz8-YL-y4b"/>
+                                                <constraint firstItem="3ay-dw-Xt8" firstAttribute="leading" secondItem="xdy-Ar-DDd" secondAttribute="leading" constant="8" id="Ur5-vF-vqe"/>
+                                                <constraint firstItem="LXE-oH-vrs" firstAttribute="top" secondItem="xdy-Ar-DDd" secondAttribute="top" constant="8" id="YWN-do-GBw"/>
+                                                <constraint firstAttribute="trailing" secondItem="3ay-dw-Xt8" secondAttribute="trailing" constant="50" id="im1-3N-fgE"/>
+                                                <constraint firstAttribute="bottom" secondItem="3ay-dw-Xt8" secondAttribute="bottom" constant="8" id="l3e-1J-7tA"/>
+                                                <constraint firstAttribute="bottom" secondItem="LXE-oH-vrs" secondAttribute="bottom" constant="14" id="u9v-8h-NEL">
+                                                    <variation key="heightClass=regular-widthClass=compact" constant="60"/>
+                                                </constraint>
+                                                <constraint firstItem="LXE-oH-vrs" firstAttribute="leading" secondItem="xdy-Ar-DDd" secondAttribute="leading" constant="8" id="uAG-GU-vHo"/>
+                                            </constraints>
+                                            <variation key="default">
+                                                <mask key="subviews">
+                                                    <exclude reference="LXE-oH-vrs"/>
+                                                    <exclude reference="3ay-dw-Xt8"/>
+                                                </mask>
+                                                <mask key="constraints">
+                                                    <exclude reference="Jz8-YL-y4b"/>
+                                                    <exclude reference="YWN-do-GBw"/>
+                                                    <exclude reference="u9v-8h-NEL"/>
+                                                    <exclude reference="uAG-GU-vHo"/>
+                                                    <exclude reference="BOC-Hm-WWw"/>
+                                                    <exclude reference="Ur5-vF-vqe"/>
+                                                    <exclude reference="im1-3N-fgE"/>
+                                                    <exclude reference="l3e-1J-7tA"/>
+                                                </mask>
+                                            </variation>
+                                            <variation key="heightClass=regular-widthClass=compact">
+                                                <mask key="subviews">
+                                                    <include reference="LXE-oH-vrs"/>
+                                                    <include reference="3ay-dw-Xt8"/>
+                                                </mask>
+                                                <mask key="constraints">
+                                                    <include reference="Jz8-YL-y4b"/>
+                                                    <include reference="YWN-do-GBw"/>
+                                                    <include reference="uAG-GU-vHo"/>
+                                                    <include reference="BOC-Hm-WWw"/>
+                                                    <include reference="Ur5-vF-vqe"/>
+                                                    <include reference="im1-3N-fgE"/>
+                                                    <include reference="l3e-1J-7tA"/>
+                                                </mask>
+                                            </variation>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="labelContactName" destination="LXE-oH-vrs" id="8gN-Im-Nhv"/>
+                                            <outlet property="labelContactNumber" destination="3ay-dw-Xt8" id="BAl-qO-3y6"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
