@@ -21,6 +21,9 @@
         <mutableArray key="Walkway UltraBold.ttf">
             <string>WalkwayUltraBold</string>
             <string>WalkwayUltraBold</string>
+            <string>WalkwayUltraBold</string>
+            <string>WalkwayUltraBold</string>
+            <string>WalkwayUltraBold</string>
         </mutableArray>
     </customFonts>
     <scenes>
@@ -2625,7 +2628,7 @@
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LXE-oH-vrs">
                                                     <rect key="frame" x="-42" y="-21" width="42" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <fontDescription key="fontDescription" name="WalkwayUltraBold" family="Walkway UltraBold" pointSize="20"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                     <variation key="heightClass=regular-widthClass=compact" ambiguous="YES" misplaced="YES">
@@ -2634,7 +2637,7 @@
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Number" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3ay-dw-Xt8">
                                                     <rect key="frame" x="-42" y="-21" width="42" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <fontDescription key="fontDescription" name="WalkwayUltraBold" family="Walkway UltraBold" pointSize="16"/>
                                                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                     <variation key="heightClass=regular-widthClass=compact" ambiguous="YES" misplaced="YES">
@@ -2699,20 +2702,36 @@
                                     <outlet property="delegate" destination="drM-FQ-wVp" id="jjr-go-fph"/>
                                 </connections>
                             </tableView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Group Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WzZ-X2-elO">
+                                <rect key="frame" x="-25" y="-30" width="97" height="30"/>
+                                <fontDescription key="fontDescription" name="WalkwayUltraBold" family="Walkway UltraBold" pointSize="30"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="1rR-LM-URe" firstAttribute="top" secondItem="gbV-PV-zPD" secondAttribute="bottom" constant="8" id="MIj-ZL-6Tn"/>
+                            <constraint firstItem="1rR-LM-URe" firstAttribute="top" secondItem="gbV-PV-zPD" secondAttribute="bottom" constant="8" id="MIj-ZL-6Tn">
+                                <variation key="heightClass=regular-widthClass=compact" constant="60"/>
+                            </constraint>
                             <constraint firstItem="Qhb-Xw-33F" firstAttribute="top" secondItem="1rR-LM-URe" secondAttribute="bottom" constant="8" id="NTy-4r-FXa"/>
+                            <constraint firstItem="1rR-LM-URe" firstAttribute="top" secondItem="WzZ-X2-elO" secondAttribute="bottom" constant="8" id="W98-ga-RtK"/>
                             <constraint firstItem="1rR-LM-URe" firstAttribute="leading" secondItem="DRQ-3u-Y1h" secondAttribute="leading" constant="8" id="brp-pT-LOp"/>
                             <constraint firstAttribute="trailing" secondItem="1rR-LM-URe" secondAttribute="trailing" constant="8" id="cLH-bf-R6w"/>
+                            <constraint firstAttribute="trailing" secondItem="WzZ-X2-elO" secondAttribute="trailing" constant="20" id="hVl-kW-EAl"/>
+                            <constraint firstItem="WzZ-X2-elO" firstAttribute="top" secondItem="gbV-PV-zPD" secondAttribute="bottom" constant="8" id="l8H-Ag-c7N"/>
+                            <constraint firstItem="WzZ-X2-elO" firstAttribute="leading" secondItem="DRQ-3u-Y1h" secondAttribute="leading" constant="20" id="o0P-kh-c7D"/>
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="1rR-LM-URe"/>
+                                <exclude reference="WzZ-X2-elO"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="hVl-kW-EAl"/>
+                                <exclude reference="l8H-Ag-c7N"/>
+                                <exclude reference="o0P-kh-c7D"/>
                                 <exclude reference="MIj-ZL-6Tn"/>
+                                <exclude reference="W98-ga-RtK"/>
                                 <exclude reference="brp-pT-LOp"/>
                                 <exclude reference="cLH-bf-R6w"/>
                                 <exclude reference="NTy-4r-FXa"/>
@@ -2721,9 +2740,14 @@
                         <variation key="heightClass=regular-widthClass=compact">
                             <mask key="subviews">
                                 <include reference="1rR-LM-URe"/>
+                                <include reference="WzZ-X2-elO"/>
                             </mask>
                             <mask key="constraints">
+                                <include reference="hVl-kW-EAl"/>
+                                <include reference="l8H-Ag-c7N"/>
+                                <include reference="o0P-kh-c7D"/>
                                 <include reference="MIj-ZL-6Tn"/>
+                                <include reference="W98-ga-RtK"/>
                                 <include reference="brp-pT-LOp"/>
                                 <include reference="cLH-bf-R6w"/>
                                 <include reference="NTy-4r-FXa"/>
@@ -2736,6 +2760,9 @@
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Done"/>
+                                <connections>
+                                    <action selector="onDone:" destination="drM-FQ-wVp" eventType="touchUpInside" id="hKG-pr-cvt"/>
+                                </connections>
                             </button>
                         </barButtonItem>
                     </navigationItem>

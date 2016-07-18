@@ -42,6 +42,10 @@ class VCGroupCreate: UIViewController, UITableViewDelegate, UITableViewDataSourc
         super.didReceiveMemoryWarning()
         //
     }
+    
+    @IBAction func onDone(sender:AnyObject){
+        callServerForCreateGroup()
+    }
 }
 
 //MARK: tableView protocol confirmation
@@ -147,5 +151,14 @@ extension VCGroupCreate {
          
          tableView.reloadRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.None)
          */
+    }
+}
+
+//MARK: server call
+extension VCGroupCreate {
+    private func callServerForCreateGroup(){
+        print("VCGroupCreate:callServerForCreateGroup:")
+        print(self.selectedIds)
+        print(AppDelegate.getAppDelegate().sRegisteredUserId)
     }
 }
