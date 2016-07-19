@@ -16,6 +16,8 @@ class VCRegistrationConfirmation: UIViewController {
     @IBOutlet var bg:UIImageView?
     @IBOutlet var otpField:UITextField!
     
+    @IBOutlet var lblPhoneNumber:UILabel?
+    
     public var registeredUserInfo:JSON?
     
     override func viewDidLoad() {
@@ -40,6 +42,9 @@ class VCRegistrationConfirmation: UIViewController {
             bg!.image = UIImage(data: data)
         }
         */
+        
+        
+        self.lblPhoneNumber?.text = AppDelegate.getAppDelegate().sRegisteredCountryCode + " " + AppDelegate.getAppDelegate().sRegisteredMobileNum
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -55,6 +60,10 @@ extension VCRegistrationConfirmation {
         print(otpField.text)
         confirmOTPwithServer()
     }
+    @IBAction func onSendAgainOTP(sender:AnyObject){
+        print("VCRegistrationConfirmation : onSendAgainOTP : ")
+    }
+    
 }
 //MARK: Utility Methods
 extension VCRegistrationConfirmation {

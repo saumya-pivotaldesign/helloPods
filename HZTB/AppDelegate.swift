@@ -19,6 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     var contactStore:CNContactStore = CNContactStore()
     // Registered User
+    var sRegisteredCountryCode:String = ""
     var sRegisteredMobileNum:String = ""
     var sRegisteredUserId:String = ""
     var sRegisteredUserName:String = ""

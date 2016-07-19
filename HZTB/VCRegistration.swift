@@ -119,6 +119,9 @@ class VCRegistration: UIViewController, UIPickerViewDataSource,UIPickerViewDeleg
         //utilREST.test_POST()
         */
         
+        // save the country code
+        AppDelegate.getAppDelegate().sRegisteredCountryCode = self.sCountryCode
+        
         //MARK: REST call for registration
         let sPhoneNumber = self.sCountryCode + self.uPhone.text!
         print("VCRegistration : onRegistrationClick : sPhoneNumber",sPhoneNumber)
