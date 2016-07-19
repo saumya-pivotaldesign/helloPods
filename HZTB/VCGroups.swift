@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 import SwiftyJSON
+import Alamofire
 
 class VCGroups: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
@@ -172,6 +173,73 @@ extension VCGroups {
         let myViewController:VCListItemGroupName = notification.object as! VCListItemGroupName
         //myViewController.someMethod()
         print("selected :",myViewController.selectedID)
+        
+        //AppDelegate.getAppDelegate().showMessage((myViewController.labelGroupName?.text)!, "Delete Group?")
+        let groupName:String = myViewController.labelGroupName!.text!
+        let msg = "Group Name - "+groupName
+        
+        let alert = UIAlertController(title: "Delete Group", message: msg, preferredStyle: UIAlertControllerStyle.Alert)
+        alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Default, handler: { action in
+            print("Cancel")
+        }))
+        alert.addAction(UIAlertAction(title: "Ok", style: .Default, handler: { action in
+            print("Ok")
+            self.callServerToDeleteGroup(myViewController.selectedID)
+        }))
+        self.presentViewController(alert, animated: true, completion: nil)
+        
+        //callServerToDeleteGroup(myViewController.selectedID)
+    }
+    internal func callServerToDeleteGroup(groupId:String){
+        print("VCGroups : callServerToDeleteGroup : groupId:",groupId)
+        // ================= START : removeGroup ==========================
+        let url = "http://hztb-dev.us-east-1.elasticbeanstalk.com/group/removeGroup"
+        
+        let headers = [
+            "Content-Type":"application/json",
+            "Accept":"application/json",
+            "Accept-Language":"en-US",
+            "REQUEST_ID":"1",
+            "Cache-Control":"no-store"
+        ]
+        let parameters = [
+            "groupId" : groupId,
+            "userId" : AppDelegate.getAppDelegate().sRegisteredUserId
+        ]
+        Alamofire.request(.POST, url,headers:headers, parameters:parameters , encoding: .JSON)
+            .responseJSON { (response) in
+                
+                print("post : request=",response.request)
+                print("post : response=",response.response)
+                print("post : data=",response.data)
+                print("post : result=",response.result)
+                // SwiftyJSON
+                //let json = JSON(data: dataFromNetworking)
+                let jsonOBJ = JSON((response.result.value)!)
+                
+                print("===========================================")
+                print("jsonOBJ=",jsonOBJ)
+                print("jsonOBJ.status=",jsonOBJ["status"])
+                //print("jsonOBJ[0]=",jsonOBJ[0])
+                //print("jsonOBJ[1]=",jsonOBJ[1])
+                //print("jsonOBJ['json']=",jsonOBJ["json"])
+                //print("jsonOBJ[\"json\"][\"foo\"]=",jsonOBJ["json"]["foo"])
+                if(jsonOBJ["status"] == "SUCCESS"){
+                    self.onDeleteSuccess()
+                }else{
+                    self.onDeleteFail()
+                }
+                print("===========================================")
+        }
+        // ================= END : removeGroup ==========================
+    }
+    internal func onDeleteSuccess(){
+        print("VCGroups : onDeleteSuccess ")
+        PIVDUtilContact.getGroupsFromServer(self)
+    }
+    internal func onDeleteFail(){
+        print("VCGroups : onDeleteFail ")
+        AppDelegate.getAppDelegate().showMessage("Delete Group has failed. Try again.", "Fail")
     }
 }
 
