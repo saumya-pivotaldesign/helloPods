@@ -88,11 +88,11 @@ extension VCRegistrationConfirmation {
             .responseJSON { (response) in
                 
                 let jsonOBJ = JSON((response.result.value)!)
-                /*
+                
                  print("result   ===========================================")
                  print(jsonOBJ)
                  print("result / ===========================================")
-                 */
+                 
                 if(jsonOBJ["otpCode"].isExists()==true){
                     AppDelegate.getAppDelegate().showMessage("Check your SMS for OTP.","OTP Sent")
                 }else{
