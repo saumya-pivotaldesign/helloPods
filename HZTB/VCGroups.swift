@@ -43,6 +43,10 @@ class VCGroups: UIViewController, UITableViewDelegate, UITableViewDataSource {
         
         //PIVDUtilContact.getGroupsFromServer(self)
         
+        //MARK: EventHandler Registrations
+        NSNotificationCenter.defaultCenter().addObserver( self, selector:#selector(ongroupDeleteNotification),
+                                                          name: PIVDStaticNames.GROUP_DELETE_ACTION, object: nil )
+        
         
     }
     override func viewWillAppear(animated: Bool) {
@@ -157,3 +161,17 @@ extension VCGroups {
     }
     
 }
+
+//MARK: event handlers
+extension VCGroups {
+    internal func ongroupDeleteNotification(notification:NSNotification){
+        print("VCGroups : ongroupDeleteNotification : ")
+        //print("name=",notification.name)
+        //print("object=",notification.object)
+        //
+        let myViewController:VCListItemGroupName = notification.object as! VCListItemGroupName
+        //myViewController.someMethod()
+        print("selected :",myViewController.selectedID)
+    }
+}
+

@@ -16,13 +16,29 @@ class VCListItemGroupName: UITableViewCell {
     
     @IBOutlet var labelGroupName:UILabel?
     
+    internal var selectedID:String = ""
+    
+    
     @IBAction func onEditTap(sender:AnyObject){
         print("VCListItemGroupName:onEditTap:")
         print(dataObj)
     }
     @IBAction func onDeleteTap(sender:AnyObject){
         print("VCListItemGroupName:onDeleteTap:")
-        print(dataObj)
+        print("VCListItemGroupName:onDeleteTap:dataObj:",dataObj)
+        
+        let gID = dataObj!["groupId"]
+        print("VCListItemGroupName:onDeleteTap:selected Id:",gID)
+        
+        self.selectedID = String(gID)
+        
+        //let uID = AppDelegate.getAppDelegate().sRegisteredUserId
+        // delete the group
+        //print(gID,uID)
+        //GROUP_DELETE_ACTION
+        // Post the notification
+        let notification = NSNotification(name: PIVDStaticNames.GROUP_DELETE_ACTION , object: self, userInfo:nil )
+        NSNotificationCenter.defaultCenter().postNotification(notification)
     }
     
     // Setter

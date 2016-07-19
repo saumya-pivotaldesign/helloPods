@@ -12,6 +12,8 @@ struct PIVDStaticNames {
     internal static let REGISTRATION_SUCCESS:String = "registrationSuccess"
     internal static let OTP_SUCCESS:String = "OTPValidationSuccess"
     internal static let PROFILE_UPDATE_SUCCESS:String = "profileUpdateSuccess"
+    internal static let GROUP_DELETE_ACTION:String = "groupDeleteAction"
+    
     // Links
     internal static let LINK_PROFILE_TAP:String = "onProfileLinkTap"
     internal static let LINK_SETTINGS_TAP:String = "onSettingsLinkTap"
