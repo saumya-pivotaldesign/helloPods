@@ -62,6 +62,45 @@ extension VCRegistrationConfirmation {
     }
     @IBAction func onSendAgainOTP(sender:AnyObject){
         print("VCRegistrationConfirmation : onSendAgainOTP : ")
+        
+        print("VCRegistrationConfirmation : onSendAgainOTP :  === ")
+        
+        let sRegisteredMobileNum:String = AppDelegate.getAppDelegate().sRegisteredMobileNum
+        
+        print("VCRegistrationConfirmation : onSendAgainOTP : sRegisteredMobileNum=",sRegisteredMobileNum)
+        
+        // validate OTP
+        let url = "http://hztb-dev.us-east-1.elasticbeanstalk.com/user/getUserProfile"
+        let headers = [
+            "Content-Type":"application/json",
+            "Accept":"application/json",
+            "Accept-Language":"en-US",
+            "REQUEST_ID":"1"
+        ]
+        let parameters = [
+            "mobileNumber" : sRegisteredMobileNum
+        ]
+        
+        Alamofire.request(.POST, url,headers:headers, parameters:parameters , encoding: .JSON)
+            .responseJSON { (response) in
+                
+                let jsonOBJ = JSON((response.result.value)!)
+                
+                /*
+                print("result   ===========================================")
+                print(jsonOBJ)
+                print("result / ===========================================")
+                */
+                
+                if(jsonOBJ["otpCode"].isExists()==true){
+                    AppDelegate.getAppDelegate().showMessage("Check your SMS for OTP.","OTP Sent")
+                }else{
+                    AppDelegate.getAppDelegate().showMessage("OTP Generation. Try after sometime.","Error")
+                }
+                
+        }
+        print("VCRegistrationConfirmation : onSendAgainOTP : /=== ")
+        
     }
     
 }
