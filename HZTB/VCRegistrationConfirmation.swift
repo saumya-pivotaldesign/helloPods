@@ -24,7 +24,7 @@ class VCRegistrationConfirmation: UIViewController {
         super.viewDidLoad()
         //
         print("VCRegistrationConfirmation : viewDidLoad : ")
-        
+        callServerToSendOTP()
         
     }
     override func viewWillAppear(animated: Bool) {
@@ -62,14 +62,17 @@ extension VCRegistrationConfirmation {
     }
     @IBAction func onSendAgainOTP(sender:AnyObject){
         print("VCRegistrationConfirmation : onSendAgainOTP : ")
-        
-        print("VCRegistrationConfirmation : onSendAgainOTP :  === ")
-        
+        callServerToSendOTP()
+    }
+    
+}
+//MARK: Utility Methods
+extension VCRegistrationConfirmation {
+    internal func callServerToSendOTP(){
+        print("VCRegistrationConfirmation : callServerToSendOTP :  === ")
         let sRegisteredMobileNum:String = AppDelegate.getAppDelegate().sRegisteredMobileNum
-        
-        print("VCRegistrationConfirmation : onSendAgainOTP : sRegisteredMobileNum=",sRegisteredMobileNum)
-        
-        // validate OTP
+        print("VCRegistrationConfirmation : callServerToSendOTP : sRegisteredMobileNum=",sRegisteredMobileNum)
+        // get OTP
         let url = "http://hztb-dev.us-east-1.elasticbeanstalk.com/user/getUserProfile"
         let headers = [
             "Content-Type":"application/json",
@@ -85,27 +88,19 @@ extension VCRegistrationConfirmation {
             .responseJSON { (response) in
                 
                 let jsonOBJ = JSON((response.result.value)!)
-                
                 /*
-                print("result   ===========================================")
-                print(jsonOBJ)
-                print("result / ===========================================")
-                */
-                
+                 print("result   ===========================================")
+                 print(jsonOBJ)
+                 print("result / ===========================================")
+                 */
                 if(jsonOBJ["otpCode"].isExists()==true){
                     AppDelegate.getAppDelegate().showMessage("Check your SMS for OTP.","OTP Sent")
                 }else{
                     AppDelegate.getAppDelegate().showMessage("OTP Generation. Try after sometime.","Error")
                 }
-                
         }
-        print("VCRegistrationConfirmation : onSendAgainOTP : /=== ")
-        
+        print("VCRegistrationConfirmation : callServerToSendOTP : /=== ")
     }
-    
-}
-//MARK: Utility Methods
-extension VCRegistrationConfirmation {
     internal func confirmOTPwithServer(){
         print("VCRegistrationConfirmation : confirmOTPwithServer : ")
         callServerForPing()
