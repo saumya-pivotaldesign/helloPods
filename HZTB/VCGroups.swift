@@ -45,6 +45,8 @@ class VCGroups: UIViewController, UITableViewDelegate, UITableViewDataSource {
         //PIVDUtilContact.getGroupsFromServer(self)
         
         //MARK: EventHandler Registrations
+        NSNotificationCenter.defaultCenter().addObserver( self, selector:#selector(ongroupEditNotification),
+                                                          name: PIVDStaticNames.GROUP_EDIT_ACTION, object: nil )
         NSNotificationCenter.defaultCenter().addObserver( self, selector:#selector(ongroupDeleteNotification),
                                                           name: PIVDStaticNames.GROUP_DELETE_ACTION, object: nil )
         
@@ -165,6 +167,26 @@ extension VCGroups {
 
 //MARK: event handlers
 extension VCGroups {
+    internal func ongroupEditNotification(notification:NSNotification){
+        print("VCGroups : ongroupEditNotification : ")
+        let myViewController:VCListItemGroupName = notification.object as! VCListItemGroupName
+        print("selected :",myViewController.selectedID)
+        print("data:",myViewController.getDataObj())
+        
+        let sb:UIStoryboard = UIStoryboard(name: "Main",bundle: nil)
+        let cv:VCGroupCreate = (sb.instantiateViewControllerWithIdentifier("sbid_createGroup") as! VCGroupCreate)
+        //cv.setProductID(url.host!)
+        // working
+        //r.presentViewController(cv, animated: false, completion: nil)
+        //self.window?.rootViewController?.presentViewController(cv, animated: true, completion: nil)
+        
+        //self.view.window?.rootViewController!.presentViewController(cv, animated: true, completion: nil)
+        // -- not working -- // self.view.window?.rootViewController?.navigationController?.pushViewController(cv, animated: false)
+        self.navigationController?.pushViewController(cv, animated: true)
+        
+        
+        
+    }
     internal func ongroupDeleteNotification(notification:NSNotification){
         print("VCGroups : ongroupDeleteNotification : ")
         //print("name=",notification.name)

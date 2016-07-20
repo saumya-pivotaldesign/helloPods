@@ -21,21 +21,21 @@ class VCListItemGroupName: UITableViewCell {
     
     @IBAction func onEditTap(sender:AnyObject){
         print("VCListItemGroupName:onEditTap:")
-        print(dataObj)
+        
+        let gID = self.dataObj!["groupId"]
+        self.selectedID = String(gID)
+        
+        // Post the notification
+        let notification = NSNotification(name: PIVDStaticNames.GROUP_EDIT_ACTION , object: self, userInfo:nil )
+        NSNotificationCenter.defaultCenter().postNotification(notification)
+        
     }
     @IBAction func onDeleteTap(sender:AnyObject){
         print("VCListItemGroupName:onDeleteTap:")
-        print("VCListItemGroupName:onDeleteTap:dataObj:",dataObj)
         
-        let gID = dataObj!["groupId"]
-        print("VCListItemGroupName:onDeleteTap:selected Id:",gID)
-        
+        let gID = self.dataObj!["groupId"]
         self.selectedID = String(gID)
         
-        //let uID = AppDelegate.getAppDelegate().sRegisteredUserId
-        // delete the group
-        //print(gID,uID)
-        //GROUP_DELETE_ACTION
         // Post the notification
         let notification = NSNotification(name: PIVDStaticNames.GROUP_DELETE_ACTION , object: self, userInfo:nil )
         NSNotificationCenter.defaultCenter().postNotification(notification)
@@ -49,6 +49,9 @@ class VCListItemGroupName: UITableViewCell {
         //self.labelGroupName = self.aGroups![indexPath.row]["groupName"].string
         //cell.labelGroupName?.text = sGroupName
         self.labelGroupName?.text = self.dataObj!["groupName"].string
+    }
+    internal func getDataObj()->JSON{
+        return self.dataObj!
     }
     
    
