@@ -198,6 +198,10 @@ extension VCGroupCreate {
                 //print("jsonOBJ['json']=",jsonOBJ["json"])
                 //print("jsonOBJ[\"json\"][\"foo\"]=",jsonOBJ["json"]["foo"])
                 print("===========================================")
+                
+                if(jsonOBJ["status"] == "SUCCESS"){
+                    AppDelegate.getAppDelegate().showMessage("New Group Created.", "Success")
+                }
         }
         // ================= END : createGroup ==========================
     }
