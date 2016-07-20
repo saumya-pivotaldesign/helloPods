@@ -56,8 +56,9 @@ class VCGroupCreate: UIViewController, UITableViewDelegate, UITableViewDataSourc
     @IBAction func onDone(sender:AnyObject){
         print("VCGroupCreate : onDone : ")
         if(self.isOnEditMode){
-            print("TODO: Update the Group")
-            
+            print("TODO: Update the Group : ")
+            print("For the timebeing its calling the CreateGroup API")
+            callServerForCreateGroup()
         }else{
             callServerForCreateGroup()
         }
@@ -145,7 +146,9 @@ extension VCGroupCreate {
                 //print( Int(a1)==Int(a2) )
                 
                 if (a1 == a2) {
-                    print("Mark it Selected")
+                    //print("Mark it Selected")
+                    self.selectedIds.append(userID2.string!)
+                    cell.accessoryType = UITableViewCellAccessoryType.Checkmark
                 }
             }
             //print("---------")
