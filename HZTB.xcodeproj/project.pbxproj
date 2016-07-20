@@ -82,6 +82,7 @@
 		AE96BB121D129572007DE2A2 /* PIVDUtilREST.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE96BB111D129572007DE2A2 /* PIVDUtilREST.swift */; };
 		AE9789411D26A165002EDAD4 /* VCSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE9789401D26A164002EDAD4 /* VCSettings.swift */; };
 		AE9789431D26A1F5002EDAD4 /* VCGroups.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE9789421D26A1F5002EDAD4 /* VCGroups.swift */; };
+		AEC499FC1D3FBE4F00C3EDC0 /* VCGroupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEC499FB1D3FBE4F00C3EDC0 /* VCGroupView.swift */; };
 		AEF692CC1D2F9DF2002FBD1D /* Walkway Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AEF692C81D2F9DF2002FBD1D /* Walkway Black.ttf */; };
 		AEF692CE1D2F9DF2002FBD1D /* Walkway SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AEF692CA1D2F9DF2002FBD1D /* Walkway SemiBold.ttf */; };
 		AEF692CF1D2F9DF2002FBD1D /* Walkway UltraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AEF692CB1D2F9DF2002FBD1D /* Walkway UltraBold.ttf */; };
@@ -170,6 +171,7 @@
 		AE96BB111D129572007DE2A2 /* PIVDUtilREST.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PIVDUtilREST.swift; sourceTree = "<group>"; };
 		AE9789401D26A164002EDAD4 /* VCSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VCSettings.swift; sourceTree = "<group>"; };
 		AE9789421D26A1F5002EDAD4 /* VCGroups.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VCGroups.swift; sourceTree = "<group>"; };
+		AEC499FB1D3FBE4F00C3EDC0 /* VCGroupView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VCGroupView.swift; sourceTree = "<group>"; };
 		AEC613221CFEC4E700DFD465 /* HZTB.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = HZTB.entitlements; sourceTree = "<group>"; };
 		AEF692C81D2F9DF2002FBD1D /* Walkway Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Walkway Black.ttf"; sourceTree = "<group>"; };
 		AEF692C91D2F9DF2002FBD1D /* Walkway Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Walkway Bold.ttf"; sourceTree = "<group>"; };
@@ -240,6 +242,7 @@
 				AE4D503B1D23E9F4005C6AE7 /* VCProfile.swift */,
 				AE9789421D26A1F5002EDAD4 /* VCGroups.swift */,
 				AE58BAD81D3CB72A00BEF5BC /* VCGroupCreate.swift */,
+				AEC499FB1D3FBE4F00C3EDC0 /* VCGroupView.swift */,
 				AEF692D11D2FDD89002FBD1D /* VCListItemGroupName.swift */,
 				AE58BADA1D3CEB2400BEF5BC /* VCListItemContactName.swift */,
 				AE9789401D26A164002EDAD4 /* VCSettings.swift */,
@@ -587,6 +590,7 @@
 				AE9789411D26A165002EDAD4 /* VCSettings.swift in Sources */,
 				AE717FBB1CF58840009DB28B /* VCHome.swift in Sources */,
 				AE8F08B71CF33C8A004048A0 /* VCNewRequest.swift in Sources */,
+				AEC499FC1D3FBE4F00C3EDC0 /* VCGroupView.swift in Sources */,
 				AE4D355E1D2BE2E9006DCEC8 /* PIVDModel.swift in Sources */,
 				AE531D621CEAED7C00F6F2A5 /* AppDelegate.swift in Sources */,
 				AE58BADB1D3CEB2400BEF5BC /* VCListItemContactName.swift in Sources */,

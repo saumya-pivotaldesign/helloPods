@@ -151,6 +151,10 @@ extension VCGroups {
         let selectedCell:UITableViewCell = tableView.cellForRowAtIndexPath(indexPath)!
         selectedCell.contentView.backgroundColor = UIColor.redColor()
         
+        let sb:UIStoryboard = UIStoryboard(name: "Main",bundle: nil)
+        let cv:VCGroupView = (sb.instantiateViewControllerWithIdentifier("sbid_viewGroup") as! VCGroupView)
+        self.navigationController?.pushViewController(cv, animated: true)
+        
         //var serverContacts = AppDelegate.getAppDelegate().contactsFromServer["userProfileResponses"]
         /*
         let tappedItem = listItems[indexPath.row] as ListItem

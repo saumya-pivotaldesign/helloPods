@@ -18,6 +18,8 @@
         <mutableArray key="Walkway Bold.ttf">
             <string>WalkwayBold</string>
             <string>WalkwayBold</string>
+            <string>WalkwayBold</string>
+            <string>WalkwayBold</string>
         </mutableArray>
         <mutableArray key="Walkway SemiBold.ttf">
             <string>WalkwaySemiBold</string>
@@ -2770,11 +2772,12 @@
                     <navigationItem key="navigationItem" title="Groups" id="iJu-xo-EWT"/>
                     <connections>
                         <outlet property="tableViewContacts" destination="mQU-gV-uhV" id="54T-ZE-99H"/>
+                        <segue destination="2uS-vI-yhF" kind="show" id="vHZ-S1-0cx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mFL-yZ-cVZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4879.5" y="173.25"/>
+            <point key="canvasLocation" x="4902" y="173.25"/>
         </scene>
         <!--Create Group-->
         <scene sceneID="EwP-Yi-T8e">
@@ -2946,7 +2949,145 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYi-iD-cU2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5602.5" y="431.25"/>
+            <point key="canvasLocation" x="5818.5" y="465.75"/>
+        </scene>
+        <!--Group Name-->
+        <scene sceneID="12V-7m-rhs">
+            <objects>
+                <viewController storyboardIdentifier="sbid_viewGroup" id="2uS-vI-yhF" customClass="VCGroupView" customModule="HZTB" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="S4m-GJ-A3d"/>
+                        <viewControllerLayoutGuide type="bottom" id="im6-KY-pNE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Uhr-N7-2Jl">
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="77" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="GTV-ha-NC9">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="62" id="HGQ-gl-Jgx" customClass="VCListItemContactName" customModule="HZTB" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="HGQ-gl-Jgx" id="4L4-Na-7ie">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d2j-Nw-S6t">
+                                                    <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                                    <fontDescription key="fontDescription" name="WalkwayBold" family="Walkway Bold" pointSize="24"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                    <variation key="heightClass=regular-widthClass=compact" ambiguous="YES" misplaced="YES">
+                                                        <rect key="frame" x="8" y="8" width="368" height="18"/>
+                                                    </variation>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xyC-bg-L3D">
+                                                    <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                                    <fontDescription key="fontDescription" name="WalkwayBold" family="Walkway Bold" pointSize="18"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                    <variation key="heightClass=regular-widthClass=compact" ambiguous="YES" misplaced="YES">
+                                                        <rect key="frame" x="8" y="34" width="368" height="19"/>
+                                                    </variation>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="d2j-Nw-S6t" secondAttribute="trailing" constant="334" id="K4i-p7-fVD">
+                                                    <variation key="heightClass=regular-widthClass=compact" constant="8"/>
+                                                </constraint>
+                                                <constraint firstAttribute="bottom" secondItem="xyC-bg-L3D" secondAttribute="bottom" constant="8" id="bbE-8E-aky"/>
+                                                <constraint firstItem="d2j-Nw-S6t" firstAttribute="top" secondItem="4L4-Na-7ie" secondAttribute="top" constant="8" id="cVc-TS-Hnh"/>
+                                                <constraint firstItem="xyC-bg-L3D" firstAttribute="leading" secondItem="4L4-Na-7ie" secondAttribute="leading" constant="8" id="ion-qY-yAH"/>
+                                                <constraint firstItem="d2j-Nw-S6t" firstAttribute="leading" secondItem="4L4-Na-7ie" secondAttribute="leading" constant="8" id="j9r-9M-ivg"/>
+                                                <constraint firstItem="xyC-bg-L3D" firstAttribute="top" secondItem="d2j-Nw-S6t" secondAttribute="bottom" constant="8" id="nTZ-RM-OLK"/>
+                                                <constraint firstAttribute="trailing" secondItem="xyC-bg-L3D" secondAttribute="trailing" constant="8" id="sdd-m7-8zL"/>
+                                                <constraint firstItem="xyC-bg-L3D" firstAttribute="top" secondItem="d2j-Nw-S6t" secondAttribute="bottom" constant="8" id="zxB-rX-uAQ"/>
+                                            </constraints>
+                                            <variation key="default">
+                                                <mask key="subviews">
+                                                    <exclude reference="d2j-Nw-S6t"/>
+                                                    <exclude reference="xyC-bg-L3D"/>
+                                                </mask>
+                                                <mask key="constraints">
+                                                    <exclude reference="K4i-p7-fVD"/>
+                                                    <exclude reference="cVc-TS-Hnh"/>
+                                                    <exclude reference="j9r-9M-ivg"/>
+                                                    <exclude reference="bbE-8E-aky"/>
+                                                    <exclude reference="ion-qY-yAH"/>
+                                                    <exclude reference="nTZ-RM-OLK"/>
+                                                    <exclude reference="sdd-m7-8zL"/>
+                                                    <exclude reference="zxB-rX-uAQ"/>
+                                                </mask>
+                                            </variation>
+                                            <variation key="heightClass=regular-widthClass=compact">
+                                                <mask key="subviews">
+                                                    <include reference="d2j-Nw-S6t"/>
+                                                    <include reference="xyC-bg-L3D"/>
+                                                </mask>
+                                                <mask key="constraints">
+                                                    <include reference="K4i-p7-fVD"/>
+                                                    <include reference="cVc-TS-Hnh"/>
+                                                    <include reference="j9r-9M-ivg"/>
+                                                    <include reference="bbE-8E-aky"/>
+                                                    <include reference="ion-qY-yAH"/>
+                                                    <include reference="nTZ-RM-OLK"/>
+                                                    <include reference="sdd-m7-8zL"/>
+                                                    <include reference="zxB-rX-uAQ"/>
+                                                </mask>
+                                            </variation>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="labelContactName" destination="d2j-Nw-S6t" id="KzD-k9-wgz"/>
+                                            <outlet property="labelContactNumber" destination="xyC-bg-L3D" id="TcC-Do-gsS"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="2uS-vI-yhF" id="Wvr-9E-n4e"/>
+                                    <outlet property="delegate" destination="2uS-vI-yhF" id="k3y-AL-ThM"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="GTV-ha-NC9" secondAttribute="trailing" constant="8" id="a0M-0s-qq9"/>
+                            <constraint firstItem="GTV-ha-NC9" firstAttribute="leading" secondItem="Uhr-N7-2Jl" secondAttribute="leading" constant="8" id="aOE-dd-f0p"/>
+                            <constraint firstItem="im6-KY-pNE" firstAttribute="top" secondItem="GTV-ha-NC9" secondAttribute="bottom" constant="8" id="pmy-dQ-fiF"/>
+                            <constraint firstItem="GTV-ha-NC9" firstAttribute="top" secondItem="S4m-GJ-A3d" secondAttribute="bottom" constant="8" id="sy5-LG-ckh"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="GTV-ha-NC9"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="a0M-0s-qq9"/>
+                                <exclude reference="aOE-dd-f0p"/>
+                                <exclude reference="sy5-LG-ckh"/>
+                                <exclude reference="pmy-dQ-fiF"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="GTV-ha-NC9"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="a0M-0s-qq9"/>
+                                <include reference="aOE-dd-f0p"/>
+                                <include reference="sy5-LG-ckh"/>
+                                <include reference="pmy-dQ-fiF"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <navigationItem key="navigationItem" title="Group Name" id="jpi-PD-m8j">
+                        <barButtonItem key="rightBarButtonItem" title="Edit" id="mnM-ZV-FG9"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="tableViewContacts" destination="GTV-ha-NC9" id="ULF-5p-FE5"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Uz4-55-Vz0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6703.5" y="62.25"/>
         </scene>
         <!--Profile-->
         <scene sceneID="8tW-7n-Wf6">
@@ -3213,7 +3354,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jXj-aw-tTl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5602.5" y="-240.75"/>
+            <point key="canvasLocation" x="5818.5" y="-249.75"/>
         </scene>
         <!--Details-->
         <scene sceneID="Qyb-Yy-66a">
