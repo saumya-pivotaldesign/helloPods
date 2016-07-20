@@ -172,13 +172,20 @@ extension VCGroups {
         let myViewController:VCListItemGroupName = notification.object as! VCListItemGroupName
         print("selected :",myViewController.selectedID)
         print("data:",myViewController.getDataObj())
+        let groupName = myViewController.getDataObj()["groupName"].string
+        print(groupName)
         
         let sb:UIStoryboard = UIStoryboard(name: "Main",bundle: nil)
         let cv:VCGroupCreate = (sb.instantiateViewControllerWithIdentifier("sbid_createGroup") as! VCGroupCreate)
         //cv.setProductID(url.host!)
-        // working
-        //r.presentViewController(cv, animated: false, completion: nil)
-        //self.window?.rootViewController?.presentViewController(cv, animated: true, completion: nil)
+        //let groupName:String = myViewController.labelGroupName!.text!
+        //print(groupName)
+        
+        cv.isOnEditMode = true
+        cv.editGroupName = groupName!
+        cv.title = "Edit Group"
+        
+        
         
         //self.view.window?.rootViewController!.presentViewController(cv, animated: true, completion: nil)
         // -- not working -- // self.view.window?.rootViewController?.navigationController?.pushViewController(cv, animated: false)

@@ -13,6 +13,9 @@ import Alamofire
 
 class VCGroupCreate: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
+    var isOnEditMode:Bool = false // Used for Edit Group
+    var editGroupName:String = "" // Used for Edit Group
+    
     @IBOutlet var tableViewContacts:UITableView!
     @IBOutlet var groupNameTextField:UITextField!
     
@@ -39,6 +42,10 @@ class VCGroupCreate: UIViewController, UITableViewDelegate, UITableViewDataSourc
         print("VCGroupCreate : viewDidLoad : self.jsonContacts",self.jsonContacts)
         print("VCGroupCreate : viewDidLoad : self.aContacts",self.aContacts)
         print("VCGroupCreate : viewDidLoad : ===================================== ")
+        
+        if(isOnEditMode){
+            groupNameTextField.text = editGroupName
+        }
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -46,7 +53,12 @@ class VCGroupCreate: UIViewController, UITableViewDelegate, UITableViewDataSourc
     }
     
     @IBAction func onDone(sender:AnyObject){
-        callServerForCreateGroup()
+        print("VCGroupCreate : onDone : ")
+        if(self.isOnEditMode){
+            print("TODO: Update the Group")
+        }else{
+            callServerForCreateGroup()
+        }
     }
 }
 
