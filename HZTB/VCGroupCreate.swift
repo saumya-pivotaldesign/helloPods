@@ -15,6 +15,7 @@ class VCGroupCreate: UIViewController, UITableViewDelegate, UITableViewDataSourc
     
     var isOnEditMode:Bool = false // Used for Edit Group
     var editGroupName:String = "" // Used for Edit Group
+    var editGroupData:JSON? // Used for Edit Group
     
     @IBOutlet var tableViewContacts:UITableView!
     @IBOutlet var groupNameTextField:UITextField!
@@ -56,6 +57,7 @@ class VCGroupCreate: UIViewController, UITableViewDelegate, UITableViewDataSourc
         print("VCGroupCreate : onDone : ")
         if(self.isOnEditMode){
             print("TODO: Update the Group")
+            
         }else{
             callServerForCreateGroup()
         }
@@ -117,6 +119,40 @@ extension VCGroupCreate {
         
         let cell:VCListItemContactName = self.tableViewContacts.dequeueReusableCellWithIdentifier("cell")! as! VCListItemContactName
         cell.setDataObj(self.aContacts![indexPath.row])
+        
+        print("VCGroupCreate : tableView:cellForRowAtIndexPath: self.isOnEditMode ===== ")
+        if(self.isOnEditMode){
+            print("===============")
+            //print(self.aContacts![indexPath.row])
+            //print("==")
+            //print(self.editGroupData)
+            //print("---------")
+            for item in self.editGroupData!["groupMembers"] {
+                let j = item.1
+                let userID1 = j["userId"]
+                let userID2 = self.aContacts![indexPath.row]["userId"]
+                
+                //print("userID1",userID1)
+                //print(self.aContacts![indexPath.row]["userId"])
+                
+                //print(userID1,userID2)
+                //print(userID1.rawValue,userID2.rawValue)
+                //print(userID1.intValue,userID2.stringValue)
+                
+                let a1 = Int(userID1.intValue)
+                let a2 = Int(userID2.stringValue)
+                
+                //print( Int(a1)==Int(a2) )
+                
+                if (a1 == a2) {
+                    print("Mark it Selected")
+                }
+            }
+            //print("---------")
+            
+            print("===============")
+        }
+        print("VCGroupCreate : tableView:cellForRowAtIndexPath: self.isOnEditMode /===== ")
         
         return cell
     }
