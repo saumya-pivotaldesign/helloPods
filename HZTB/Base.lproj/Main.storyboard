@@ -3081,7 +3081,11 @@
                         </variation>
                     </view>
                     <navigationItem key="navigationItem" title="Group Name" id="jpi-PD-m8j">
-                        <barButtonItem key="rightBarButtonItem" title="Edit" id="mnM-ZV-FG9"/>
+                        <barButtonItem key="rightBarButtonItem" title="Edit" id="mnM-ZV-FG9">
+                            <connections>
+                                <action selector="onEdit" destination="2uS-vI-yhF" id="cVv-gi-Z56"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="tableViewContacts" destination="GTV-ha-NC9" id="ULF-5p-FE5"/>

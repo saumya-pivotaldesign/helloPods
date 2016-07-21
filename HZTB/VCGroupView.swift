@@ -29,6 +29,33 @@ class VCGroupView: UIViewController, UITableViewDelegate, UITableViewDataSource 
         //
     }
     
+    @IBAction func onEdit(){
+        print("VCGroupView : onEdit : ")
+        //print(self.jGroupItems!["groupId"])
+        
+        //let gID = self.jGroupItems!["groupId"]
+        //self.selectedID = String(gID)
+        let groupName = self.jGroupItems!["groupName"].string
+        
+        // Post the notification
+        //let notification = NSNotification(name: PIVDStaticNames.GROUP_EDIT_ACTION , object: self, userInfo:nil )
+        //NSNotificationCenter.defaultCenter().postNotification(notification)
+        
+        
+        let sb:UIStoryboard = UIStoryboard(name: "Main",bundle: nil)
+        let cv:VCGroupCreate = (sb.instantiateViewControllerWithIdentifier("sbid_createGroup") as! VCGroupCreate)
+        
+        cv.isOnEditMode = true
+        cv.editGroupName = groupName!
+        cv.editGroupData = self.jGroupItems
+        cv.title = "Edit Group"
+        
+        //self.view.window?.rootViewController!.presentViewController(cv, animated: true, completion: nil)
+        // -- not working -- // self.view.window?.rootViewController?.navigationController?.pushViewController(cv, animated: false)
+        self.navigationController?.pushViewController(cv, animated: true)
+        
+    }// onEdit
+    
 }
 
 //MARK: tableView protocol confirmation
