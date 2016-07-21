@@ -47,7 +47,13 @@ extension VCGroupView {
         //let cell:UITableViewCell = self.tableViewContacts.dequeueReusableCellWithIdentifier("cell")! as UITableViewCell
         
         let cell:VCListItemContactName = self.tableViewContacts.dequeueReusableCellWithIdentifier("cell")! as! VCListItemContactName
-        //cell.setDataObj(self.aContacts![indexPath.row])
+        //cell.setDataObj(self.aGroupItems![indexPath.row])
+        let s = self.aGroupItems![indexPath.row]["firstName"].string! + self.aGroupItems![indexPath.row]["lastname"].string!
+        //cell.textLabel?.text = s
+        cell.labelContactName?.text = s
+        cell.labelContactNumber?.text = "" //Simply not showing it
+        
+        print("VCGroupView : tableView:cellForRowAtIndexPath: name=",s)
         
         return cell
     }
@@ -66,14 +72,16 @@ extension VCGroupView {
         self.jGroupItems = jData
         self.aGroupItems = jData["groupMembers"].array
         self.nGroupMembersCount = (self.aGroupItems!.count)
-        
+        /*
         print("= ================")
         print(jData)
         print(aGroupItems?.count)
         print(aGroupItems)
         print("/ ================")
+        */
         //print("VCGroupView : setGroupData : nGroupMembersCount",nGroupMembersCount)
         
+        // Not needed as the data is set before its visible! Awesome :)
         //self.tableViewContacts.reloadData()
     }
 }
