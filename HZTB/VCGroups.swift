@@ -151,8 +151,16 @@ extension VCGroups {
         let selectedCell:UITableViewCell = tableView.cellForRowAtIndexPath(indexPath)!
         selectedCell.contentView.backgroundColor = UIColor.redColor()
         
+        
+        
+        print("============================")
+        print(self.aGroups![indexPath.row])
+        print("============================")
+        
         let sb:UIStoryboard = UIStoryboard(name: "Main",bundle: nil)
         let cv:VCGroupView = (sb.instantiateViewControllerWithIdentifier("sbid_viewGroup") as! VCGroupView)
+        cv.setGroupData(self.aGroups![indexPath.row])
+        cv.title = self.aGroups![indexPath.row]["groupName"].string
         self.navigationController?.pushViewController(cv, animated: true)
         
         //var serverContacts = AppDelegate.getAppDelegate().contactsFromServer["userProfileResponses"]
