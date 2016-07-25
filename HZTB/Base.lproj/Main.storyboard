@@ -2642,14 +2642,13 @@
                                                         <rect key="frame" x="8" y="12" width="254" height="19"/>
                                                     </variation>
                                                 </label>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E92-HC-rVu">
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E92-HC-rVu">
                                                     <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                                    <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                     <fontDescription key="fontDescription" name="WalkwayUltraBold" family="Walkway UltraBold" pointSize="18"/>
-                                                    <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <state key="normal" title="Edit"/>
+                                                    <state key="normal" backgroundImage="edit"/>
                                                     <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                                        <rect key="frame" x="270" y="6" width="60" height="30"/>
+                                                        <rect key="frame" x="304" y="0.0" width="40" height="40"/>
                                                     </variation>
                                                     <connections>
                                                         <action selector="onEditTap:" destination="UCv-vQ-dPa" eventType="touchUpInside" id="Dwy-4h-YsG"/>
@@ -2657,12 +2656,12 @@
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yNt-99-51I">
                                                     <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                                    <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                     <fontDescription key="fontDescription" name="WalkwayUltraBold" family="Walkway UltraBold" pointSize="18"/>
                                                     <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <state key="normal" title="Delete"/>
+                                                    <state key="normal" backgroundImage="delete"/>
                                                     <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                                        <rect key="frame" x="332" y="6" width="60" height="30"/>
+                                                        <rect key="frame" x="352" y="0.0" width="40" height="40"/>
                                                     </variation>
                                                     <connections>
                                                         <action selector="onDeleteTap:" destination="UCv-vQ-dPa" eventType="touchUpInside" id="d29-do-HxU"/>
@@ -4467,6 +4466,8 @@
     <resources>
         <image name="Bg" width="16" height="16"/>
         <image name="Profile-Pic-2200x2200.jpg" width="2200" height="2200"/>
+        <image name="delete" width="16" height="16"/>
+        <image name="edit" width="16" height="16"/>
         <image name="requests" width="16" height="16"/>
         <image name="sent" width="16" height="16"/>
         <image name="store" width="16" height="16"/>
