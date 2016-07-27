@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		336B9F887B0A1C0CC586904D /* Pods_HZTB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07D6C911D9C59D05281F3A22 /* Pods_HZTB.framework */; };
+		AE29CD0C1D48C0D5007AEC61 /* VCNewRequestUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE29CD0B1D48C0D5007AEC61 /* VCNewRequestUI.swift */; };
 		AE2B48011D1D1A6400EAD4B7 /* PIVDStaticNames.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE2B48001D1D1A6400EAD4B7 /* PIVDStaticNames.swift */; };
 		AE2B48031D1D420B00EAD4B7 /* PIVDContact.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE2B48021D1D420B00EAD4B7 /* PIVDContact.swift */; };
 		AE4D355B1D2BC493006DCEC8 /* PIVDUtilLocalStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4D355A1D2BC493006DCEC8 /* PIVDUtilLocalStorage.swift */; };
@@ -125,6 +126,7 @@
 		07D6C911D9C59D05281F3A22 /* Pods_HZTB.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HZTB.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		32C43E92C90F44444FABD508 /* Pods-HZTB.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HZTB.release.xcconfig"; path = "Pods/Target Support Files/Pods-HZTB/Pods-HZTB.release.xcconfig"; sourceTree = "<group>"; };
 		68113FFA8BC212CC24D6FC22 /* Pods-HZTB.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HZTB.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HZTB/Pods-HZTB.debug.xcconfig"; sourceTree = "<group>"; };
+		AE29CD0B1D48C0D5007AEC61 /* VCNewRequestUI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VCNewRequestUI.swift; sourceTree = "<group>"; };
 		AE2B48001D1D1A6400EAD4B7 /* PIVDStaticNames.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PIVDStaticNames.swift; sourceTree = "<group>"; };
 		AE2B48021D1D420B00EAD4B7 /* PIVDContact.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PIVDContact.swift; sourceTree = "<group>"; };
 		AE4D355A1D2BC493006DCEC8 /* PIVDUtilLocalStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PIVDUtilLocalStorage.swift; sourceTree = "<group>"; };
@@ -299,6 +301,7 @@
 				AE56495F1D1039DF00FF6302 /* VCRegistration.swift */,
 				AE7F15731D228105000AE265 /* VCRegistrationConfirmation.swift */,
 				AE8F08B61CF33C8A004048A0 /* VCNewRequest.swift */,
+				AE29CD0B1D48C0D5007AEC61 /* VCNewRequestUI.swift */,
 				AE4D503B1D23E9F4005C6AE7 /* VCProfile.swift */,
 				AE9789421D26A1F5002EDAD4 /* VCGroups.swift */,
 				AE58BAD81D3CB72A00BEF5BC /* VCGroupCreate.swift */,
@@ -718,6 +721,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AE4D355B1D2BC493006DCEC8 /* PIVDUtilLocalStorage.swift in Sources */,
+				AE29CD0C1D48C0D5007AEC61 /* VCNewRequestUI.swift in Sources */,
 				AE2B48011D1D1A6400EAD4B7 /* PIVDStaticNames.swift in Sources */,
 				AE717FB61CF587DF009DB28B /* Interactor.swift in Sources */,
 				AE717FB41CF587DF009DB28B /* DismissMenuAnimator.swift in Sources */,

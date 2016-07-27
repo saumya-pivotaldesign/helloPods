@@ -250,6 +250,15 @@ extension VCHome {
         //let n:NSURL = NSURL(string: "")!
         //UIApplication.sharedApplication().openURL(NSURL(fileURLWithPath: "hztbuddy://test_page/one?token=12345&domain=foo.com"))
     }
+    @IBAction func onNewRequestTap(sender:AnyObject){
+        print("VCHome : onNewRequestTap : ")
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewControllerWithIdentifier("sid_newRequestUI") as! VCNewRequestUI
+        //self.presentViewController(vc, animated: true, completion: nil)
+        //navigationController?.presentViewController(vc, animated: true, completion: nil)
+        navigationController?.pushViewController(vc, animated: true)
+        
+    }
 }
 
 //MARK: Functional needs
