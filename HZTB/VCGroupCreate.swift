@@ -25,6 +25,7 @@ class VCGroupCreate: UIViewController, UITableViewDelegate, UITableViewDataSourc
     var nContacts:Int = 0
     
     var items: [String] = ["Item 1","Item 2","Item 3", "Item 4", "Item 5"]
+    var itemsJSONArray:[JSON] = [JSON("name:one,mobileNumber:111111222222"),JSON("name:one,mobileNumber:111111222222")]
     var selectedIds:[String] = []
     
     
@@ -78,6 +79,7 @@ extension VCGroupCreate {
         //print("VCGroups : tableView:numberOfRowsInSection: nGroups",nGroups)
         
         return nContacts
+        //return self.itemsJSONArray.count
     }
     
     
@@ -121,6 +123,9 @@ extension VCGroupCreate {
         let cell:VCListItemContactName = self.tableViewContacts.dequeueReusableCellWithIdentifier("cell")! as! VCListItemContactName
         cell.setDataObj(self.aContacts![indexPath.row])
         
+        //cell.setDataObj(self.itemsJSONArray[indexPath.row])
+        //cell.imgProfilePic.image = UIImage(named: "delete")
+        
         print("VCGroupCreate : tableView:cellForRowAtIndexPath: self.isOnEditMode ===== ")
         if(self.isOnEditMode){
             print("===============")
@@ -152,6 +157,17 @@ extension VCGroupCreate {
                 }
             }
             //print("---------")
+            
+            //cell.contentView.setNeedsDisplay()
+            //cell.layoutSubviews()
+            //cell.setNeedsDisplay()
+            //cell.setNeedsLayout()
+            
+            //cell.setSelected(true, animated: true)
+            //cell.setSelected(false, animated: true)
+            
+            //tableViewContacts.scrollsToTop = true
+            //tableViewContacts.flashScrollIndicators()
             
             print("===============")
         }
@@ -205,6 +221,27 @@ extension VCGroupCreate {
          tableView.reloadRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.None)
          */
     }
+    
+    /*
+    func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+        print("VCGroupCreate : tableView:willDisplayCell:cell:forRowAtIndexPath:    ===== ")
+        
+        print("indexPath.row",indexPath.row)
+        print("cell",cell)
+        
+        let cell:VCListItemContactName = self.tableViewContacts.dequeueReusableCellWithIdentifier("cell")! as! VCListItemContactName
+        
+        cell.contentView.setNeedsDisplay()
+        cell.layoutSubviews()
+        cell.setNeedsDisplay()
+        cell.setNeedsLayout()
+        
+        // imgProfilePic.image = UIImage(named: "Bg")
+        //cell.imgProfilePic.image = UIImage(named: "Bg")
+        //cell.setNeedsDisplay()
+        
+        print("VCGroupCreate : tableView:willDisplayCell:cell:forRowAtIndexPath:  / ===== ")
+    }*/
 }
 
 //MARK: server call
