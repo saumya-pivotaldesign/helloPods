@@ -25,7 +25,7 @@ apple test1 - 01 2222211116
 
  
 ### Notes
- - Testing Travis CI
+ - Testing CI
 
 
 
