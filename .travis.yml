@@ -7,5 +7,5 @@ language: objective-c
 xcode_workspace: HZTB.xcworkspace
 xcode_scheme: HZTB
 #
-pod install
+# pod install
 
